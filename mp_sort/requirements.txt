@@ -1,0 +1,13 @@
+Click==7.0
+Flask==1.1.1
+Flask-DotEnv==0.1.2
+itsdangerous==1.1.0
+Jinja2==2.10.3
+MarkupSafe==1.1.1
+mypy==0.740
+mypy-extensions==0.4.3
+python-dotenv==0.10.3
+Transcrypt==3.7.16
+typed-ast==1.4.0
+typing-extensions==3.7.4.1
+Werkzeug==0.16.0
