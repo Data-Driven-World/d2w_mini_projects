@@ -348,3 +348,54 @@ The second button is to sort the generated random numbers. The event `onclick` i
 - get the random numbers from `array`,
 - sort the list using either bubble sort or insertion sort,
 - create a single string containing the sorted numbers.
+
+### Assignment for Exercise 2
+
+#### Part 1: Creating a Text Input
+
+In this exercise, instead of randomly generate the numbers, you will ask the user to enter the sequence of numbers using a Text Input.
+
+Open `ex2.html`. You should see the following:
+
+```
+        <p>
+        	<div id="generate">Enter a sequence of numbers separated by a comma (","):</div>
+        	## Enter the code here to create a Text Input. ##
+        </p>
+```
+
+Search the internet to find out how to create a Text Input field and enter the code in the line indicated. Replace that line with the correct tag and code for Text Input. Name the text input `numbers`.
+
+#### Part 2: Sorting User Input
+
+You should also see the following line:
+
+```
+        <p>
+        	<div id="sorted">...</div>
+        	<button onclick="library.sortnumber2()">Sort</button>
+        </p>
+```
+
+This button's even `onclick` is binded to `sortnumber2()` function in your `library.py`. Modify that function to do the following:
+- get the string from the text input stored in the variable `value`,
+- split the string using comma as a separator,
+- remove all trailing whitespaces and convert them to numbers,
+- sort the list of numbers,
+- create a single string containing the sorted numbers and store it to `array_str`.
+
+### Expected Output
+
+The expected output for both exercises 1 and 2 can be found in this video.
+
+[Mini Project 1 Expected Output](http://vdimension.sutd.edu.sg/Player?66NkLoMQ8qTOs4Da2dd26LlGAzmH080pY6XoehsXmAU=)
+
+## Optional: Deploying to Amazon Elastic Beanstalk
+
+### Setup
+
+#### Installing EB CLI
+
+You will need to install Elastic Beanstalk Command Line Interface (EB CLI). 
+- [Installing EB CLI for MacOS](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-osx.html)
+- [Installing EB CLI for Windows](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-windows.html)
