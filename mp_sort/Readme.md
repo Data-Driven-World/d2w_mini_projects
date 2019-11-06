@@ -327,10 +327,24 @@ Open `ex1.html` in your text editor. You should see these few lines of code:
         	<div id="generate">...</div>
         	<button onclick="library.generate()">Generate 10 numbers</button>
         </p>
+```
+
+We have two buttons. The first button is to generate 10 random numbers. The event `onclick` is binded to the function `generate()` in your `library.py`. Fill in this function to do the following:
+- generate 10 random integers and store it into the global variable `array`,
+- create a single string containing all the numbers. For example,
+    `3, 1, 2, 4, 8, 6, 5, 9, 0, 7.`
+
+#### Part 2: Sorting Numbers
+
+In `ex1.html`, you should also find the following lines:
+```
         <p>
         	<div id="sorted">...</div>
         	<button onclick="library.sortnumber1()">Sort</button>
         </p>
 ```
 
-We have two buttons. The first button is to generate 10 random numbers. The event `onclick` is binded to the function `generate()` in your `library.py`. Fill in this function to generate 10 random integers and store it into
+The second button is to sort the generated random numbers. The event `onclick` is binded to the function `sortnumber1()` in your `library.py`. Fill in this function to do the following:
+- get the random numbers from `array`,
+- sort the list using either bubble sort or insertion sort,
+- create a single string containing the sorted numbers.
