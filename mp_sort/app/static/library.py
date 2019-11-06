@@ -21,19 +21,12 @@ def generate():
 	# and a full stop should end the string.
 	pass
 
+	array_str = None
+	
 	# This line is to placed the string into the HTML
 	# under div section with the id called "generate"	
 	document.getElementById("generate").innerHTML = array_str
 
-def bubble_sort(array):
-  n = len(array)
-  count = 0
-  for big_idx in range(1, n):
-    for small_idx in range(1, n):
-      count += 1
-      if array[small_idx - 1] > array[small_idx]:
-        array[small_idx - 1], array[small_idx] = array[small_idx], array[small_idx - 1]
-  return count
 
 def sortnumber1():
 	'''	This function is used in Exercise 1.
