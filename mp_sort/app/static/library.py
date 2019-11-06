@@ -16,13 +16,14 @@ def generate():
 	# store it to the global variable array
 	pass
 
+	array = None
 	# convert the items into one single string 
 	# the number should be separated by a comma
 	# and a full stop should end the string.
 	pass
 
 	array_str = None
-	
+
 	# This line is to placed the string into the HTML
 	# under div section with the id called "generate"	
 	document.getElementById("generate").innerHTML = array_str
