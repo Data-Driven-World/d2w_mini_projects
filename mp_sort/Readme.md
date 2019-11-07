@@ -392,10 +392,4 @@ The expected output for both exercises 1 and 2 can be found in this video.
 
 ## Optional: Deploying to Amazon Elastic Beanstalk
 
-### Setup
-
-#### Installing EB CLI
-
-You will need to install Elastic Beanstalk Command Line Interface (EB CLI). 
-- [Installing EB CLI for MacOS](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-osx.html)
-- [Installing EB CLI for Windows](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-windows.html)
+Check [Deploying to Amazon Elastic Beanstalk](DeployEB.md).
