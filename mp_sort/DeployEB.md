@@ -12,27 +12,21 @@ You may want to install Elastic Beanstalk Command Line Interface (EB CLI). Follo
 
 ### Creating AWS Educate Starter Account
 
-### Creating IAM Users
+### Creating Access Key
 
 1. Login to your AWS Educate Platform at [https://www.awseducate.com/](https://www.awseducate.com/).
 1. Go to the AWS console.
     ![](https://www.dropbox.com/s/pwgdgvoruuacneq/iam_create_1.png?raw=1)
-1. Select IAM service and click.
-    ![](https://www.dropbox.com/s/ja49hnlmtdph2ov/iam_create_2.png?raw=1)
-1. Create User.
-    ![](https://www.dropbox.com/s/natg7zii1m3lo35/iam_create_3.png?raw=1)
-1. Enter user name and choose programmatic access.
-    ![](https://www.dropbox.com/s/vjroz5iso4vvzw9/iam_create_4.png?raw=1)
-1. Create Group.
-    ![](https://www.dropbox.com/s/a0nknc9jafmdtl4/iam_create_5.png?raw=1)
-1. Enter Group name and choose AdministratorAccess.
-    ![](https://www.dropbox.com/s/4odytdfu6n32czd/iam_create_6.png?raw=1)
-1. Add the user to the group and click next.
-    ![](https://www.dropbox.com/s/7val7qfzd03jw8m/iam_create_7.png?raw=1)
-1. Skip tag and click next.
-    ![](https://www.dropbox.com/s/mcc2ovu4p5q12us/iam_create_8.png?raw=1)
-1. Download the CSV file containing your Access key ID and Secret access Key.
-    ![](https://www.dropbox.com/s/csskhflpieru52h/iam_create_9.png?raw=1)
+1. Click your user name and choose "My Security Credentials".
+	![](https://www.dropbox.com/s/7qyxysirqvvte56/key_root_1.png?raw=1)
+1. Click "Continue to Security Credentials".
+	![](https://www.dropbox.com/s/fpynx533x1zfenn/key_root_2.png?raw=1)
+1. Open "Access keys (access key ID and secret access key)".
+	![](https://www.dropbox.com/s/ds45l9roybz5qft/key_root_3.png?raw=1)
+1. Click "Create New Access Key".
+	![](https://www.dropbox.com/s/j5x06xtyxr35xcp/key_root_4.png?raw=1)
+1. Download key file. Your access key id and secret key is in this file. Save it in a safe place.
+	![](https://www.dropbox.com/s/diaidcxopzq8coe/key_root_5.png?raw=1)
 
 ## Deploying to Elastic Beanstalk
 
