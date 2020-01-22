@@ -39,7 +39,7 @@ or
 1. Initialze the folder for EB repository by typing the following:
 
 	```
-	$ eb init -p python-3.6 miniproject1 --region ap-southeast-1
+	$ eb init -p python-3.6 miniproject1 --region us-east-1
 	```
 
 1. Run eb init again to configure a default keypair so that you can connect to the EC2 instance running your application with SSH:
