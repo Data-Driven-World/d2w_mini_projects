@@ -22,6 +22,7 @@ You may want to install Elastic Beanstalk Command Line Interface (EB CLI). Follo
 1. Under AWS CLI, click "Show".
 	![](https://www.dropbox.com/s/uppsfd9d6i658mt/credential_3.png?raw=1)
 1. Create a new text file using any plain text editor and save the information into the text file. Keep the information in a safe place and **do not put it in your public repository**.
+    ![](https://www.dropbox.com/s/m9qpgn17f1kzeae/credential_4.png?raw=1)
 
 ## Deploying to Elastic Beanstalk
 
