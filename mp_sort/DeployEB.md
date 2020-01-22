@@ -15,18 +15,13 @@ You may want to install Elastic Beanstalk Command Line Interface (EB CLI). Follo
 ### Creating Access Key
 
 1. Login to your AWS Educate Platform at [https://www.awseducate.com/](https://www.awseducate.com/).
-1. Go to the AWS console.
-    ![](https://www.dropbox.com/s/pwgdgvoruuacneq/iam_create_1.png?raw=1)
-1. Click your user name and choose "My Security Credentials".
-	![](https://www.dropbox.com/s/7qyxysirqvvte56/key_root_1.png?raw=1)
-1. Click "Continue to Security Credentials".
-	![](https://www.dropbox.com/s/fpynx533x1zfenn/key_root_2.png?raw=1)
-1. Open "Access keys (access key ID and secret access key)".
-	![](https://www.dropbox.com/s/ds45l9roybz5qft/key_root_3.png?raw=1)
-1. Click "Create New Access Key".
-	![](https://www.dropbox.com/s/j5x06xtyxr35xcp/key_root_4.png?raw=1)
-1. Download key file. Your access key id and secret key is in this file. Save it in a safe place.
-	![](https://www.dropbox.com/s/diaidcxopzq8coe/key_root_5.png?raw=1)
+1. Go to classroom.
+    ![](https://www.dropbox.com/s/fwrvxrc374zj5hn/credential_1.png?raw=1)
+1. Click the button "Account Details".
+	![](https://www.dropbox.com/s/v8cwxnrap1f84yo/credential_2.png?raw=1)
+1. Under AWS CLI, click "Show".
+	![](https://www.dropbox.com/s/uppsfd9d6i658mt/credential_3.png?raw=1)
+1. Create a new text file using any plain text editor and save the information into the text file. Keep the information in a safe place and **do not put it in your public repository**.
 
 ## Deploying to Elastic Beanstalk
 
