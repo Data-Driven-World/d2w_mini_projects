@@ -1,5 +1,39 @@
 # Mini Project 1: Sorting App
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Learning Objectives](#learning-objectives)
+- [Setup](#setup)
+    - [Install Git](#install-git)
+    - [Downloading Repository](#downloading-repository)
+    - [Go to Mini Project 1 Folder](#go-to-mini-project-1-folder)
+- [Create Virtual Environment (Windows)](#create-virtual-environment-windows)
+- [Create Virtual Environment (MacOS/Linux)](#create-virtual-environment-macoslinux)
+- [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux)
+    - [Install Python Packages](#install-python-packages)
+    - [Exercise 1](#exercise-1)
+        - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
+    - [HTML for Exercise 1](#html-for-exercise-1)
+- [Windows](#windows)
+    - [Using Transcrypt](#using-transcrypt)
+    - [Run Flask](#run-flask)
+- [MacOS/Linux](#macoslinux)
+    - [Using Transcrypt](#using-transcrypt-1)
+    - [Run Flask](#run-flask-1)
+- [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux-1)
+    - [Assignment for Exercise 1](#assignment-for-exercise-1)
+        - [Part 1: Generating Random Integers](#part-1-generating-random-integers)
+        - [Part 2: Sorting Numbers](#part-2-sorting-numbers)
+    - [Assignment for Exercise 2](#assignment-for-exercise-2)
+        - [Part 1: Creating a Text Input](#part-1-creating-a-text-input)
+        - [Part 2: Sorting User Input](#part-2-sorting-user-input)
+    - [Expected Output](#expected-output)
+- [Optional: Deploying to Amazon Elastic Beanstalk](#optional-deploying-to-amazon-elastic-beanstalk)
+
+<!-- markdown-toc end -->
+
+
 ## Learning Objectives
 In this mini project, you will develop a web app to sort numbers. By the end of this assignment, you should be able to:
 - Create a simple web app using Flask web framework
@@ -43,24 +77,15 @@ app
 
 This handout can be found in the file `Readme.md`.
 
-### Create Virtual Environment
+## Create Virtual Environment (Windows)
 
-**If you are using Windows, you should open Anaconda Prompt to do the following steps.**
-In the following steps, the MacOS prompt will be represented by:
-```
-$
-```
-while Windows prompt will be represnted by:
+**You should open Anaconda Prompt to do the following steps.**
+
+In the following steps, the Windows prompt will be represnted by:
 ```
 >
 ```
-
-Go to the root folder `mp_sort`. For MacOS:
-```
-$ cd ~/Downloads/d2w_mini_projects/mp_sort
-```
-
-For Windows:
+Go to the root folder `mp_sort`.
 ```
 > cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_sort
 ```
@@ -70,54 +95,76 @@ From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv
 $ python -m venv virtenv
 ```
 
-A folder called `virtenv` will be created. Now, activate the virtual environment. For MacOS:
-
-```
-$ source virtenv/bin/activate
-```
-
-For Windows:
+A folder called `virtenv` will be created. Now, activate the virtual environment.
 ```
 > virtenv\Scripts\activate
 ```
 
 You should see the word `virtenv` in your prompt something like:
 ```
-(virtenv) user$
-```
-or
-```
 (virtenv) folder>
 ```
 
-_To exit the virtual enviroment at the end of this mini project, simply type:_
-```
-$ deactivate
-```
-or
+_To exit the virtual environment at the end of this mini project, simply type:_
 ```
 > deactivate
 ```
 
+## Create Virtual Environment (MacOS/Linux)
+
+
+In the following steps, the MacOS/Linux prompt will be represented by:
+```
+$
+```
+
+Go to the root folder `mp_sort`. 
+```
+$ cd ~/Downloads/d2w_mini_projects/mp_sort
+```
+
+From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
+
+```
+$ python -m venv virtenv
+```
+
+A folder called `virtenv` will be created. Now, activate the virtual environment. 
+
+```
+$ source virtenv/bin/activate
+```
+
+You should see the word `virtenv` in your prompt something like:
+```
+(virtenv) user$
+```
+
+_To exit the virtual environment at the end of this mini project, simply type:_
+```
+$ deactivate
+```
+## Combined (Windows/Mac/Linux)
+
 ### Install Python Packages
 
 Install the necessary packages for this mini project. From the root folder, i.e. `mp_sort`, type the following:
-
-For MacOS:
-```
-$ pip install -r requirements.txt
-```
 
 For Windows:
 ```
 > pip install -r requirements.txt
 ```
 
+For MacOS/Linux: (For Linux, you might need to type pip3 instead)
+```
+$ pip install -r requirements.txt
+```
+
 The above steps will install Flask and Transcrypt Python libraries and some other necessary packages.
 
-## Exercise 1
+### Exercise 1
 
-### Brief Overview of Flask Project Structure
+#### Brief Overview of Flask Project Structure
 
 We are using Flask web framework to create this web app. The first file you may notice is `application.py` in the root folder. Open that file using a text editor. You should see the following:
 
@@ -221,17 +268,13 @@ mp_sort/
 
 All your work for this mini project will be done inside `library.py`.
 
+
+## Windows
+
 ### Using Transcrypt
 
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
-For MacOS:
-```
-$ cd ~/Downloads/d2w_mini_projects/mp_sort/app/static
-$ ls
-```
-
-For Windows:
 ```
 > cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort\app\static
 > dir
@@ -250,13 +293,6 @@ transcrypt -b library.py
 
 The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. To see the content of that folder:
 
-For MacOS:
-```
-$ ls
-$ ls __target__
-```
-
-For Windows:
 ```
 > dir
 > dir __target__
@@ -277,29 +313,18 @@ You should see `library.js` created inside this folder.
 
 Now you are ready to run your web app in your local computer. To do so, you need to go back to the root directory. This can be done with the following:
 
-For MacOS:
-```
-$ cd ../..
-```
-which means go up the folder two times. Or, simply
-```
-$ cd ~/Downloads/d2w_mini_projects/mp_sort/
-```
-
-For Windows:
 ```
 > cd ..\..
 ```
-or
+
+which means go up the folder two times. Or, simply
+
 ```
 > cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort
 ```
 
 You should see `application.py` in this root folder. Run Flask by typing:
 
-```
-$ flask run
-```
 or
 ```
 > flask run
@@ -316,6 +341,79 @@ Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. Yo
 ![](https://www.dropbox.com/s/a2fqx5svvyqtqf9/mp1_home.png?raw=1)
 
 To stop the web app type `CTRL+C`. 
+
+
+## MacOS/Linux
+
+### Using Transcrypt
+
+Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
+
+```
+$ cd ~/Downloads/d2w_mini_projects/mp_sort/app/static
+$ ls
+```
+
+The last command will list the file in that folder, and you should see:
+```
+library.py
+```
+
+Run Transcrypt on `library.py`:
+
+```
+transcrypt -b library.py
+```
+
+The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. To see the content of that folder:
+
+```
+$ ls
+$ ls __target__
+```
+
+```
+__target__/
+  library.js
+  library.project
+  math.js
+  org.transcrypt.__runtime__.js
+  random.js
+```
+
+You should see `library.js` created inside this folder.
+
+### Run Flask
+
+Now you are ready to run your web app in your local computer. To do so, you need to go back to the root directory. This can be done with the following:
+
+```
+$ cd ../..
+```
+which means go up the folder two times. Or, simply
+```
+$ cd ~/Downloads/d2w_mini_projects/mp_sort/
+```
+
+You should see `application.py` in this root folder. Run Flask by typing:
+
+```
+$ flask run
+```
+
+You should see that some output will be thrown out, which one of them would be:
+
+```
+* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
+
+![](https://www.dropbox.com/s/a2fqx5svvyqtqf9/mp1_home.png?raw=1)
+
+To stop the web app type `CTRL+C`. 
+
+## Combined (Windows/Mac/Linux)
 
 ### Assignment for Exercise 1
 
