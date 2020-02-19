@@ -52,7 +52,7 @@ You need to have Git to do the project. Download and install the software accord
 ### Downloading Repository
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
-```
+```shell
 $ cd Downloads
 $ git clone https://github.com/kurniawano/d2w_mini_projects.git
 ```
@@ -61,14 +61,14 @@ $ git clone https://github.com/kurniawano/d2w_mini_projects.git
 
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_sort` for this mini project.
 
-```
+```shell
 $ cd d2w_mini_projects/mp_sort
 $ ls
 ```
 
 The last command should output the following:
 
-```
+```shell
 Readme.md		
 application.py
 requirements.txt
@@ -82,31 +82,31 @@ This handout can be found in the file `Readme.md`.
 **You should open Anaconda Prompt to do the following steps.**
 
 In the following steps, the Windows prompt will be represnted by:
-```
+```shell
 >
 ```
 Go to the root folder `mp_sort`.
-```
+```shell
 > cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_sort
 ```
 From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
 
-```
+```shell
 $ python -m venv virtenv
 ```
 
 A folder called `virtenv` will be created. Now, activate the virtual environment.
-```
+```shell
 > virtenv\Scripts\activate
 ```
 
 You should see the word `virtenv` in your prompt something like:
-```
+```shell
 (virtenv) folder>
 ```
 
 _To exit the virtual environment at the end of this mini project, simply type:_
-```
+```shell
 > deactivate
 ```
 
@@ -114,34 +114,34 @@ _To exit the virtual environment at the end of this mini project, simply type:_
 
 
 In the following steps, the MacOS/Linux prompt will be represented by:
-```
+```shell
 $
 ```
 
 Go to the root folder `mp_sort`. 
-```
+```shell
 $ cd ~/Downloads/d2w_mini_projects/mp_sort
 ```
 
 From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
 
-```
+```shell
 $ python -m venv virtenv
 ```
 
 A folder called `virtenv` will be created. Now, activate the virtual environment. 
 
-```
+```shell
 $ source virtenv/bin/activate
 ```
 
 You should see the word `virtenv` in your prompt something like:
-```
+```shell
 (virtenv) user$
 ```
 
 _To exit the virtual environment at the end of this mini project, simply type:_
-```
+```shell
 $ deactivate
 ```
 ## Combined (Windows/Mac/Linux)
@@ -151,12 +151,12 @@ $ deactivate
 Install the necessary packages for this mini project. From the root folder, i.e. `mp_sort`, type the following:
 
 For Windows:
-```
+```shell
 > pip install -r requirements.txt
 ```
 
 For MacOS/Linux: (For Linux, you might need to type pip3 instead)
-```
+```shell
 $ pip install -r requirements.txt
 ```
 
@@ -168,7 +168,7 @@ The above steps will install Flask and Transcrypt Python libraries and some othe
 
 We are using Flask web framework to create this web app. The first file you may notice is `application.py` in the root folder. Open that file using a text editor. You should see the following:
 
-```
+```python
 from app import application
 
 if __name__ == "__main__":
@@ -177,7 +177,7 @@ if __name__ == "__main__":
 
 The last two lines runs the `application` object when it is run on the shell. The value will be used when you deploy it to Amazon Elastic Beanstalk. It also enables the debug mode to `True` so that you can see any error messages when they occur. The `application` object is imported in the first line from the `app` package. The `app` package is in a folder called `app`:
 
-```
+```shell
 mp_sort/
   app/
     __init__.py
@@ -188,7 +188,7 @@ mp_sort/
 
 The file `__init__.py` contains the line that creates the `application` object as a `Flask` instance.
 
-```
+```python
 from flask import Flask
 
 application = Flask(__name__)
@@ -198,7 +198,7 @@ from app import routes
 
 This file also import the file `routes.py` which defines the URL routing.
 
-```
+```python
 from flask import render_template
 from app import application
 
@@ -218,7 +218,7 @@ def exercise2():
 
 The first route indicates then a user enter the URL with "/" or "/index" at the end, our web app will serve this request by calling `index()` function. The `index()` function will return a HTML response following a template called `index.html`. This file `index.html` can be found inside the `templates` folder.
 
-```
+```shell
 mp_sort/
   app/
     __init__.py
@@ -238,16 +238,16 @@ For Exercise 1, you may want to look into the file `ex1.html`. Open this file in
 
 HTML code normally contains of two section, the header and the body. Each of the elements can be identified by their tags. The header element for `ex1.html` is as below:
 
-```
-    <head>
-        <title>{{title}}</title>
-        <script type="module">import * as library from '/static/__target__/library.js'; window.library = library;</script>
-    </head>
+```html
+<head>
+	<title>{{title}}</title>
+	<script type="module">import * as library from '/static/__target__/library.js'; window.library = library;</script>
+</head>
 ```
 
 The `<title>` set the title of the page. Inside this tag we found `{{title}}`. The two curly braces is a Jinja template syntax that allow you to change the HTML code. It is a kind of variable that you can set. This variable `title` is actually set when `render_template()` is called in `routes.py`.
 
-```
+```python
 @application.route('/ex1')
 def exercise1():
     return render_template('ex1.html', title='Mini Project 1 Exercise 1')
@@ -257,7 +257,7 @@ In this code, the variable `title` is set to `Mini Project 1 Exercise 1`.
 
 The second tag `<script ...>...</script>` is to import our script. We will generate this Javascript file `library.js` from our Python `library.py` file inside the `static` folder. 
 
-```
+```shell
 mp_sort/
   app/
     __init__.py
@@ -275,30 +275,30 @@ All your work for this mini project will be done inside `library.py`.
 
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
-```
+```shell
 > cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort\app\static
 > dir
 ```
 
 The last command will list the file in that folder, and you should see:
-```
+```shell
 library.py
 ```
 
 Run Transcrypt on `library.py`:
 
-```
+```shell
 transcrypt -b library.py
 ```
 
 The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. To see the content of that folder:
 
-```
+```shell
 > dir
 > dir __target__
 ```
 
-```
+```shell
 __target__/
   library.js
   library.project
@@ -313,26 +313,26 @@ You should see `library.js` created inside this folder.
 
 Now you are ready to run your web app in your local computer. To do so, you need to go back to the root directory. This can be done with the following:
 
-```
+```shell
 > cd ..\..
 ```
 
 which means go up the folder two times. Or, simply
 
-```
+```shell
 > cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort
 ```
 
 You should see `application.py` in this root folder. Run Flask by typing:
 
 or
-```
+```shell
 > flask run
 ```
 
 You should see that some output will be thrown out, which one of them would be:
 
-```
+```shell
 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
@@ -349,30 +349,30 @@ To stop the web app type `CTRL+C`.
 
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
-```
+```shell
 $ cd ~/Downloads/d2w_mini_projects/mp_sort/app/static
 $ ls
 ```
 
 The last command will list the file in that folder, and you should see:
-```
+```shell
 library.py
 ```
 
 Run Transcrypt on `library.py`:
 
-```
+```shell
 transcrypt -b library.py
 ```
 
 The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. To see the content of that folder:
 
-```
+```shell
 $ ls
 $ ls __target__
 ```
 
-```
+```shell
 __target__/
   library.js
   library.project
@@ -387,23 +387,23 @@ You should see `library.js` created inside this folder.
 
 Now you are ready to run your web app in your local computer. To do so, you need to go back to the root directory. This can be done with the following:
 
-```
+```shell
 $ cd ../..
 ```
 which means go up the folder two times. Or, simply
-```
+```shell
 $ cd ~/Downloads/d2w_mini_projects/mp_sort/
 ```
 
 You should see `application.py` in this root folder. Run Flask by typing:
 
-```
+```shell
 $ flask run
 ```
 
 You should see that some output will be thrown out, which one of them would be:
 
-```
+```shell
 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
@@ -420,11 +420,11 @@ To stop the web app type `CTRL+C`.
 #### Part 1: Generating Random Integers 
 Open `ex1.html` in your text editor. You should see these few lines of code:
 
-```
-		<p>
-        	<div id="generate">...</div>
-        	<button onclick="library.generate()">Generate 10 numbers</button>
-        </p>
+```html
+<p>
+	<div id="generate">...</div>
+	<button onclick="library.generate()">Generate 10 numbers</button>
+</p>
 ```
 
 We have two buttons. The first button is to generate 10 random numbers. The event `onclick` is binded to the function `generate()` in your `library.py`. Fill in this function to do the following:
@@ -435,11 +435,11 @@ We have two buttons. The first button is to generate 10 random numbers. The even
 #### Part 2: Sorting Numbers
 
 In `ex1.html`, you should also find the following lines:
-```
-        <p>
-        	<div id="sorted">...</div>
-        	<button onclick="library.sortnumber1()">Sort</button>
-        </p>
+```html
+<p>
+	<div id="sorted">...</div>
+	<button onclick="library.sortnumber1()">Sort</button>
+</p>
 ```
 
 The second button is to sort the generated random numbers. The event `onclick` is binded to the function `sortnumber1()` in your `library.py`. Fill in this function to do the following:
@@ -455,11 +455,11 @@ In this exercise, instead of randomly generate the numbers, you will ask the use
 
 Open `ex2.html`. You should see the following:
 
-```
-        <p>
-        	<div id="generate">Enter a sequence of numbers separated by a comma (","):</div>
-        	## Enter the code here to create a Text Input. ##
-        </p>
+```html
+<p>
+	<div id="generate">Enter a sequence of numbers separated by a comma (","):</div>
+	## Enter the code here to create a Text Input. ##
+</p>
 ```
 
 Search the internet to find out how to create a Text Input field and enter the code in the line indicated. Replace that line with the correct tag and code for Text Input. Name the text input `numbers`.
@@ -468,11 +468,11 @@ Search the internet to find out how to create a Text Input field and enter the c
 
 You should also see the following line:
 
-```
-        <p>
-        	<div id="sorted">...</div>
-        	<button onclick="library.sortnumber2()">Sort</button>
-        </p>
+```html
+<p>
+	<div id="sorted">...</div>
+	<button onclick="library.sortnumber2()">Sort</button>
+</p>
 ```
 
 This button's even `onclick` is binded to `sortnumber2()` function in your `library.py`. Modify that function to do the following:
