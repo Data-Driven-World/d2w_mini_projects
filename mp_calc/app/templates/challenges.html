@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>Hi {{ user.username }}! Answer these!</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Question</th>
+      <th scope="col">Answer</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for idx in range(challenges|length) %}
+  	<tr>
+      <th scope="row">{{ idx+1 }}</th>
+      <td>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#q{{ idx }}" aria-expanded="false" aria-controls="collapseExample"
+        onclick="library.records.start_timer({{ challenges[idx].id }});">
+        Show/Hide
+        </button>
+        <div class="collapse" id="q{{ idx }}">
+          <div class="card card-body">
+          {{ challenges[idx].question.expression }}
+          </div>
+        </div></td>
+      <td>
+        <form id="form-{{ idx }}" action="" method="post" novalidate>
+          {{ form.hidden_tag() }}
+          <div>
+          {{ form.answer(size=32) }}
+          <button type="button" class="btn btn-primary"
+            onclick="library.records.stop_timer({{ idx }}, {{ challenges[idx].id }})">Submit</button>
+        </form>
+      </td>
+      <td>
+        <div id="elapsedtime-{{ id }}">{{ records[challenges[idx].id] }}</div>
+      </td>
+    </tr>
+  {% endfor %}
+  
+  </tbody>
+</table>
+
+{% endblock %}

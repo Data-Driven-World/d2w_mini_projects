@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>Hall of Fame</h1>
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th scope="col" >#</th>
+      <th scope="col" >Challenge</th>
+      <th scope="col" >User</th>
+      <th scope="col" class="text-right" >Time</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for idx in range(challenges|length) %}
+  	<tr>
+      <th scope="row" class="lead">{{ idx+1 }}</th>
+      <td class="lead">
+      	{{ challenges[idx].question.expression }}
+      </td>
+      <td class="lead">
+      	{% for r in records[challenges[idx].id] %}{{ r.user_challenge.username}}<br>{% endfor %}
+      </td>
+      <td class="text-right lead">
+        {% for r in records[challenges[idx].id] %}{{ r.elapsed_time}}<br>{% endfor %}
+      </td>
+    </tr>
+  {% endfor %}
+  
+  </tbody>
+</table>
+{% endblock %}

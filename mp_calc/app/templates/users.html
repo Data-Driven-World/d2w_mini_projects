@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+<h1>This Platform's Users</h1>
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">User</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for idx in range(users|length) %}
+  	<tr>
+      <th scope="row" class="lead">{{ idx+1 }}</th>
+      <td class="lead">
+      	#Replace Me#
+      </td>
+    </tr>
+  {% endfor %}
+  
+  </tbody>
+</table>
+{% endblock %}
