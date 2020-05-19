@@ -216,7 +216,7 @@ def exercise2():
     return render_template('ex2.html', title='Mini Project 1 Exercise 2')
 ```
 
-The first route indicates then a user enter the URL with "/" or "/index" at the end, our web app will serve this request by calling `index()` function. The `index()` function will return a HTML response following a template called `index.html`. This file `index.html` can be found inside the `templates` folder.
+The first route indicates when a user enter the URL with "/" or "/index" at the end, our web app will serve this request by calling `index()` function. The `index()` function will return a HTML response following a template called `index.html`. This file `index.html` can be found inside the `templates` folder.
 
 ```shell
 mp_sort/
