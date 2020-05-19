@@ -81,7 +81,7 @@ This handout can be found in the file `Readme.md`.
 
 **You should open Anaconda Prompt to do the following steps.**
 
-In the following steps, the Windows prompt will be represnted by:
+In the following steps, the Windows prompt will be represented by:
 ```shell
 >
 ```
