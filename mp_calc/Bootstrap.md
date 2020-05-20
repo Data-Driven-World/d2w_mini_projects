@@ -128,7 +128,7 @@ For more options on typography, check [Bootstrap's Typography Documentation](htt
 
 ## Table Styles
 
-We use [Bootstrap's Table Style] in several files like `question.html`, `challenge.html`, `users.html`, and `halloffame.html`. 
+We use [Bootstrap's Table Style](https://getbootstrap.com/docs/4.5/content/tables/) in several files like `question.html`, `challenge.html`, `users.html`, and `halloffame.html`. 
 
 The code below is from `users.html`.
 
@@ -162,7 +162,7 @@ We use `table` inside the `class` option for `<table>` to enable Bootstrap's Tab
 
 - [Bootstrap's Navbar Documentation](https://getbootstrap.com/docs/4.5/components/navbar/)
 [Bootstrap's Alert Documentation](https://getbootstrap.com/docs/4.5/components/alerts/).
-- [Bootstrap's Table Documentation]
+- [Bootstrap's Table Documentation](https://getbootstrap.com/docs/4.5/content/tables/)
 - [Bootstrap's Typography Documentation](https://getbootstrap.com/docs/4.5/content/typography/)(https://getbootstrap.com/docs/4.5/content/tables/)
 - [Bootstrap Documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
 
