@@ -163,6 +163,6 @@ We use `table` inside the `class` option for `<table>` to enable Bootstrap's Tab
 - [Bootstrap's Navbar Documentation](https://getbootstrap.com/docs/4.5/components/navbar/)
 [Bootstrap's Alert Documentation](https://getbootstrap.com/docs/4.5/components/alerts/).
 - [Bootstrap's Table Documentation](https://getbootstrap.com/docs/4.5/content/tables/)
-- [Bootstrap's Typography Documentation](https://getbootstrap.com/docs/4.5/content/typography/)(https://getbootstrap.com/docs/4.5/content/tables/)
+- [Bootstrap's Typography Documentation](https://getbootstrap.com/docs/4.5/content/typography/)
 - [Bootstrap Documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
 
