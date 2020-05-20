@@ -3,9 +3,9 @@
 ## Learning Objectives
 In this mini project, you will develop a web app to create and play math quiz for integer arithmetic. By the end of this assignment, you should be able to:
 - Create a web app using Flask web framework
-- Use database to store and retrieve data
 - Implement mergesort for server application library
 - Use Stack to evaluate integer expressions
+- Use database to store and retrieve data
 
 ## Setup
 
@@ -452,7 +452,7 @@ Implement the `Stack` class inside `serverlibrary.py`.
 #### Exercise 2 - Task 2
 Implement the `EvaluateExpression` class inside `serverlibrary.py`.
 
-#### Exercise 3 - Task 3
+#### Exercise 2 - Task 3
 Test your implementation by doing the following:
 - Navigate to "Questions" page.
 - Create several integer arithmetic expressions and assign it to different users. Note that you can assign more than one users for the same question.
@@ -461,7 +461,7 @@ If your `EvaluateExpression` is correct, you will see the correct **answer** dis
 
 ![](https://www.dropbox.com/s/4u61v1hylndkcfl/mp2_questions.png?raw=1)
 
-#### Exercise 3 - Task 4
+#### Exercise 2 - Task 4
 
 Test also the other pages and see if they are working fine:
 - Logout from your current user and login to one of the users you have assigned a challenge.
@@ -469,6 +469,12 @@ Test also the other pages and see if they are working fine:
 - Put the answer in the provided input box, and click "Submit". If your answer is correct, the elapsed time will be displayed on the last column. Otherwise, nothing will be displayed in the last column.
 - Answer several challenges with different users, then navigate to "Hall of Fame" page. If your `mergesort()` implementation is correct, you will see a table listing all the challenges with the fastest top three users for each of them.
 
+#### Final Task
+
+Read the following notes to understand how to use the database and Bootstrap for styling.
+
+- [Using SQLAlchemy and Flask in this Mini Project 2](Database.md)
+- [Using Bootstrap in this Mini Project 2](Bootstrap.md)
 
 ### Expected Output
 
