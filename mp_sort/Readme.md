@@ -486,7 +486,7 @@ This button's even `onclick` is binded to `sortnumber2()` function in your `libr
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
-[Mini Project 1 Expected Output](http://vdimension.sutd.edu.sg/Player?66NkLoMQ8qTOs4Da2dd26LlGAzmH080pY6XoehsXmAU=)
+[Mini Project 1 Expected Output](https://web.microsoftstream.com/video/fa203d50-c064-48a2-a951-ec0ec3385a48)
 
 ## Optional: Deploying to Amazon Elastic Beanstalk
 

@@ -481,7 +481,7 @@ Read the following notes to understand how to use the database and Bootstrap for
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
-[Mini Project 2 Expected Output](http://vdimension.sutd.edu.sg/Player?8xd1aD4xCCP3J3nInZSK0FGXpal8Yr77PMy6PHKBP2k=)
+[Mini Project 2 Expected Output](https://web.microsoftstream.com/video/1392234b-aa8a-412d-92c7-e2cf2b803175)
 
 ## Optional: Deploying to Amazon Elastic Beanstalk
 
