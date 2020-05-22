@@ -475,6 +475,7 @@ Read the following notes to understand how to use the database and Bootstrap for
 
 - [Using SQLAlchemy and Flask in this Mini Project 2](Database.md)
 - [Using Bootstrap in this Mini Project 2](Bootstrap.md)
+- [Using Web Forms in this Mini Project 2](Forms.md)
 
 ### Expected Output
 
