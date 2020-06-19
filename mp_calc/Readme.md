@@ -485,7 +485,7 @@ The expected output for both exercises 1 and 2 can be found in this video.
 
 ## Optional: Deploying to Amazon Elastic Beanstalk
 
-Check [Deploying to Amazon Elastic Beanstalk](DeployEB.md).
+Check [Deploying to Amazon Elastic Beanstalk](../mp_sort/DeployEB.md).
 
 ## References
 - [Flask Tutorial using Templates](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates)
