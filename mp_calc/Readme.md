@@ -487,6 +487,27 @@ The expected output for both exercises 1 and 2 can be found in this video.
 
 Check [Deploying to Amazon Elastic Beanstalk](../mp_sort/DeployEB.md).
 
+## Troubleshooting
+
+1. I got, `ModuleNotFoundError: No module named 'flask_bootstrap'?` 
+
+   Make sure you have activated your Python's virtual environment. For example, if your virtual environment name is `virtenv` you can do the following:
+   - Go to the folder or directory of your root project, e.g. `cd %USERPROFILE\Downloads\d2w_mini_projects\mp_calc` (Win), or `cd ~/Downloads/d2w_mini_projects/mp_calc` (Mac OS)
+   - Actiate the virtual environment, e.g. `virtenv\Scripts\activate` (Win), or `source virtenv/bin/activate` (Mac OS).
+
+1. I can't run flask/use transcrypt?
+
+   See the solution above.
+   
+1. The app doesn't change even though I make changes to the code.
+
+    If you make changes to your `clientlibrary.py`, you need to transpile it again to produce its javascript version, i.e. `python -m transcrypt -b clientlibrary.py`. You need to do this in the folder or directory where `clientlibrary.py` is.
+    
+    In many cases, you may need to do a [*hard refresh*](https://www.getfilecloud.com/blog/2015/03/tech-tip-how-to-do-hard-refresh-in-browsers/#.XuwVw2ozaJs) of your browser. Another way is to reload when running flask. Do either one of the following :
+    - `export FLASK_ENV=development` and then `flask run`.
+    - or `flask run --reload --debugger`
+
+
 ## References
 - [Flask Tutorial using Templates](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates)
 - [Flask Tutorial using Database](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
