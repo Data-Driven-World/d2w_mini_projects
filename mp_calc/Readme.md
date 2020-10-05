@@ -37,7 +37,6 @@ The last command should output the following:
 ```shell
 app
 application.py
-migrations
 mp2_exercises.ipynb
 requirements.txt
 ```
