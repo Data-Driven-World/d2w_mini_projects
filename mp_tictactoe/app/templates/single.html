@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block app_content %}
+
+<h1 class="display-1">Hi, {{ current_user.username }}!</h1>
+
+<p class="lead">Welcome to Tic Tac Toe Forever site where you can play Tic Tac Toe ... forever.</p>
+<p class="lead">Click on the menu above to navigate. Do the following.
+</p>
+<div id="marks" style='text-align:center'>You use: {{player}}, Computer uses: {{computer}}</div>
+
+		<table border="2" style="margin-left:auto;margin-right:auto;">
+                  {% for row in range(3) %}
+			<tr>
+                        {% for col in range(3) %}
+			<td class="Square" id="cell{{row}}{{col}}" onClick = "library.click_cell('{{current_user.username}}', {{row}}, {{col}},'{{player}}');"></td>
+                        {% endfor %}	
+  		        </tr>
+                  {% endfor %}
+		</table>
+<h1><div id="winner" style='text-align:center'></div></h1>
+
+<form id="replay" method="POST" action='/single'>
+<div class="d-flex justify-content-center">
+  <input type="submit" value="REPLAY" class="btn btn-dark">
+</div>
+</form>
+
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" charset="utf-8">
+var socket;
+var celldata;
+$(document).ready(function(){
+    namespace = '/tictactoe';
+    socket = io(namespace);
+    socket.emit("startconnect", {"mark": "{{ player }}"});
+    socket.on('afterconnect', function(message) {
+      console.log('Player is ' + '{{ player }}');
+      celldata = message;
+      for(var row=0; row < 3; row++){
+        for(var col=0; col < 3; col++){
+          try{
+            document.getElementById("cell"+row+col).innerText = celldata?.data[row][col];
+          } catch (e) {
+            console.log(e);                                                                   }
+        }
+      }
+    });
+
+    socket.on('computer_move', function(message){
+      try{
+        row = message.data["row"];
+        col = message.data["col"];
+      } catch(e){
+        console.log(e);
+      }
+      console.log(row, col);
+      library.update_computer(row, col, '{{ player }}')
+    });
+
+    socket.on('winning', function(message){
+      try{
+        winner = message.data;
+      } catch(e){
+        console.log(e)
+      }
+      library.winning('{{ player }}', message.data);
+    });
+
+});
+</script>
+{% endblock %}
