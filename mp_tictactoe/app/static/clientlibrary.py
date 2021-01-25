@@ -21,10 +21,10 @@ def update_computer(row, col, player):
     is given by 'cell11'.
     '''
 
-	computer = None
-	cell_id = None
-	console.log(cell_id)
-	document.getElementById(cell_id).innerText = computer
+    computer = None
+    cell_id = None
+    console.log(cell_id)
+    document.getElementById(cell_id).innerText = computer
 
 def winning(player, winner):
     '''
@@ -50,6 +50,6 @@ def click_cell(username, row, col, mark):
 
     '''
     cellid = None
-	socket.emit('clicked', {'username': username, 'id': cellid, 'mark': mark})
+    socket.emit('clicked', {'username': username, 'id': cellid, 'mark': mark})
     pass
 
