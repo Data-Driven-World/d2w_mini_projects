@@ -140,7 +140,7 @@ The above steps will install the following packages:
 
 The first file you will need to look at is `application.py`. Open that file using a text editor. You should see *less* lines here as compared to your previous project `mp_calc`. In this file, you see only the following:
 
-```
+```python
 from app import application, db
 from app.models import User
 
@@ -159,7 +159,7 @@ Notice the following differences:
 
 Inside the `app` folder, we again have `__init__.py` file. In this file, we have added two lines as follows.
 
-```
+```python
 from flask_socketio import SocketIO
 .
 .
@@ -169,12 +169,12 @@ socketio = SocketIO(application)
 Those two lines are used to make use `Flask-SocketIO` which implements `SocketIO` API in Python. This enables you to have realtime, bi-directional communication between web clients and servers. It has two parts: a client-side library that runs in the browser, and a server side library. The code we have inside `__init__.py` is for the server side library. For the client-side library, we can fine the following codes:
 
 In `app/templates/base.html`:
-```
+```html
 <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
 ```
 which are needed to use `Socket.IO` library and JQuery library. More importantly, we can find some codes inside `app/templates/single.html`:
-```
+```html
 <script type="text/javascript" charset="utf-8">
 var socket;
 var celldata;
@@ -192,7 +192,7 @@ We have written some Javascript codes for you to handle the following *events*:
 - `winning`: This custom event is called when there is a winner. It will call the function `winning(mark, winner)` inside `clientlibrary.py` to update the HTML with the status of the winner. This is part of Exercise 1 you need to do.
 
   Inside `app/templates/single.html`, just below the table, we have the following HTML code:
-  ```
+  ```html
   <h1><div id="winner" style='text-align:center'></div></h1>
   ```
   Currently, it is empty. There is no text between `<div>` and `</div>`But when the computer or the player wins the game, it should be replaced with either "You Win!" or "You Lose!". The function that is responsible to update this is `winning(mark, winner)` function inside `client_library.py`.
@@ -269,7 +269,7 @@ Now we are going to work with the databases. We will use two kinds of databases.
 
 Let's start with the SQL table. We specify our tables in the `app/models.py`. Inside you will find the following code:
 
-```
+```python
 class User(UserMixin, db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
@@ -297,17 +297,17 @@ The first four attributes are similar to the previous mini project. Your task is
 Now, we are going to create the database using Flask-Migrate tool. First, go to the root directory of your project. For example, if you download the repository to your user's `Download` folder, you can use the following.
 
 Windows:
-```
+```dos
 > cd %USERPROFILE\Downloads\d2w_mini_projects\mp_tictactoe
 ```
 Mac OS:
-```
+```shell
 $ cd ~/Downloads/d2w_mini_projects/mp_tictactoe
 ```
 
 Then, run the following command from the terminal:
 
-```
+```shell
 flask db init
 flask db migrate
 flask db upgrade
@@ -321,17 +321,17 @@ flask db upgrade
 You can try to run the web application now. First go to the root directory of your project. For example, 
 
 Windows:
-```
+```dos
 > cd %USERPROFILE\Downloads\d2w_mini_projects\mp_tictactoe
 ```
 Mac OS:
-```
+```shell
 $ cd ~/Downloads/d2w_mini_projects/mp_tictactoe
 ```
 
 Then, run the following command from the terminal:
 
-```
+```shell
 flask run
 ```
 
@@ -362,7 +362,7 @@ Open and edit `mp_tictactoe/app/serverlibrary.py` to edit your `Move` class defi
 ### Task 2
 Write a test case after the following line:
 
-```
+```python
 if __name__ == "__main__":
     ########################
     # Exercise 3
@@ -387,7 +387,7 @@ Hint:
 
 This is the main class to perform the AI-based TicTacToe game. We will write down the methods' one at a time. The initialization method of the class is given as follows:
 
-```
+```python
 class TicTacToe:
     def __init__(self, board=None, mark='X'):
         if board == None:
@@ -529,51 +529,51 @@ Now we are going to connect to MongoDB using PyMongoDB driver. If you have follo
 1. Open `mp_tictactoe/app/routes.py` in your text editor. This file contains the different handler for your web servers.
 1. Go to the function `single()`. 
 1. Modify the code to get the collection from the username by replacing `None` in the below code:
-```
-# get collection from dbmongo database using the username
-# replace None 
-collection = dbmongo[None]
-```
+    ```python
+    # get collection from dbmongo database using the username
+    # replace None 
+    collection = dbmongo[None]
+    ```
 1. Note that the TicTacToe's object instance is stored in `players[user]` variable. Retrieve the mark for the current player by replacing the `None` in the below code:
-```
-# get the mark for the current player
-# replace None
-player_mark = None
-```
-and
-```
-# get the mark for the computer player
-# replace None with your code
-computer_mark = None
-```
+    ```python
+    # get the mark for the current player
+    # replace None
+    player_mark = None
+    ```
+    and
+    ```python
+    # get the mark for the computer player
+    # replace None with your code
+    computer_mark = None
+    ```
 1. Save the state of the board into the dictionary `data` under the key `cell` and the player's mark under the key `mark`. 
-```
-data = {'cell': None, 'mark': None}
-```
+    ```python
+    data = {'cell': None, 'mark': None}
+    ```
 1. Insert the data into the MongoDB collection in the below code.
-```
-collection.insert_one(None)
-```
+    ```python
+    collection.insert_one(None)
+    ```
 1. Complete the rest of the code in the `else` block as shown in the section below.
-```
-    else:
-        if user not in players:
-            # set player mark randomly
-            player_mark = random.choice(marks)
-            
-            # set the computer mark
-            # replace None with your code
-            computer_mark = None
+    ```python
         else:
-            # if user is already in the dictionary, use the mark there
-            # the TicTacToe object is stored inside players[user] variable
-            player_mark = players[user].mark
-            
-            # set the computer mark
-            # replace None with your code
-            computer_mark = None
-        return render_template('single.html', title='Single Player', 
-```
+            if user not in players:
+                # set player mark randomly
+                player_mark = random.choice(marks)
+
+                # set the computer mark
+                # replace None with your code
+                computer_mark = None
+            else:
+                # if user is already in the dictionary, use the mark there
+                # the TicTacToe object is stored inside players[user] variable
+                player_mark = players[user].mark
+
+                # set the computer mark
+                # replace None with your code
+                computer_mark = None
+            return render_template('single.html', title='Single Player', 
+    ```
 
 ## Exercise 6
 
@@ -582,97 +582,93 @@ We will use SocketIO to communicate between the client and the server without ha
 ### Task 1: Getting Familiar with SocketIO
 
 1. Open `mp_tictactoe/app/routes.py` and go to `handle_connect(message)` function. You will see the following codes:
-```
-@socketio.on('startconnect', namespace='/tictactoe')
-def handle_connect(message):
-    print("Connected")
-    mark = message["mark"]
-    collection = dbmongo[current_user.username]
-    if collection.count_documents({}) < 1:
-        collection.insert_one({'cell': [['_', '_', '_'], 
-                                        ['_', '_', '_'],
-                                        ['_', '_', '_']],
-                               'mark': mark})
-    last_data = collection.find().limit(1).sort([('_id',-1)])[0]
-    players[current_user.username] = TicTacToe(last_data['cell'],
-                                           last_data['mark'])
-    emit('afterconnect', {'data': last_data['cell']})
-```
+    ```javascript
+    @socketio.on('startconnect', namespace='/tictactoe')
+    def handle_connect(message):
+        print("Connected")
+        mark = message["mark"]
+        collection = dbmongo[current_user.username]
+        if collection.count_documents({}) < 1:
+            collection.insert_one({'cell': [['_', '_', '_'], 
+                                            ['_', '_', '_'],
+                                            ['_', '_', '_']],
+                                   'mark': mark})
+        last_data = collection.find().limit(1).sort([('_id',-1)])[0]
+        players[current_user.username] = TicTacToe(last_data['cell'],
+                                               last_data['mark'])
+        emit('afterconnect', {'data': last_data['cell']})
+    ```
 
 Notes:
 - The line before the function definition is a decorator by SocketIO to indicate that this is the handler when an event `startconnect` is detected in the `tictactoe` namespace.
 - The event `startconnect` is emitted by the client when the page is loaded up. You can see the following code inside `mp_tictactoe/app/templates/single.html` when the HTML page is ready:
-```
-namespace = '/tictactoe';
-socket = io(namespace);
-socket.emit("startconnect", {"mark": "{{ player }}"});
-```
+    ```javascript
+    namespace = '/tictactoe';
+    socket = io(namespace);
+    socket.emit("startconnect", {"mark": "{{ player }}"});
+    ```
 - SocketIO allows you to emit an even with messages in the argument of the function. In this case, the `startconnect` has the following message: `{"mark": "{{ player }}"}`, which is a dictionary where the key is `mark` and the value is either X or O. 
 - The following line check if there is any existing data stored in the database in this collection for this particular user.
-```
-if collection.count_documents({}) < 1:
-    collection.insert_one(...)
-```
+    ```python
+    if collection.count_documents({}) < 1:
+        collection.insert_one(...)
+    ```
 - Note that `count_documents()` is a method for a MongoDB collection. The argument is the search criteria. By leaving it as an empty dictionary, it searches all documents and count them. 
 - The code simply searches if there is any record of the user playing the game. If there is, the number of documents will not be less than 1 as every click will store a new data into the database. If this is the first time the user play, the code creates a new data by inserting an empty TicTacToe's board. 
 - The code then tries to find the last document sorted based on the `_id` which saves the last state of the TicTacToe's board.
-```
-last_data = collection.find().limit(1).sort([('_id',-1)])[0]
-```
+    ```python
+    last_data = collection.find().limit(1).sort([('_id',-1)])[0]
+    ```
 - Then, the code creates a new instance of `TicTacToe` object using this last data.
-```
-players[current_user.username] = TicTacToe(last_data['cell'],
-                                           last_data['mark'])
-```
+    ```python
+    players[current_user.username] = TicTacToe(last_data['cell'],
+                                               last_data['mark'])
+    ```
 - Lastly, the code emit a new signal or event called `afterconnect` using SocketIO and pass on the board's state as the message. 
-```
-emit('afterconnect', {'data': last_data['cell']})
-```
+    ```python
+    emit('afterconnect', {'data': last_data['cell']})
+    ```
 
 ### Task 2: Handling Click
 Previously in Exercise 1 Task 1 you have encountered the `click_cell()` function inside `mp_tictactoe/app/static/clientlibrary.py` which handle what happens when there is a click. One of the thing that this function does is to emit a SocketIO event:
-```
-socket.emit('clicked', {'username': username, 'id': cellid, 'mark': mark})
-```
+    ```python
+    socket.emit('clicked', {'username': username, 'id': cellid, 'mark': mark})
+    ```
 
 Now, we are going to handle this event `clicked` that is emitted when there is a click.
 
 Open `mp_tictactoe/app/routes.py` and go to `handle_click(message)`. This is the function that handles the `clicked` even as shown by the decorator.
-```
+```python
 @socketio.on('clicked', namespace='/tictactoe')
 def handle_click(message):
     ...
 ```
 
 1. First, we will initialize a few variables using the argument `message`. To understand the structure of message, you can open `mp_tictactoe/app/static/clientlibrary.py` and look inside the `emit()` function call.  Replace the `None` in the codes below.
-
-    ```
+    ```python
     # get the user name, mark and the clicked cell from message
     # check clientlibrary.py for the message sent in 
     # event 'clicked'
     # replace the None
     user = message[None]
     mark = message[None]
-    ```
-    ```
+    
     # set the computer mark to be the opposite of that of player
     computer = None
-    ```
-    ```
+    
     # get the cell number from 'id' inside message
     # Note that the format for the cell string is 'cellXY'
     # extract only the last two characters
     cell = None
     ```
 1. In the previous step, we got the row and col that the user clicked inside `cell` variable. Extract the row and the column and call the `update(row, col, mark)` method of TicTacToe's object instance. 
-
-    ```
+    ```python
     # update TicTacToe's object using the mark at the approriate row and col
     # replace the None
     players[user].update(None, None, None)
     ```
 1. After updating the board using the `update()` method, now you can check if there is a winner by looking at the board. Call a method to check if there is a winner from one of TicTacToe's methods. **Note: There are two instances where you need to call this method. One is just after you are updating the player's move and the other one is after you update the computer's move.**
-    ```
+    ```python
     # check if there is any winner
     # you can call checkwinning method inside TicTacToe's object
     winner = None
