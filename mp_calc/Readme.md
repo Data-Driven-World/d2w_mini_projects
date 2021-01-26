@@ -135,9 +135,9 @@ The above steps will install the following packages:
 - Flask-Bootstrap
 - and some other packages
 
-### Exercise 1
+## Exercise 1
 
-#### Brief Overview of Flask Project Structure
+### Brief Overview of Flask Project Structure
 
 We are using Flask web framework to create this web app. There are more files in this mini project as compared to the first one. You should revise your first mini project before proceeding to this mini project. In this notes, we will highlight only those parts which differ from the previous mini project.
 
@@ -250,7 +250,7 @@ For Exercise 1, you may want to look into the following files:
 - `users.html`: the HTML file to display the list of users.
 - `serverlibrary.py`: the python module where you need to implement your `mergesort()` function.
 
-### Exercise 1
+## Exercise 1
 
 Let's open `users.html`. The first few lines are shown here.
 
@@ -280,13 +280,13 @@ This file basically iterates over all users and create rows of users in a table.
 </tbody>
 ```
 
-#### Exercise 1 - Task 1
+### Exercise 1 - Task 1
 You need to replace the text `#Replace Me#` with some jinja templating code such that it displays the items inside `users`. 
 
-#### Exercise 1 - Task 2
+### Exercise 1 - Task 2
 You need to do **Q1** in `mp2_exercises.ipynb` before completing this part. Once you finish with Q1, open `serverlibrary.py` and copy your modified `mergesort()` function inside.
 
-#### Exercise 1 - Task 3
+### Exercise 1 - Task 3
 This web application makes use of some client javascript library which is translated from `clientlibrary.py` under `app/static/` folder. To be able to run the web application, you need to go to that folder and compile `clientlibrary.py` using Transcrypt. You also need to setup the database. So in this task we do the following:
 - compile `clientlibrary.py` into a javascript file
 - create database
@@ -430,7 +430,7 @@ Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. Yo
 
 To stop the web app type `CTRL+C`. 
 
-#### Exercise 1 - Task 4
+### Exercise 1 - Task 4
 
 - Create several users. More than three users are recommended.
 - Login using one of the user account.
@@ -440,18 +440,18 @@ You should see all the users you have created sorted according to their username
 
 ![](https://www.dropbox.com/s/o2w51fb3w0k8ibv/mp2_ex1.png?raw=1)
 
-### Exercise 2
+## Exercise 2
 
 In this exercise, you will work with `serverlibrary.py` under the `app` folder. In order to do this, you need to complete **Week 4** Exercises in `mp2_exercises.ipynb`, particularly **Q2** onwards. 
 
-#### Exercise 2 - Task 1
+### Exercise 2 - Task 1
 
 Implement the `Stack` class inside `serverlibrary.py`.
 
-#### Exercise 2 - Task 2
+### Exercise 2 - Task 2
 Implement the `EvaluateExpression` class inside `serverlibrary.py`.
 
-#### Exercise 2 - Task 3
+### Exercise 2 - Task 3
 Test your implementation by doing the following:
 - Navigate to "Questions" page.
 - Create several integer arithmetic expressions and assign it to different users. Note that you can assign more than one users for the same question.
@@ -460,7 +460,7 @@ If your `EvaluateExpression` is correct, you will see the correct **answer** dis
 
 ![](https://www.dropbox.com/s/4u61v1hylndkcfl/mp2_questions.png?raw=1)
 
-#### Exercise 2 - Task 4
+### Exercise 2 - Task 4
 
 Test also the other pages and see if they are working fine:
 - Logout from your current user and login to one of the users you have assigned a challenge.
@@ -468,7 +468,7 @@ Test also the other pages and see if they are working fine:
 - Put the answer in the provided input box, and click "Submit". If your answer is correct, the elapsed time will be displayed on the last column. Otherwise, nothing will be displayed in the last column.
 - Answer several challenges with different users, then navigate to "Hall of Fame" page. If your `mergesort()` implementation is correct, you will see a table listing all the challenges with the fastest top three users for each of them.
 
-#### Final Task
+### Final Task
 
 Read the following notes to understand how to use the database and Bootstrap for styling.
 
@@ -476,7 +476,7 @@ Read the following notes to understand how to use the database and Bootstrap for
 - [Using Bootstrap in this Mini Project 2](Bootstrap.md)
 - [Using Web Forms in this Mini Project 2](Forms.md)
 
-### Expected Output
+## Expected Output
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
@@ -505,7 +505,6 @@ Check [Deploying to Amazon Elastic Beanstalk](../mp_sort/DeployEB.md).
     In many cases, you may need to do a [*hard refresh*](https://www.getfilecloud.com/blog/2015/03/tech-tip-how-to-do-hard-refresh-in-browsers/#.XuwVw2ozaJs) of your browser. Another way is to reload when running flask. Do either one of the following :
     - `export FLASK_ENV=development` and then `flask run`.
     - or `flask run --reload --debugger`
-
 
 ## References
 - [Flask Tutorial using Templates](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates)
