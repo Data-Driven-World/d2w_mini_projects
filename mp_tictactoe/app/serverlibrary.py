@@ -27,7 +27,7 @@ class Move:
     def __init__(self):
         pass
 
-   def __str__(self):
+    def __str__(self):
         return f"row: {self.row:}, col: {self.col:}"
 
 ####################
@@ -168,7 +168,7 @@ class TicTacToe:
         '''
         best_val = -sys.maxsize if player == self.max_player else sys.maxsize
         best_move = Move()
-         for row in range(3):
+        for row in range(3):
             for col in range(3):
                 # check if cell is empty
                 # write the boolean condition and replace the None
@@ -251,10 +251,11 @@ class TicTacToe:
             # - initial value for the best score will be opposite
             # - set the mark to minimizer when trying the move
             # - change to maximizer when going deeper to the next level
+            pass
 
     
 if __name__ == "__main__":
-     board1 = [['X', '_', 'O'],
+    board1 = [['X', '_', 'O'],
              ['_', 'X', 'O'],
              ['_', '_', 'X']]
 
