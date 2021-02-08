@@ -116,7 +116,24 @@ class TicTacToe:
         - It returns -10 if the minimzer wins.
         - It returns 0 if there is no winner.
         '''
+        
+        for idx in range(3):
+            # check for each row and return proper score
+            # below is written as an example for you
+            # we have predefined 'marks' as a set of 'X' and 'O'
+            if (board[idx][0] == board[idx][1] == board[idx][2]) and \
+               board[idx][0] in marks:
+                return self.checkwinner(board[idx][0])
+            
+            # check for each col and return proper score
+            # write your code below
+            pass
+        
+        # check for the two diagonals for winning pattern
         pass
+    
+        # if there is no winner, return 0
+        return 0
   
     ##########
     # Task 5
@@ -134,6 +151,17 @@ class TicTacToe:
         - the maximizer or the minimizer if there is a winner
         - None if there is no winner.
         '''
+        
+        # call evaluate() method to get the score
+        score = None
+        
+        # replace return None when appropriate
+        if score == 10:
+            return None
+        elif score == -10:
+            return None
+        else:
+            return None
         pass
     
     #########
@@ -166,8 +194,13 @@ class TicTacToe:
         Output:
         - returns the Move object for the best move for this player.
         '''
+        # this is step 1 to initialize best move score
         best_val = -sys.maxsize if player == self.max_player else sys.maxsize
+        
+        # this is step 2 to initialize best move to NULL
         best_move = Move()
+        
+        # this is step 3 to check every possible move
         for row in range(3):
             for col in range(3):
                 # check if cell is empty
@@ -178,10 +211,21 @@ class TicTacToe:
                     # replace the None
                     self.board[row][col] = None
                     
-                    # compute evaluation function
+                    # The next two steps are to compute the evaluation function
                     # first, check if current player is maximizer
                     is_max = None
+                    
                     # second, call minimax to get the score
+                    # the minimax method has the following arguments:
+                    # def minimax(board, depth, is_max_player)
+                    # - board is the state of the board
+                    # - depth is an integer and indicates the level of the minimax algorithm, set to 0 
+                    # - is_max_player is a boolean whether the current player 
+                    #   is a maximizer or not
+                    # Note: if the current player is a maximizer,
+                    #.      => you should call the minimax as a minimizer
+                    #.      if the current player is a minimizer,
+                    #.      => you should call the minimax as a maximizer
                     move_val = None
                     
                     # undo the move
@@ -220,11 +264,13 @@ class TicTacToe:
 
         # write the boolean condition to check if there is no more move
         no_more_move = None
-        if no_move_move:
+        if no_more_move:
             return 0
 
         if is_max_player:
+            # this is to store the best score so far
             best = -sys.maxsize 
+            
             for row in range(3):
                 for col in range(3):
                     # if there is a possible move
@@ -255,6 +301,32 @@ class TicTacToe:
 
     
 if __name__ == "__main__":
+    ########################
+    # Exercise 3
+    ########################
+    #
+    # Test Move class
+    # 
+    # Write your test case to make sure that 
+    # the row and col properties accept only index 
+    # between 0 and 2
+    #
+    ########################
+    pass
+
+    ########################
+    # Exercise 4
+    ########################
+    #
+    # Test TicTacToe class
+    # 
+    # Comment out sys.exit(1) 
+    # to run the test cases
+    #
+    ########################
+    
+    sys.exit(1)
+    
     board1 = [['X', '_', 'O'],
              ['_', 'X', 'O'],
              ['_', '_', 'X']]
