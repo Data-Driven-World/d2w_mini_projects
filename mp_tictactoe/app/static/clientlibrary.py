@@ -46,10 +46,10 @@ def click_cell(username, row, col, mark):
 
     This function will call 'clicked' event in the server.
 
-    Update the TicTacToe gridd cell with the mark. 
+    Update the TicTacToe grid cell with the mark. 
 
     '''
     cellid = None
+    document.getElementById(None).innerText = None 
     socket.emit('clicked', {'username': username, 'id': cellid, 'mark': mark})
-    pass
 
