@@ -47,7 +47,24 @@ def update_score(user, status):
     score = calculate_score(current_user.winning, current_user.draw)
     current_user.score = score
     db.session.commit()
-
+    
+def process_winning(user, mark, collection, winner=None, status='lose'):
+    # if there is a winner, 
+    # emit signal 'winning' and pass on the winner as the data
+    if winner != None:
+        emit('winning', {'data': winner})
+        
+    # if the status is not lose, update the score
+    if status != 'lose':
+        update_score(user,status)
+        
+    # reset the TicTacToe's board
+    players[user].reset()
+        
+    # update MongoDB with a clean board
+    collection.insert_one({'cell': players[user].board,
+                           'mark': mark})
+ 
 #######################################
 # These are event handler for SocketIO
 ######################################
@@ -94,9 +111,9 @@ def handle_click(message):
     # extract only the last two characters
     cell = None
     
-    #collection = dbmongo.get_collection(user)
-    # get the collection from dbmongo database, replace the None
-    collection = dbmongo[user]
+    # get the collection from dbmongo database, replace the None with
+    # the variable that stores the username
+    collection = dbmongo[None]
     
     # update TicTacToe's object using the mark at the approriate row and col
     # replace the None
