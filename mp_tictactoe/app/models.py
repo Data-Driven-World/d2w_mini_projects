@@ -35,4 +35,16 @@ class User(UserMixin, db.Model):
     def __repr__(self):
         return f'<User {self.username:}>'
 
-    
+class State(db.Model):
+    __tablename__ = 'state'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    time = db.Column(db.TIMESTAMP)
+    ##########################################################
+    # Your code here
+    # Add a column for the cell as a 9 character string length
+    # Add a column to store for the mark of the player
+    #  this should be a single string character
+    #########################################################
+    cell = None
+    mark = None   
