@@ -44,6 +44,8 @@ class TicTacToe:
             board = [['_', '_', '_'],
                      ['_', '_', '_'],
                      ['_', '_', '_']]
+        if isinstance(board, str):
+            board = self.str_to_board(board)
         self.board = board
         self.max_player = 'X'
         self.min_player = 'O'
@@ -64,10 +66,39 @@ class TicTacToe:
         - None
         '''
         pass
+
+    def str_to_board(self, boardstr):
+        ```
+        This method is to transform the single string board state into a nested list.
+
+        Input:
+       - boardstr: a string of 9 character representing the board
+
+        Output:
+        - a nested list representing the state of the board
+        ```
+        board = []
+        for row in range(3):
+            rowlist = []
+            for col in range(3):
+                rowlist.append(boardstr[row * 3 + col])
+            board.append(rowlist)
+        return board
+
+    #############################################################
+    # Your code here for the computed property
+    # property name: board_to_str
+    # output: a single string representing the state of the board
+    #############################################################
+
+    @property
+    def board_to_str(self):
+        retval = ''
+        for row in self.board:
+            for col in row:
+                retval += col
+        return retval
     
-    ###############
-    # Task 2
-    ###############
     def update(self, row, col, mark):
         '''
         This method is to update self.board at position (row, col)
@@ -84,7 +115,7 @@ class TicTacToe:
         pass
 
     #############
-    # Task 3
+    # Task 2
     #############
     def checkwinner(self, cell):
         '''
@@ -102,7 +133,7 @@ class TicTacToe:
         pass
     
     ###########
-    # Task 4
+    # Task 3
     ###########
     def evaluate(self, board):
         '''
@@ -136,7 +167,7 @@ class TicTacToe:
         return 0
   
     ##########
-    # Task 5
+    # Task 4
     ##########
     def checkwinning(self):
         '''
@@ -165,7 +196,7 @@ class TicTacToe:
         pass
     
     #########
-    # Task 6
+    # Task 5
     #########
     def any_moves_left(self):
         '''
@@ -182,7 +213,7 @@ class TicTacToe:
 
 
     ###########
-    # Task 7
+    # Task 6
     ###########
     def find_best_move(self, player):
         '''
@@ -242,7 +273,7 @@ class TicTacToe:
         return best_move
 
     ############
-    # Task 8
+    # Task 7
     ############
     def minimax(self, board, depth, is_max_player):
         '''
@@ -336,14 +367,16 @@ if __name__ == "__main__":
     assert t.board == [['_', '_', '_'],
                        ['_', '_', '_'],
                        ['_', '_', '_']]
-    
+    assert t.board_to_str == '_________'
+ 
     t.update(0, 0, 'X')
     t.update(0, 2, 'O')
     t.update(1, 1, 'X')
     t.update(1, 2, 'O')
     t.update(2, 2, 'X')
     assert t.board == board1
-    
+    assert t.board_to_str == 'X_O_XO__X' 
+
     assert t.checkwinner('X') == 10
     
     assert t.checkwinner('O') == -10
