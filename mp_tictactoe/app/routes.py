@@ -2,25 +2,20 @@ from app import application
 from flask import render_template, flash, redirect, url_for
 from app.forms import LoginForm, RegistrationForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User
 from werkzeug.urls import url_parse
-from app import db
 from flask import request 
 from flask_socketio import emit
 from app import socketio
 import random
-import pymongo
+from datetime import datetime
 from app.serverlibrary import TicTacToe, Move, mergesort
+from app.models import User, State
+from app import db
+
 
 ########################
 # Setup for global data
 #######################
-# Paste in your connection string for MongoDB
-# replace the None with the string for connection
-client = pymongo.MongoClient(None)
-
-# Connect to test database
-dbmongo = client.test
 
 marks = ('X', 'O')
 players = {}
@@ -33,7 +28,7 @@ players = {}
 def calculate_score(winning, draw):
     return winning * 10 + draw * 5
 
-def update_score(user, status):
+def update_score(status):
     if status == 'win':
         if current_user.winning == None:
             current_user.winning = 1
@@ -48,7 +43,8 @@ def update_score(user, status):
     current_user.score = score
     db.session.commit()
     
-def process_winning(user, mark, collection, winner=None, status='lose'):
+def process_winning(winner=None, status='lose'):
+    user = current_user.username
     # if there is a winner, 
     # emit signal 'winning' and pass on the winner as the data
     if winner != None:
@@ -56,15 +52,18 @@ def process_winning(user, mark, collection, winner=None, status='lose'):
         
     # if the status is not lose, update the score
     if status != 'lose':
-        update_score(user,status)
+        update_score(status)
         
     # reset the TicTacToe's board
     players[user].reset()
         
-    # update MongoDB with a clean board
-    collection.insert_one({'cell': players[user].board,
-                           'mark': mark})
- 
+    # update DB with a clean board
+    data = State(user_id=current_user.id,
+                 time=datetime.now(),
+                 cell=players[user].board_to_str,
+                 mark=players[user].mark)
+    db.session.add(data)
+    db.session.commit() 
 #######################################
 # These are event handler for SocketIO
 ######################################
@@ -80,17 +79,20 @@ def process_winning(user, mark, collection, winner=None, status='lose'):
 def handle_connect(message):
     print("Connected")
     mark = message["mark"]
-    collection = dbmongo[current_user.username]
-    if collection.count_documents({}) < 1:
-        collection.insert_one({'cell': [['_', '_', '_'], 
-                                        ['_', '_', '_'],
-                                        ['_', '_', '_']],
-                               'mark': mark})
-    last_data = collection.find().limit(1).sort([('_id',-1)])[0]
-    players[current_user.username] = TicTacToe(last_data['cell'],
-                                           last_data['mark'])
-    emit('afterconnect', {'data': last_data['cell']})
-    
+
+    all_data = State.query.filter_by(user_id=current_user.id).all()
+    if len(all_data) < 1:
+        data = State(user_id=current_user.id,
+                     time=datetime.now(),
+                     cell='_________',
+                     mark=mark)
+        db.session.add(data)
+        db.session.commit()
+    last_data = State.query.filter_by(user_id=current_user.id).all()[-1]
+    players[current_user.username] = TicTacToe(last_data.cell,
+                                           last_data.mark)
+    emit('afterconnect', {'data': last_data.cell})   
+
 ##########
 # Task 2
 ##########
@@ -111,10 +113,6 @@ def handle_click(message):
     # extract only the last two characters
     cell = None
     
-    # get the collection from dbmongo database, replace the None with
-    # the variable that stores the username
-    collection = dbmongo[None]
-    
     # update TicTacToe's object using the mark at the approriate row and col
     # replace the None
     players[user].update(None, None, None)
@@ -126,8 +124,7 @@ def handle_click(message):
     # if there is a winner
     if winner != None:
         # process the winning state, and update the score
-        process_winning(user, mark, collection, 
-                        winner, status='win')
+        process_winning(winner, status='win')
         
         # exit the function
         return
@@ -151,9 +148,16 @@ def handle_click(message):
         # emit signal 'computer_move' to update the page
         emit('computer_move', {'data': {'row':next_move.row, 'col':next_move.col}})
         
-        # insert a new document to MongoDB on the board's status
-        collection.insert_one({'cell':players[user].board,
-                               'mark': mark})
+        # insert a new document to db on the board's status
+        # create an object instance of State. Replace the None.
+        data = State(user_id=None,
+                     time=datetime.now(),
+                     cell=None,
+                     mark=None)
+        # write the code to add the data to the session
+	pass
+        # write the code to commit the session to the database
+	pass
 
         # check if there is a winner
         if winner != None:
