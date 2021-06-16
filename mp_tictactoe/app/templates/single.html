@@ -43,7 +43,7 @@ $(document).ready(function(){
       for(var row=0; row < 3; row++){
         for(var col=0; col < 3; col++){
           try{
-            document.getElementById("cell"+row+col).innerText = celldata?.data[row][col];
+            document.getElementById("cell"+row+col).innerText = celldata?.data[col + row * 3];
           } catch (e) {
             console.log(e);                                                                   }
         }
