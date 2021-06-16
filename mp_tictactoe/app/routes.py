@@ -163,8 +163,7 @@ def handle_click(message):
         if winner != None:
             # process winning state, 
             # but do not update the score since computer wins
-            process_winning(user, mark, collection,
-                            winner, status='lose')
+            process_winning(winner, status='lose')
             
             # exit the function
             return
@@ -172,8 +171,7 @@ def handle_click(message):
     else:
         # if there is no winner
         # update the score as draw
-        process_winning(user, mark, collection,
-                        winner=None, status='draw')
+        process_winning(winner=None, status='draw')
         return
 
 #######################
@@ -192,10 +190,6 @@ def handle_click(message):
 def single():
     user = current_user.username
     if request.method == 'POST':
-        # get collection from dbmongo database using the username
-        # replace None 
-        collection = dbmongo[None]
-        
         # reset the tictactoe board to the original state
         # the TicTacToe's object is stored in players[user] variable
         players[user].reset()
@@ -208,19 +202,28 @@ def single():
         # replace None with your code
         computer_mark = None
         
-        # update dbmongo collection
+        # update database
         # the 'cell' should be the state of the board
         #  which can be obtained from the tictactoe object
-        # the 'mark' should be the player's mark
         # replace None
-        data = {'cell': None, 'mark': None}
-        collection.insert_one(None)
+        data = State(user_id=None,
+                     time=datetime.now(),
+                     cell=None,
+                     mark=None)
+        # add the data to the session
+	pass
+        # commit the session to the database
+	pass
         return render_template('single.html', title='Single Player', player=player_mark, computer=computer_mark)
     else:
         if user not in players:
             # set player mark randomly
             player_mark = random.choice(marks)
             
+            # create the object instant TicTacToe using
+            # the player's mark
+            players[user] = TicTacToe(mark=player_mark)
+
             # set the computer mark
             # replace None with your code
             computer_mark = None
