@@ -28,7 +28,7 @@ $ git clone https://github.com/kurniawano/d2w_mini_projects.git
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_calc` for this mini project.
 
 ```shell
-$ cd d2w_mini_projects/mp_calc
+$ cd fip_powerx_mini_projects/mp_calc
 $ ls
 ```
 
@@ -53,7 +53,7 @@ In the following steps, the Windows prompt will be represented by:
 ```
 Go to the root folder `mp_calc`.
 ```shell
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_calc
+> cd %USERPROFILE%\fip_powerx_mini_projects\mp_calc
 ```
 From the root folder, i.e. `mp_calc`, create virtual environment called `virtenv`.
 
@@ -86,7 +86,7 @@ $
 
 Go to the root folder `mp_calc`. 
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_calc
+$ cd ~/fip_powerx_mini_projects/mp_calc
 ```
 
 From the root folder, i.e. `mp_calc`, create virtual environment called `virtenv`.
@@ -301,7 +301,7 @@ First, make sure that you have done the following:
 
 Go to your root folder.
 ```dos
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_calc
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_calc
 ```
 
 Now, we can go to the location of `clientlibrary.py` under `app/static/`.
@@ -331,7 +331,7 @@ Now you are ready to create your database in your local computer. To do so, you 
 which means go up the folder two times. Or, simply
 
 ```dos
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_calc
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_calc
 ```
 
 You should see `application.py` in this root folder. Run the following commands:
@@ -371,7 +371,7 @@ First, make sure that you have done the following:
 
 Go to your root folder.
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_calc
+$ cd ~/fip_powerx_mini_projects/mp_calc
 ```
 
 Now, we can go to the location of `clientlibrary.py` under `app/static/`.
@@ -399,7 +399,7 @@ $ cd ../..
 ```
 which means go up the folder two times. Or, simply
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_calc/
+$ cd ~/fip_powerx_mini_projects/mp_calc/
 ```
 
 You should see `application.py` in this root folder. Run the following commands:
@@ -491,7 +491,7 @@ Check [Deploying to Amazon Elastic Beanstalk](../mp_sort/DeployEB.md).
 1. I got, `ModuleNotFoundError: No module named 'flask_bootstrap'?` 
 
    Make sure you have activated your Python's virtual environment. For example, if your virtual environment name is `virtenv` you can do the following:
-   - Go to the folder or directory of your root project, e.g. `cd %USERPROFILE\Downloads\d2w_mini_projects\mp_calc` (Win), or `cd ~/Downloads/d2w_mini_projects/mp_calc` (Mac OS)
+   - Go to the folder or directory of your root project, e.g. `cd %USERPROFILE\fip_powerx_mini_projects\mp_calc` (Win), or `cd ~/fip_powerx_mini_projects/mp_calc` (Mac OS)
    - Actiate the virtual environment, e.g. `virtenv\Scripts\activate` (Win), or `source virtenv/bin/activate` (Mac OS).
 
 1. I can't run flask/use transcrypt?

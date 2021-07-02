@@ -29,11 +29,11 @@ You may want to install Elastic Beanstalk Command Line Interface (EB CLI). Follo
 Open Terminal or Anaconda Prompt. Go to the folder of your project. For example,
 
 ```
-$ cd ~/Downloads/d2w_mini_projects/mp_sort
+$ cd ~/fip_powerx_mini_projects/mp_sort
 ```
 or
 ```
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_sort
+> cd %USERPROFILE%\fip_powerx_mini_projects\mp_sort
 ```
 
 1. Initialze the folder for EB repository by typing the following:

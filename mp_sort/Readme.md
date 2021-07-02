@@ -53,8 +53,7 @@ You need to have Git to do the project. Download and install the software accord
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
 ```shell
-$ cd Downloads
-$ git clone https://github.com/kurniawano/d2w_mini_projects.git
+$ git clone https://github.com/kurniawano/fip_powerx_mini_projects.git
 ```
 
 ### Go to Mini Project 1 Folder
@@ -62,7 +61,7 @@ $ git clone https://github.com/kurniawano/d2w_mini_projects.git
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_sort` for this mini project.
 
 ```shell
-$ cd d2w_mini_projects/mp_sort
+$ cd fip_powerx_mini_projects/mp_sort
 $ ls
 ```
 
@@ -87,7 +86,7 @@ In the following steps, the Windows prompt will be represented by:
 ```
 Go to the root folder `mp_sort`.
 ```shell
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_sort
+> cd %USERPROFILE%\fip_powerx_mini_projects\mp_sort
 ```
 From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
 
@@ -120,7 +119,7 @@ $
 
 Go to the root folder `mp_sort`. 
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort
+$ cd ~/fip_powerx_mini_projects/mp_sort
 ```
 
 From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
@@ -276,7 +275,7 @@ All your work for this mini project will be done inside `library.py`.
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
 ```shell
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort\app\static
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_sort\app\static
 > dir
 ```
 
@@ -320,7 +319,7 @@ Now you are ready to run your web app in your local computer. To do so, you need
 which means go up the folder two times. Or, simply
 
 ```shell
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_sort
 ```
 
 You should see `application.py` in this root folder. Run Flask by typing:
@@ -350,7 +349,7 @@ To stop the web app type `CTRL+C`.
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort/app/static
+$ cd ~/fip_powerx_mini_projects/mp_sort/app/static
 $ ls
 ```
 
@@ -392,7 +391,7 @@ $ cd ../..
 ```
 which means go up the folder two times. Or, simply
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort/
+$ cd ~/Downloads/fip_powerx_mini_projects/mp_sort/
 ```
 
 You should see `application.py` in this root folder. Run Flask by typing:
