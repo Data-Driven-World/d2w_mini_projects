@@ -322,7 +322,11 @@ which means go up the folder two times. Or, simply
 > cd %USERPROFILE\fip_powerx_mini_projects\mp_sort
 ```
 
-You should see `application.py` in this root folder. Run Flask by typing:
+You should see `application.py` in this root folder. 
+
+#### Local Computer
+
+If you are using your own computer, you can run Flask by typing:
 
 or
 ```shell
@@ -335,12 +339,34 @@ You should see that some output will be thrown out, which one of them would be:
 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
-Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
+
+You can now open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
 
 ![](https://www.dropbox.com/s/a2fqx5svvyqtqf9/mp1_home.png?raw=1)
 
 To stop the web app type `CTRL+C`. 
 
+#### Vocareum
+If you use Vocareum terminal to run your Flask application, you can run flask by running the `runflaskvoc.sh` script. To do that, first make sure it is executable. Make sure you are inside the `mp_sort` folder  by using the `pwd` command. Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
+
+```shell
+> pwd
+> ls
+```
+
+Make sure that the script is executable by running the following command. 
+
+```shell
+> chmod a+x ./runflaskvoc.sh
+```
+
+To run the script, run the script.
+
+```shell
+> ./runflaskvoc.sh
+```
+
+Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
 
 ## MacOS/Linux
 
