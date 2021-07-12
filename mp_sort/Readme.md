@@ -324,11 +324,40 @@ which means go up the folder two times. Or, simply
 
 You should see `application.py` in this root folder. 
 
+#### Vocareum
+If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. First, make sure you are inside the `mp_sort` folder  by using the `pwd` command. 
+
+```shell
+> pwd
+```
+
+Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
+
+```shell
+> ls
+```
+
+Make sure that the script is executable by running the following command. 
+
+```shell
+> chmod a+x ./runflaskvoc.sh
+```
+The above script is to change the file to be executable for all users, group and owner.
+
+To run the script, type the following.
+
+```shell
+> ./runflaskvoc.sh
+```
+
+Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
+
+To stop the web app type `CTRL+C`. 
+
 #### Local Computer
 
 If you are using your own computer, you can run Flask by typing:
 
-or
 ```shell
 > flask run
 ```
@@ -346,27 +375,7 @@ You can now open your browser at `http://127.0.0.1:5000/` to see the web app. Yo
 
 To stop the web app type `CTRL+C`. 
 
-#### Vocareum
-If you use Vocareum terminal to run your Flask application, you can run flask by running the `runflaskvoc.sh` script. To do that, first make sure it is executable. Make sure you are inside the `mp_sort` folder  by using the `pwd` command. Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
 
-```shell
-> pwd
-> ls
-```
-
-Make sure that the script is executable by running the following command. 
-
-```shell
-> chmod a+x ./runflaskvoc.sh
-```
-
-To run the script, run the script.
-
-```shell
-> ./runflaskvoc.sh
-```
-
-Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
 
 ## MacOS/Linux
 

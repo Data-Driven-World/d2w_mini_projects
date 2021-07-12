@@ -378,7 +378,42 @@ Mac OS:
 $ cd ~/fip_powerx_mini_projects/mp_tictactoe
 ```
 
-Then, run the following command from the terminal:
+Now you can run Flask.
+
+#### Vocareum
+
+If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. First, make sure you are inside the `mp_tictactoe` folder  by using the `pwd` command. 
+
+```shell
+> pwd
+```
+
+Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
+
+```shell
+> ls
+```
+
+Make sure that the script is executable by running the following command. 
+
+```shell
+> chmod a+x ./runflaskvoc.sh
+```
+The above script is to change the file to be executable for all users, group and owner.
+
+To run the script, type the following.
+
+```shell
+> ./runflaskvoc.sh
+```
+
+Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
+
+To stop the web app type `CTRL+C`. 
+
+#### Local Computer
+
+If you are using your own computer, you can run Flask by typing:
 
 ```shell
 flask run

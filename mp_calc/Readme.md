@@ -293,7 +293,109 @@ This web application makes use of some client javascript library which is transl
 
 Follow the steps below.
 
-**Windows**
+#### Linux/MacOs
+
+First, make sure that you have done the following:
+- actiate your virtual environment
+- install all the required packages (see the instructions above)
+
+Go to your root folder.
+```shell
+$ cd ~/fip_powerx_mini_projects/mp_calc
+```
+
+Now, we can go to the location of `clientlibrary.py` under `app/static/`.
+
+```shell
+$ cd app/static
+```
+
+Type the following:
+
+```shell
+$ python -m transcrypt -b clientlibrary.py
+```
+
+Make sure you see the the `__target__` folder created successfully. You can check by typing:
+
+```shell
+$ ls
+```
+
+Now you are ready to run your web app in your local computer or in Vocareum. To do so, you need to go back to the root directory. This can be done with the following:
+
+```shell
+$ cd ../..
+```
+which means go up the folder two times. Or, simply
+```shell
+$ cd ~/fip_powerx_mini_projects/mp_calc/
+```
+
+You should see `application.py` in this root folder. Run the following commands:
+
+```dos
+> flask db init
+> flask db migrate
+> flask db upgrade
+```
+
+You should see a file called `app.db` and a folder `migrations`. 
+
+Once this is done, you can run Flask depending on whether you use Vocareum or your local computer. 
+
+**Vocareum**
+
+If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. First, make sure you are inside the `mp_calc` folder  by using the `pwd` command. 
+
+```shell
+> pwd
+```
+
+Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
+
+```shell
+> ls
+```
+
+Make sure that the script is executable by running the following command. 
+
+```shell
+> chmod a+x ./runflaskvoc.sh
+```
+The above script is to change the file to be executable for all users, group and owner.
+
+To run the script, type the following.
+
+```shell
+> ./runflaskvoc.sh
+```
+
+Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
+
+To stop the web app type `CTRL+C`. 
+
+**Local Computer**
+
+In your local computer, simply type:
+
+```shell
+$ flask run
+```
+
+You should see that some output will be thrown out, which one of them would be:
+
+```shell
+* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
+
+![](https://www.dropbox.com/s/nra8ltsjltlylp1/mp2_login.png?raw=1)
+
+To stop the web app type `CTRL+C`. 
+
+#### Windows
 
 First, make sure that you have done the following:
 - actiate your virtual environment
@@ -363,72 +465,6 @@ Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. Yo
 
 To stop the web app type `CTRL+C`. 
 
-**MacOS/Linux**
-
-First, make sure that you have done the following:
-- actiate your virtual environment
-- install all the required packages (see the instructions above)
-
-Go to your root folder.
-```shell
-$ cd ~/fip_powerx_mini_projects/mp_calc
-```
-
-Now, we can go to the location of `clientlibrary.py` under `app/static/`.
-
-```shell
-$ cd app/static
-```
-
-Type the following:
-
-```shell
-$ python -m transcrypt -b clientlibrary.py
-```
-
-Make sure you see the the `__target__` folder created successfully. You can check by typing:
-
-```shell
-$ ls
-```
-
-Now you are ready to run your web app in your local computer. To do so, you need to go back to the root directory. This can be done with the following:
-
-```shell
-$ cd ../..
-```
-which means go up the folder two times. Or, simply
-```shell
-$ cd ~/fip_powerx_mini_projects/mp_calc/
-```
-
-You should see `application.py` in this root folder. Run the following commands:
-
-```dos
-> flask db init
-> flask db migrate
-> flask db upgrade
-```
-
-You should see a file called `app.db` and a folder `migrations`. 
-
-Once this is done, you can run Flask by typing:
-
-```shell
-$ flask run
-```
-
-You should see that some output will be thrown out, which one of them would be:
-
-```shell
-* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-```
-
-Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
-
-![](https://www.dropbox.com/s/nra8ltsjltlylp1/mp2_login.png?raw=1)
-
-To stop the web app type `CTRL+C`. 
 
 ### Exercise 1 - Task 4
 
