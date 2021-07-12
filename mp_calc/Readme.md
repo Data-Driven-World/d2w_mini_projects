@@ -1,5 +1,43 @@
 # Mini Project 1: Math Quiz App
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Mini Project 1: Math Quiz App](#mini-project-1-math-quiz-app)
+    - [Learning Objectives](#learning-objectives)
+    - [Setup](#setup)
+        - [Install Git](#install-git)
+        - [Downloading Repository](#downloading-repository)
+        - [Go to Mini Project 2 Folder](#go-to-mini-project-2-folder)
+    - [Create Virtual Environment (Windows)](#create-virtual-environment-windows)
+    - [Create Virtual Environment (MacOS/Linux)](#create-virtual-environment-macoslinux)
+    - [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux)
+        - [Install Python Packages](#install-python-packages)
+    - [Exercise 1](#exercise-1)
+        - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
+    - [Exercise 1](#exercise-1-1)
+        - [Exercise 1 - Task 1](#exercise-1---task-1)
+        - [Exercise 1 - Task 2](#exercise-1---task-2)
+        - [Exercise 1 - Task 3](#exercise-1---task-3)
+            - [Linux/MacOs](#linuxmacos)
+                - [Vocareum](#vocareum)
+                - [Local Computer](#local-computer)
+            - [Windows](#windows)
+        - [Exercise 1 - Task 4](#exercise-1---task-4)
+    - [Exercise 2](#exercise-2)
+        - [Exercise 2 - Task 1](#exercise-2---task-1)
+        - [Exercise 2 - Task 2](#exercise-2---task-2)
+        - [Exercise 2 - Task 3](#exercise-2---task-3)
+        - [Exercise 2 - Task 4](#exercise-2---task-4)
+        - [Final Task](#final-task)
+    - [Expected Output](#expected-output)
+    - [Optional: Deploying to Amazon Elastic Beanstalk](#optional-deploying-to-amazon-elastic-beanstalk)
+    - [Troubleshooting](#troubleshooting)
+    - [References](#references)
+
+<!-- markdown-toc end -->
+
+
 ## Learning Objectives
 In this mini project, you will develop a web app to create and play math quiz for integer arithmetic. By the end of this assignment, you should be able to:
 - Create a web app using Flask web framework
@@ -344,7 +382,7 @@ You should see a file called `app.db` and a folder `migrations`.
 
 Once this is done, you can run Flask depending on whether you use Vocareum or your local computer. 
 
-**Vocareum**
+##### Vocareum
 
 If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. First, make sure you are inside the `mp_calc` folder  by using the `pwd` command. 
 
@@ -375,9 +413,9 @@ Once it is running, you can open another tab in your browser and type the follow
 
 To stop the web app type `CTRL+C`. 
 
-**Local Computer**
+##### Local Computer
 
-In your local computer, simply type:
+If you are using your own computer, you can run Flask by typing:
 
 ```shell
 $ flask run

@@ -1,5 +1,53 @@
 # Mini Project 3: Tic Tac Toe App
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Mini Project 3: Tic Tac Toe App](#mini-project-3-tic-tac-toe-app)
+    - [Learning Objectives](#learning-objectives)
+    - [Setup](#setup)
+        - [Install Git](#install-git)
+        - [Downloading Repository](#downloading-repository)
+        - [Go to Mini Project 3 Folder](#go-to-mini-project-3-folder)
+    - [Create Virtual Environment (Windows)](#create-virtual-environment-windows)
+    - [Create Virtual Environment (MacOS/Linux)](#create-virtual-environment-macoslinux)
+    - [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux)
+        - [Install Python Packages](#install-python-packages)
+    - [Exercise 1](#exercise-1)
+        - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
+        - [Task 1](#task-1)
+        - [Task 2](#task-2)
+            - [Windows](#windows)
+            - [MacOS](#macos)
+    - [Exercise 2](#exercise-2)
+        - [Task 1](#task-1-1)
+        - [Task 2](#task-2-1)
+        - [Task 3](#task-3)
+        - [Task 4](#task-4)
+            - [Vocareum](#vocareum)
+            - [Local Computer](#local-computer)
+    - [Exercise 3](#exercise-3)
+        - [Task 1](#task-1-2)
+        - [Task 2](#task-2-2)
+    - [Exercise 4](#exercise-4)
+        - [Task 1](#task-1-3)
+        - [Task 2](#task-2-3)
+        - [Task 3](#task-3-1)
+        - [Task 4](#task-4-1)
+        - [Task 5](#task-5)
+        - [Task 6](#task-6)
+        - [Task 7](#task-7)
+        - [Task 8](#task-8)
+    - [Exercise 5](#exercise-5)
+    - [Exercise 6](#exercise-6)
+        - [Task 1: Getting Familiar with SocketIO](#task-1-getting-familiar-with-socketio)
+        - [Task 2: Handling Click](#task-2-handling-click)
+    - [Expected Deliverable](#expected-deliverable)
+    - [References](#references)
+
+<!-- markdown-toc end -->
+
+
 ## Learning Objectives
 By the end of this mini project, you should be able to:
 - write minimax algorithm using recursion
