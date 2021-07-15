@@ -868,7 +868,7 @@ def handle_click(message):
 
 The expected output can be found in this video below.
 
-[Mini Project 3 Expected Output](https://web.microsoftstream.com/video/6c5a1ca1-66e3-46ab-aeb3-ae250422ed3d)
+[Mini Project 3 Expected Output](https://youtu.be/vK2jgxotA8g)
 
 ## References
 
