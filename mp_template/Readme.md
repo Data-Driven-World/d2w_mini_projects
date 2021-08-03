@@ -1,19 +1,19 @@
 # Final Project
 
 ## Overview
-The purpose of this final project is for you to apply what you have learnt in this course. To make your learning meaningful it is important that you write the code on your own and try to explore and apply as many concepts as you may in doing this project.
+The purpose of this final project is for you to apply what you have learnt in this course. To make your learning meaningful it is important that you write the code on your own and try to explore and apply as many concepts as you have learned in doing this project.
 You have the option to choose among the following categories:
 1. Vehicle Rent Program
 1. Minesweeper Game
 1. Create Your Own Utility/Productivity Program
 
-All the the above categories must be implemented as a web-based application using Flask.
+All the the above categories **must be implemented as a web-based application using Flask**.
 
 You need to choose only **ONE** of them. Please see the criteria and deliverable for each of those options in the subsequent sections.
 
 ## Deliverables
 
-1. Flask Python codes: You need to deploy your Flask code and submit them through Vocareum.
+1. Flask Python codes: You need to deploy your Flask code and submit your code to Vocareum. Ensure that your deployment in Vocareum works.
 1. Readme.md: Inside your folder, create a file called Readme.md . Use Markdown to write your document and format it accordingly. Make sure to include the following in your documentation:
     - Brief description of the software, i.e. what it does.
     - How to use the software. Include steps how to run it and how to use all the features.
@@ -26,14 +26,14 @@ You need to choose only **ONE** of them. Please see the criteria and deliverable
 
 | Category                       | 0-1                                                                                                                                                                    | 2-3                                                                                                                                                 | 4-5                                                                                                                                                                                                                                 |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Problem and Solution           | Student implement only some features of basic Minesweeper or Vehicle Rental Program. Student implement too simple or not so useful program in the Open-Ended Category. | Student implement the either the basic program for Minesweeper or Vehicle Rental Problem. Student implement some basic Open-Ended category program. | Student implement extra features for Minesweeper or Vehicle Rental Problem. Student Implement interesting, useful and close to real-life application for the Open-Ended category.                                                   |
-| Code and Documentation         | The code is not documented. Not written in using procedural nor object-oriented design. Not following PEP8. Not modularized.                                           | There are some comments explaining the code. There maybe a mixed of object-oriented and procedural programming.                                     | The code is written well following PEP8 and modularized. The code is documented well either using docstring or comments. The code is designed and written in object-oriented.                                                       |
-| Design and Optimization        | Student is unable to explain the design of the code.                                                                                                                   | Student can explain the design of the software in terms of its functions and structures.                                                            | Student can explain the design of the software in both Readme.txt and presentation. Student put effort in designing the data structures and choosing the algorithm. Student can explain the choice and design of the class diagram. |
-| Presentation and Communication | Student do not present clearly on the work and/or unable to answer questions related to the work.                                                                      | Student present the work and are able to answer some questions related to the work.                                                                 | Student communicates well during presentation and able to answer the questions related to the work.                                                                                                                                 |
+| Problem and Solution           | Only some features of basic Minesweeper / Vehicle Rental were implemented. Program in the Open-Ended category is too simple and/or is not useful. | All features for basic Minesweeper / Vehicle Rental / Open-Ended Program were implemented. | Interesting / useful / user-friendly / close to real-life applications extra features for Minesweeper / Vehicle Rental / Open-Ended Program were implemented.
+| Code and Documentation         | The code is poorly/not documented. Not written using procedural nor object-oriented design. Not following PEP8. Not modular.                                           | There are appropriate comments explaining the code. There is a mix of object-oriented and procedural programming.                                     | The code is well written, follows PEP8 and is modular. The code is well documented either using docstring or comments. The code is designed and written using the object-oriented paradigm.                                                       |
+| Design and Optimization        | Student is unable to explain the design of the code.                                                                                                                   | Student can explain the design of the software in terms of its functions and structures.                                                            | Student can explain the design of the software in both Readme.md and presentation. Student put effort in designing the data structures and choosing the algorithms. Student can explain the choice and design of the class diagram. |
+| Presentation and Communication | Student does not present clearly on the work and/or unable to answer questions related to the work.                                                                      | Student can present the work and is able to answer some questions related to the work.                                                                 | Student communicates well during the presentation and is able to answer the questions related to the work.                                                                                                                                 |
 
 ## Web-based Minesweeper Game
 
-In this project, you implement a Minesweeper Game using Flask.  You should use object oriented design to implement this game. The program should prompt users for the commands to be executed. There are three basic kinds of commands: 1) open, 2) flag, 3) quit. The quit command is executed by typing quit in the prompt. The open and flag command should allow the user to choose the cell, i.e. which row and which column. For example, a user can open row A and col 3 or flag row B and col 31.
+In this project, you will implement a Minesweeper Game using Flask.  You should use object oriented design to implement this game. The program should prompt users for the commands to be executed. There are three basic kinds of commands: 1) open, 2) flag, 3) quit. The quit command is executed by typing quit in the prompt. The open and flag command should allow the user to choose the cell, i.e. which row and which column. For example, a user can open row A and col 3 or flag row B and col 31.
 
 ### Reference
 
@@ -44,7 +44,7 @@ In this project, you implement a Minesweeper Game using Flask.  You should use o
 
 In implementing this program, you should try to apply the following concepts:
 
-- Object-oriented design: Try design your program as objects. Use UML diagram to specify the relationship between the classes that you use. See if you have any of the following relationships:
+- Object-oriented design: Try to design your program as objects. Use UML diagrams to specify the relationship between the classes that you use. See if you have any of the following relationships:
     - *has-a* relationship
     - *is-a* relationship
 - Property: Try to implement your object using property instead of just attributes.
@@ -87,12 +87,12 @@ See the full problem for a similar text-based problem in: [Vehicle Rental Proble
 
 In implementing this program, you should try to apply the following concepts:
 
-- Object-oriented design: Try design your program as objects. Use UML diagram to specify the relationship between the classes that you use. See if you have any of the following relationships:
+- Object-oriented design: Try design your program as objects. Use UML diagrams to specify the relationship between the classes that you use. See if you have any of the following relationships:
     - *has-a* relationship
     - *is-a* relationship
 - Inheritance: One specific object-oriented feature in this problem is to use inheritence for the different `Vehicle` subclasses. 
 - Property: Try to implement your object using property instead of just attributes.
-- Data Structures: Try to implement some of the data structures either using Python's built-in types or create your own data types. **One of the feature is to find and retrieve vehicle information**. Instead of using Python's list, can you use other data type to make this operation more efficient?
+- Data Structures: Try to implement some of the data structures either using Python's built-in types or create your own data types. **One of the feature is to find and retrieve vehicle information**. Instead of using Python's `list`, can you use other data type to make this operation more efficient?
 - Modularization: Try to create different functions or methods in your class and modularize your code to some unit tasks.
 - Compositions: Try to call another functions or methods from within a function or a method.
 - Database: Try to save your data into a database and retrieve it when you need it.
@@ -108,11 +108,11 @@ You can try to implement the following in your game:
 
 This is an *open-ended* category. This means that you are free to do any kind of software you would like to build under the category of *utility* or *productivity*. Some examples of this software are those that make your life or day-to-day tasks easier or more productive. Some examples are (but not limited to only these):
 
-- note taking software: You can write a web-based note taking software where you can quickly save short text for you to take note or recall. You can safe these text and search for the text using some keyword. You can add features like reminder and make it into a to-do list software.
-- quick calculator software: You may tend to do some specific calculation again again. As an example, it can be your financial calculator for investment or retirement saving. Another example is  tool. You can write a Python program to do these tasks. 
-- family tree software: You can create a software to store information on your family tree. This can be useful when someone in your family want to retrieve information related to this. You can let the user to add or edit information, search for a name and retrieve the relationship of this person, or browser through the family tree to find out the different names and people in the family.
-- conversion software: You can create some software to convert data from one format to another. For example you can download your Bank account or credit card statements in CSV or PDF and format or filter it for your own use like automatically categorizing your expenses and income. 
-- and many others
+- **Note Taking Software**: You can write a web-based note taking software where you can quickly save short text for you to take note or recall. You can save these texts and search the text using some keyword. You can add features like reminder and make it into a to-do list software.
+- **Quick Calculator Software**: You may tend to do some specific calculation again and again. As an example, it can be your financial calculator for investment or retirement savings. You can write a Python program to do these tasks. 
+- **Family Tree Software**: You can create a software to store information on your family tree. This can be useful when someone in your family wants to retrieve information related to this. You can let the user to add or edit information, search for a name and retrieve the relationship of this person, or browser through the family tree to find out the different names and people in the family.
+- **Conversion Software**: You can create some software to convert data from one format to another. For example, you can download your Bank account or credit card statements in CSV or PDF and format or filter it for your own use like automatically categorizing your expenses and income. 
+- ...and many others
 
 In choosing this category you need to explain the following:
 
