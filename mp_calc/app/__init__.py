@@ -14,7 +14,8 @@ login = LoginManager(application)
 login.login_view = 'login'
 bootstrap = Bootstrap(application)
 
-application.wsgi_app = PrefixMiddleware(application.wsgi_app)
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
 
 
 from app import routes, models
