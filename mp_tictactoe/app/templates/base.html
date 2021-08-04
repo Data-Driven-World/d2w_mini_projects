@@ -50,8 +50,8 @@
 
 {% block scripts %}
 {{ super() }}
-<script type="module">import * as library from '/static/__target__/clientlibrary.js'; window.library = library;</script>
-<link rel="stylesheet" href="/static/styles.css">
+<script type="module">import * as library from './static/__target__/clientlibrary.js'; window.library = library;</script>
+<link rel="stylesheet" href="./static/styles.css">
 <script src="//code.jquery.com/jquery-1.12.4.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
 
