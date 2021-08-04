@@ -384,7 +384,14 @@ Once this is done, you can run Flask depending on whether you use Vocareum or yo
 
 ##### Vocareum
 
-If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. First, make sure you are inside the `mp_calc` folder  by using the `pwd` command. 
+If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_calc/app/__init__.py`.
+
+```python
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
+```
+
+Now, make sure you are inside the `mp_calc` folder  by using the `pwd` command. 
 
 ```shell
 > pwd
@@ -415,7 +422,14 @@ To stop the web app type `CTRL+C`.
 
 ##### Local Computer
 
-If you are using your own computer, you can run Flask by typing:
+If you are using your own computer, make sure to change the flag `voc=False` in the following line inside `mp_sort/app/__init__.py`.
+
+```python
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
+```
+
+Now, you can run Flask by typing:
 
 ```shell
 $ flask run
