@@ -341,7 +341,7 @@ First, make sure that you have done the following:
 
 Go to your root folder.
 ```shell
-$ cd ~/fip_powerx_mini_projects/mp_calc
+$ cd ~/d2w_mini_projects/mp_calc
 ```
 
 Now, we can go to the location of `clientlibrary.py` under `app/static/`.
@@ -369,7 +369,7 @@ $ cd ../..
 ```
 which means go up the folder two times. Or, simply
 ```shell
-$ cd ~/fip_powerx_mini_projects/mp_calc/
+$ cd ~/d2w_mini_projects/mp_calc/
 ```
 
 You should see `application.py` in this root folder. Run the following commands:
@@ -386,7 +386,14 @@ Once this is done, you can run Flask depending on whether you use Vocareum or yo
 
 ##### Vocareum
 
-If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. First, make sure you are inside the `mp_calc` folder  by using the `pwd` command. 
+If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_calc/app/__init__.py`.
+
+```python
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
+```
+
+Now, make sure you are inside the `mp_calc` folder  by using the `pwd` command. 
 
 ```shell
 > pwd
@@ -417,7 +424,14 @@ To stop the web app type `CTRL+C`.
 
 ##### Local Computer
 
-If you are using your own computer, you can run Flask by typing:
+If you are using your own computer, make sure to change the flag `voc=False` in the following line inside `mp_calc/app/__init__.py`.
+
+```python
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
+```
+
+Now, you can run Flask by typing:
 
 ```shell
 $ flask run
@@ -443,7 +457,7 @@ First, make sure that you have done the following:
 
 Go to your root folder.
 ```dos
-> cd %USERPROFILE\fip_powerx_mini_projects\mp_calc
+> cd %USERPROFILE\d2w_mini_projects\mp_calc
 ```
 
 Now, we can go to the location of `clientlibrary.py` under `app/static/`.
@@ -473,7 +487,7 @@ Now you are ready to create your database in your local computer. To do so, you 
 which means go up the folder two times. Or, simply
 
 ```dos
-> cd %USERPROFILE\fip_powerx_mini_projects\mp_calc
+> cd %USERPROFILE\d2w_mini_projects\mp_calc
 ```
 
 You should see `application.py` in this root folder. Run the following commands:
