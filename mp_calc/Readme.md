@@ -1,5 +1,43 @@
 # Mini Project 1: Math Quiz App
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Mini Project 1: Math Quiz App](#mini-project-1-math-quiz-app)
+    - [Learning Objectives](#learning-objectives)
+    - [Setup](#setup)
+        - [Install Git](#install-git)
+        - [Downloading Repository](#downloading-repository)
+        - [Go to Mini Project 2 Folder](#go-to-mini-project-2-folder)
+    - [Create Virtual Environment (Windows)](#create-virtual-environment-windows)
+    - [Create Virtual Environment (MacOS/Linux)](#create-virtual-environment-macoslinux)
+    - [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux)
+        - [Install Python Packages](#install-python-packages)
+    - [Exercise 1](#exercise-1)
+        - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
+    - [Exercise 1](#exercise-1-1)
+        - [Exercise 1 - Task 1](#exercise-1---task-1)
+        - [Exercise 1 - Task 2](#exercise-1---task-2)
+        - [Exercise 1 - Task 3](#exercise-1---task-3)
+            - [Linux/MacOs](#linuxmacos)
+                - [Vocareum](#vocareum)
+                - [Local Computer](#local-computer)
+            - [Windows](#windows)
+        - [Exercise 1 - Task 4](#exercise-1---task-4)
+    - [Exercise 2](#exercise-2)
+        - [Exercise 2 - Task 1](#exercise-2---task-1)
+        - [Exercise 2 - Task 2](#exercise-2---task-2)
+        - [Exercise 2 - Task 3](#exercise-2---task-3)
+        - [Exercise 2 - Task 4](#exercise-2---task-4)
+        - [Final Task](#final-task)
+    - [Expected Output](#expected-output)
+    - [Optional: Deploying to Amazon Elastic Beanstalk](#optional-deploying-to-amazon-elastic-beanstalk)
+    - [Troubleshooting](#troubleshooting)
+    - [References](#references)
+
+<!-- markdown-toc end -->
+
+
 ## Learning Objectives
 In this mini project, you will develop a web app to create and play math quiz for integer arithmetic. By the end of this assignment, you should be able to:
 - Create a web app using Flask web framework
@@ -28,7 +66,7 @@ $ git clone https://github.com/kurniawano/d2w_mini_projects.git
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_calc` for this mini project.
 
 ```shell
-$ cd d2w_mini_projects/mp_calc
+$ cd fip_powerx_mini_projects/mp_calc
 $ ls
 ```
 
@@ -53,7 +91,7 @@ In the following steps, the Windows prompt will be represented by:
 ```
 Go to the root folder `mp_calc`.
 ```shell
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_calc
+> cd %USERPROFILE%\fip_powerx_mini_projects\mp_calc
 ```
 From the root folder, i.e. `mp_calc`, create virtual environment called `virtenv`.
 
@@ -86,7 +124,7 @@ $
 
 Go to the root folder `mp_calc`. 
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_calc
+$ cd ~/fip_powerx_mini_projects/mp_calc
 ```
 
 From the root folder, i.e. `mp_calc`, create virtual environment called `virtenv`.
@@ -293,7 +331,123 @@ This web application makes use of some client javascript library which is transl
 
 Follow the steps below.
 
-**Windows**
+#### Linux/MacOs
+
+First, make sure that you have done the following:
+- actiate your virtual environment
+- install all the required packages (see the instructions above)
+
+Go to your root folder.
+```shell
+$ cd ~/fip_powerx_mini_projects/mp_calc
+```
+
+Now, we can go to the location of `clientlibrary.py` under `app/static/`.
+
+```shell
+$ cd app/static
+```
+
+Type the following:
+
+```shell
+$ python -m transcrypt -b clientlibrary.py
+```
+
+Make sure you see the the `__target__` folder created successfully. You can check by typing:
+
+```shell
+$ ls
+```
+
+Now you are ready to run your web app in your local computer or in Vocareum. To do so, you need to go back to the root directory. This can be done with the following:
+
+```shell
+$ cd ../..
+```
+which means go up the folder two times. Or, simply
+```shell
+$ cd ~/fip_powerx_mini_projects/mp_calc/
+```
+
+You should see `application.py` in this root folder. Run the following commands:
+
+```dos
+> flask db init
+> flask db migrate
+> flask db upgrade
+```
+
+You should see a file called `app.db` and a folder `migrations`. 
+
+Once this is done, you can run Flask depending on whether you use Vocareum or your local computer. 
+
+##### Vocareum
+
+If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_calc/app/__init__.py`.
+
+```python
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
+```
+
+Now, make sure you are inside the `mp_calc` folder  by using the `pwd` command. 
+
+```shell
+> pwd
+```
+
+Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
+
+```shell
+> ls
+```
+
+Make sure that the script is executable by running the following command. 
+
+```shell
+> chmod a+x ./runflaskvoc.sh
+```
+The above script is to change the file to be executable for all users, group and owner.
+
+To run the script, type the following.
+
+```shell
+> ./runflaskvoc.sh
+```
+
+Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
+
+To stop the web app type `CTRL+C`. 
+
+##### Local Computer
+
+If you are using your own computer, make sure to change the flag `voc=False` in the following line inside `mp_sort/app/__init__.py`.
+
+```python
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
+```
+
+Now, you can run Flask by typing:
+
+```shell
+$ flask run
+```
+
+You should see that some output will be thrown out, which one of them would be:
+
+```shell
+* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
+
+Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
+
+![](https://www.dropbox.com/s/nra8ltsjltlylp1/mp2_login.png?raw=1)
+
+To stop the web app type `CTRL+C`. 
+
+#### Windows
 
 First, make sure that you have done the following:
 - actiate your virtual environment
@@ -301,7 +455,7 @@ First, make sure that you have done the following:
 
 Go to your root folder.
 ```dos
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_calc
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_calc
 ```
 
 Now, we can go to the location of `clientlibrary.py` under `app/static/`.
@@ -331,7 +485,7 @@ Now you are ready to create your database in your local computer. To do so, you 
 which means go up the folder two times. Or, simply
 
 ```dos
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_calc
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_calc
 ```
 
 You should see `application.py` in this root folder. Run the following commands:
@@ -363,72 +517,6 @@ Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. Yo
 
 To stop the web app type `CTRL+C`. 
 
-**MacOS/Linux**
-
-First, make sure that you have done the following:
-- actiate your virtual environment
-- install all the required packages (see the instructions above)
-
-Go to your root folder.
-```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_calc
-```
-
-Now, we can go to the location of `clientlibrary.py` under `app/static/`.
-
-```shell
-$ cd app/static
-```
-
-Type the following:
-
-```shell
-$ python -m transcrypt -b clientlibrary.py
-```
-
-Make sure you see the the `__target__` folder created successfully. You can check by typing:
-
-```shell
-$ ls
-```
-
-Now you are ready to run your web app in your local computer. To do so, you need to go back to the root directory. This can be done with the following:
-
-```shell
-$ cd ../..
-```
-which means go up the folder two times. Or, simply
-```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_calc/
-```
-
-You should see `application.py` in this root folder. Run the following commands:
-
-```dos
-> flask db init
-> flask db migrate
-> flask db upgrade
-```
-
-You should see a file called `app.db` and a folder `migrations`. 
-
-Once this is done, you can run Flask by typing:
-
-```shell
-$ flask run
-```
-
-You should see that some output will be thrown out, which one of them would be:
-
-```shell
-* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-```
-
-Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
-
-![](https://www.dropbox.com/s/nra8ltsjltlylp1/mp2_login.png?raw=1)
-
-To stop the web app type `CTRL+C`. 
 
 ### Exercise 1 - Task 4
 
@@ -480,7 +568,7 @@ Read the following notes to understand how to use the database and Bootstrap for
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
-[Mini Project 2 Expected Output](https://web.microsoftstream.com/video/1392234b-aa8a-412d-92c7-e2cf2b803175)
+[Mini Project 2 Expected Output](https://youtu.be/Rzy0nT9hMI8)
 
 ## Optional: Deploying to Amazon Elastic Beanstalk
 
@@ -491,7 +579,7 @@ Check [Deploying to Amazon Elastic Beanstalk](../mp_sort/DeployEB.md).
 1. I got, `ModuleNotFoundError: No module named 'flask_bootstrap'?` 
 
    Make sure you have activated your Python's virtual environment. For example, if your virtual environment name is `virtenv` you can do the following:
-   - Go to the folder or directory of your root project, e.g. `cd %USERPROFILE\Downloads\d2w_mini_projects\mp_calc` (Win), or `cd ~/Downloads/d2w_mini_projects/mp_calc` (Mac OS)
+   - Go to the folder or directory of your root project, e.g. `cd %USERPROFILE\fip_powerx_mini_projects\mp_calc` (Win), or `cd ~/fip_powerx_mini_projects/mp_calc` (Mac OS)
    - Actiate the virtual environment, e.g. `virtenv\Scripts\activate` (Win), or `source virtenv/bin/activate` (Mac OS).
 
 1. I can't run flask/use transcrypt?

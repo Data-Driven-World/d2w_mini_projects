@@ -30,11 +30,11 @@ future==0.16.0
 idna==2.7
 importlib-metadata==2.0.0
 itsdangerous==1.1.0
-Jinja2==2.11.3
+Jinja2>=2.11.3
 jmespath==0.10.0
 jsonschema==3.2.0
 Mako==1.1.2
-MarkupSafe==1.1.1
+MarkupSafe>=2.0
 mypy==0.770
 mypy-extensions==0.4.3
 paramiko==2.7.2

@@ -1,5 +1,53 @@
 # Mini Project 3: Tic Tac Toe App
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [Mini Project 3: Tic Tac Toe App](#mini-project-3-tic-tac-toe-app)
+    - [Learning Objectives](#learning-objectives)
+    - [Setup](#setup)
+        - [Install Git](#install-git)
+        - [Downloading Repository](#downloading-repository)
+        - [Go to Mini Project 3 Folder](#go-to-mini-project-3-folder)
+    - [Create Virtual Environment (Windows)](#create-virtual-environment-windows)
+    - [Create Virtual Environment (MacOS/Linux)](#create-virtual-environment-macoslinux)
+    - [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux)
+        - [Install Python Packages](#install-python-packages)
+    - [Exercise 1](#exercise-1)
+        - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
+        - [Task 1](#task-1)
+        - [Task 2](#task-2)
+            - [Windows](#windows)
+            - [MacOS](#macos)
+    - [Exercise 2](#exercise-2)
+        - [Task 1](#task-1-1)
+        - [Task 2](#task-2-1)
+        - [Task 3](#task-3)
+        - [Task 4](#task-4)
+            - [Vocareum](#vocareum)
+            - [Local Computer](#local-computer)
+    - [Exercise 3](#exercise-3)
+        - [Task 1](#task-1-2)
+        - [Task 2](#task-2-2)
+    - [Exercise 4](#exercise-4)
+        - [Task 1](#task-1-3)
+        - [Task 2](#task-2-3)
+        - [Task 3](#task-3-1)
+        - [Task 4](#task-4-1)
+        - [Task 5](#task-5)
+        - [Task 6](#task-6)
+        - [Task 7](#task-7)
+        - [Task 8](#task-8)
+    - [Exercise 5](#exercise-5)
+    - [Exercise 6](#exercise-6)
+        - [Task 1: Getting Familiar with SocketIO](#task-1-getting-familiar-with-socketio)
+        - [Task 2: Handling Click](#task-2-handling-click)
+    - [Expected Deliverable](#expected-deliverable)
+    - [References](#references)
+
+<!-- markdown-toc end -->
+
+
 ## Learning Objectives
 By the end of this mini project, you should be able to:
 - write minimax algorithm using recursion
@@ -18,7 +66,6 @@ You need to have Git to do the project. Download and install the software accord
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
 ```shell
-$ cd Downloads
 $ git clone https://github.com/kurniawano/d2w_mini_projects.git
 ```
 
@@ -27,7 +74,7 @@ $ git clone https://github.com/kurniawano/d2w_mini_projects.git
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_tictactoe` for this mini project.
 
 ```shell
-$ cd d2w_mini_projects/mp_tictactoe
+$ cd fip_powerx_mini_projects/mp_tictactoe
 $ ls
 ```
 
@@ -52,7 +99,7 @@ In the following steps, the Windows prompt will be represented by:
 ```
 Go to the root folder `mp_tictactoe`.
 ```shell
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_tictactoe
+> cd %USERPROFILE%\fip_powerx_mini_projects\mp_tictactoe
 ```
 From the root folder, i.e. `mp_tictactoe`, create virtual environment called `virtenv`.
 
@@ -85,7 +132,7 @@ $
 
 Go to the root folder `mp_tictactoe`. 
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_tictactoe
+$ cd ~/fip_powerx_mini_projects/mp_tictactoe
 ```
 
 From the root folder, i.e. `mp_tictactoe`, create virtual environment called `virtenv`.
@@ -225,7 +272,7 @@ In this task, you need to compile the `clientlibrary.py` into a javascript file 
 To compile `clientlibrary.py`, first we need to go into the `static` folder.
 
 ```shell
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_tictactoe\app\static
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_tictactoe\app\static
 > dir
 ```
 
@@ -247,7 +294,7 @@ The option `-b` means to build the javascript library. You can use `--help` for 
 To compile `library.py`, first we need to go into the `static` folder.
 
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_tictactoe/app/static
+$ cd ~/fip_powerx_mini_projects/mp_tictactoe/app/static
 $ ls
 ```
 
@@ -348,11 +395,11 @@ Now, we are going to create the database using Flask-Migrate tool. First, go to 
 
 Windows:
 ```dos
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_tictactoe
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_tictactoe
 ```
 Mac OS:
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_tictactoe
+$ cd ~/fip_powerx_mini_projects/mp_tictactoe
 ```
 
 Then, run the following command from the terminal:
@@ -372,14 +419,63 @@ You can try to run the web application now. First go to the root directory of yo
 
 Windows:
 ```dos
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_tictactoe
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_tictactoe
 ```
 Mac OS:
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_tictactoe
+$ cd ~/fip_powerx_mini_projects/mp_tictactoe
 ```
 
-Then, run the following command from the terminal:
+Now you can run Flask.
+
+#### Vocareum
+
+If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_tictactoe/app/__init__.py`.
+
+```python
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
+```
+
+Now, make sure you are inside the `mp_tictactoe` folder  by using the `pwd` command. 
+
+```shell
+> pwd
+```
+
+Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
+
+```shell
+> ls
+```
+
+Make sure that the script is executable by running the following command. 
+
+```shell
+> chmod a+x ./runflaskvoc.sh
+```
+The above script is to change the file to be executable for all users, group and owner.
+
+To run the script, type the following.
+
+```shell
+> ./runflaskvoc.sh
+```
+
+Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
+
+To stop the web app type `CTRL+C`. 
+
+#### Local Computer
+
+If you are using your own computer, make sure to change the flag `voc=False` in the following line inside `mp_sort/app/__init__.py`.
+
+```python
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
+```
+
+Now, you can run Flask by typing:
 
 ```shell
 flask run
@@ -786,7 +882,7 @@ def handle_click(message):
 
 The expected output can be found in this video below.
 
-[Mini Project 3 Expected Output](https://web.microsoftstream.com/video/6c5a1ca1-66e3-46ab-aeb3-ae250422ed3d)
+[Mini Project 3 Expected Output](https://youtu.be/vK2jgxotA8g)
 
 ## References
 

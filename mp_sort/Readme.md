@@ -3,33 +3,36 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
-- [Learning Objectives](#learning-objectives)
-- [Setup](#setup)
-    - [Install Git](#install-git)
-    - [Downloading Repository](#downloading-repository)
-    - [Go to Mini Project 1 Folder](#go-to-mini-project-1-folder)
-- [Create Virtual Environment (Windows)](#create-virtual-environment-windows)
-- [Create Virtual Environment (MacOS/Linux)](#create-virtual-environment-macoslinux)
-- [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux)
-    - [Install Python Packages](#install-python-packages)
-    - [Exercise 1](#exercise-1)
-        - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
-    - [HTML for Exercise 1](#html-for-exercise-1)
-- [Windows](#windows)
-    - [Using Transcrypt](#using-transcrypt)
-    - [Run Flask](#run-flask)
-- [MacOS/Linux](#macoslinux)
-    - [Using Transcrypt](#using-transcrypt-1)
-    - [Run Flask](#run-flask-1)
-- [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux-1)
-    - [Assignment for Exercise 1](#assignment-for-exercise-1)
-        - [Part 1: Generating Random Integers](#part-1-generating-random-integers)
-        - [Part 2: Sorting Numbers](#part-2-sorting-numbers)
-    - [Assignment for Exercise 2](#assignment-for-exercise-2)
-        - [Part 1: Creating a Text Input](#part-1-creating-a-text-input)
-        - [Part 2: Sorting User Input](#part-2-sorting-user-input)
-    - [Expected Output](#expected-output)
-- [Optional: Deploying to Amazon Elastic Beanstalk](#optional-deploying-to-amazon-elastic-beanstalk)
+- [Mini Project 1: Sorting App](#mini-project-1-sorting-app)
+    - [Learning Objectives](#learning-objectives)
+    - [Setup](#setup)
+        - [Install Git](#install-git)
+        - [Downloading Repository](#downloading-repository)
+        - [Go to Mini Project 1 Folder](#go-to-mini-project-1-folder)
+    - [Create Virtual Environment (Windows)](#create-virtual-environment-windows)
+    - [Create Virtual Environment (MacOS/Linux)](#create-virtual-environment-macoslinux)
+    - [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux)
+        - [Install Python Packages](#install-python-packages)
+        - [Exercise 1](#exercise-1)
+            - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
+        - [HTML for Exercise 1](#html-for-exercise-1)
+    - [Windows](#windows)
+        - [Using Transcrypt](#using-transcrypt)
+        - [Run Flask](#run-flask)
+            - [Vocareum](#vocareum)
+            - [Local Computer](#local-computer)
+    - [MacOS/Linux](#macoslinux)
+        - [Using Transcrypt](#using-transcrypt-1)
+        - [Run Flask](#run-flask-1)
+    - [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux-1)
+        - [Assignment for Exercise 1](#assignment-for-exercise-1)
+            - [Part 1: Generating Random Integers](#part-1-generating-random-integers)
+            - [Part 2: Sorting Numbers](#part-2-sorting-numbers)
+        - [Assignment for Exercise 2](#assignment-for-exercise-2)
+            - [Part 1: Creating a Text Input](#part-1-creating-a-text-input)
+            - [Part 2: Sorting User Input](#part-2-sorting-user-input)
+        - [Expected Output](#expected-output)
+    - [Optional: Deploying to Amazon Elastic Beanstalk](#optional-deploying-to-amazon-elastic-beanstalk)
 
 <!-- markdown-toc end -->
 
@@ -53,8 +56,7 @@ You need to have Git to do the project. Download and install the software accord
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
 ```shell
-$ cd Downloads
-$ git clone https://github.com/kurniawano/d2w_mini_projects.git
+$ git clone https://github.com/kurniawano/fip_powerx_mini_projects.git
 ```
 
 ### Go to Mini Project 1 Folder
@@ -62,7 +64,7 @@ $ git clone https://github.com/kurniawano/d2w_mini_projects.git
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_sort` for this mini project.
 
 ```shell
-$ cd d2w_mini_projects/mp_sort
+$ cd fip_powerx_mini_projects/mp_sort
 $ ls
 ```
 
@@ -87,7 +89,7 @@ In the following steps, the Windows prompt will be represented by:
 ```
 Go to the root folder `mp_sort`.
 ```shell
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_sort
+> cd %USERPROFILE%\fip_powerx_mini_projects\mp_sort
 ```
 From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
 
@@ -120,7 +122,7 @@ $
 
 Go to the root folder `mp_sort`. 
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort
+$ cd ~/fip_powerx_mini_projects/mp_sort
 ```
 
 From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
@@ -276,7 +278,7 @@ All your work for this mini project will be done inside `library.py`.
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
 ```shell
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort\app\static
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_sort\app\static
 > dir
 ```
 
@@ -320,12 +322,60 @@ Now you are ready to run your web app in your local computer. To do so, you need
 which means go up the folder two times. Or, simply
 
 ```shell
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort
+> cd %USERPROFILE\fip_powerx_mini_projects\mp_sort
 ```
 
-You should see `application.py` in this root folder. Run Flask by typing:
+You should see `application.py` in this root folder. 
 
-or
+#### Vocareum
+If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_sort/app/__init__.py`.
+
+```python
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
+```
+
+Now, make sure you are inside the `mp_sort` folder  by using the `pwd` command. 
+
+```shell
+> pwd
+```
+
+Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
+
+```shell
+> ls
+```
+
+Make sure that the script is executable by running the following command. 
+
+```shell
+> chmod a+x ./runflaskvoc.sh
+```
+The above script is to change the file to be executable for all users, group and owner.
+
+To run the script, type the following.
+
+```shell
+> ./runflaskvoc.sh
+```
+
+Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
+
+To stop the web app type `CTRL+C`. 
+
+#### Local Computer
+
+
+If you are using your own computer, make sure to change the flag `voc=False` in the following line inside `mp_sort/app/__init__.py`.
+
+```python
+# set voc=False if you run on local computer
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
+```
+
+Now, you can run Flask by typing:
+
 ```shell
 > flask run
 ```
@@ -336,11 +386,13 @@ You should see that some output will be thrown out, which one of them would be:
 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
-Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
+
+You can now open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
 
 ![](https://www.dropbox.com/s/a2fqx5svvyqtqf9/mp1_home.png?raw=1)
 
 To stop the web app type `CTRL+C`. 
+
 
 
 ## MacOS/Linux
@@ -350,7 +402,7 @@ To stop the web app type `CTRL+C`.
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort/app/static
+$ cd ~/fip_powerx_mini_projects/mp_sort/app/static
 $ ls
 ```
 
@@ -392,7 +444,7 @@ $ cd ../..
 ```
 which means go up the folder two times. Or, simply
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort/
+$ cd ~/Downloads/fip_powerx_mini_projects/mp_sort/
 ```
 
 You should see `application.py` in this root folder. Run Flask by typing:
@@ -486,7 +538,7 @@ This button's even `onclick` is binded to `sortnumber2()` function in your `libr
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
-[Mini Project 1 Expected Output](https://web.microsoftstream.com/video/fa203d50-c064-48a2-a951-ec0ec3385a48)
+[Mini Project 1 Expected Output](https://youtu.be/4kDRFaUtiow)
 
 ## Optional: Deploying to Amazon Elastic Beanstalk
 

@@ -68,7 +68,7 @@ class TicTacToe:
         pass
 
     def str_to_board(self, boardstr):
-        ```
+        '''
         This method is to transform the single string board state into a nested list.
 
         Input:
@@ -76,7 +76,7 @@ class TicTacToe:
 
         Output:
         - a nested list representing the state of the board
-        ```
+        '''
         board = []
         for row in range(3):
             rowlist = []
