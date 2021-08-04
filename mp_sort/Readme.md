@@ -56,7 +56,8 @@ You need to have Git to do the project. Download and install the software accord
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
 ```shell
-$ git clone https://github.com/kurniawano/fip_powerx_mini_projects.git
+$ cd Downloads
+$ git clone https://github.com/kurniawano/d2w_mini_projects.git
 ```
 
 ### Go to Mini Project 1 Folder
@@ -64,7 +65,7 @@ $ git clone https://github.com/kurniawano/fip_powerx_mini_projects.git
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_sort` for this mini project.
 
 ```shell
-$ cd fip_powerx_mini_projects/mp_sort
+$ cd d2w_mini_projects/mp_sort
 $ ls
 ```
 
@@ -89,7 +90,7 @@ In the following steps, the Windows prompt will be represented by:
 ```
 Go to the root folder `mp_sort`.
 ```shell
-> cd %USERPROFILE%\fip_powerx_mini_projects\mp_sort
+> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_sort
 ```
 From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
 
@@ -122,7 +123,7 @@ $
 
 Go to the root folder `mp_sort`. 
 ```shell
-$ cd ~/fip_powerx_mini_projects/mp_sort
+$ cd ~/Downloads/d2w_mini_projects/mp_sort
 ```
 
 From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
@@ -278,7 +279,7 @@ All your work for this mini project will be done inside `library.py`.
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
 ```shell
-> cd %USERPROFILE\fip_powerx_mini_projects\mp_sort\app\static
+> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort\app\static
 > dir
 ```
 
@@ -322,20 +323,13 @@ Now you are ready to run your web app in your local computer. To do so, you need
 which means go up the folder two times. Or, simply
 
 ```shell
-> cd %USERPROFILE\fip_powerx_mini_projects\mp_sort
+> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort
 ```
 
 You should see `application.py` in this root folder. 
 
 #### Vocareum
-If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_sort/app/__init__.py`.
-
-```python
-# set voc=False if you run on local computer
-application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
-```
-
-Now, make sure you are inside the `mp_sort` folder  by using the `pwd` command. 
+If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. First, make sure you are inside the `mp_sort` folder  by using the `pwd` command. 
 
 ```shell
 > pwd
@@ -366,15 +360,7 @@ To stop the web app type `CTRL+C`.
 
 #### Local Computer
 
-
-If you are using your own computer, make sure to change the flag `voc=False` in the following line inside `mp_sort/app/__init__.py`.
-
-```python
-# set voc=False if you run on local computer
-application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
-```
-
-Now, you can run Flask by typing:
+If you are using your own computer, you can run Flask by typing:
 
 ```shell
 > flask run
@@ -386,13 +372,11 @@ You should see that some output will be thrown out, which one of them would be:
 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 ```
 
-
-You can now open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
+Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
 
 ![](https://www.dropbox.com/s/a2fqx5svvyqtqf9/mp1_home.png?raw=1)
 
 To stop the web app type `CTRL+C`. 
-
 
 
 ## MacOS/Linux
@@ -402,7 +386,7 @@ To stop the web app type `CTRL+C`.
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
 ```shell
-$ cd ~/fip_powerx_mini_projects/mp_sort/app/static
+$ cd ~/Downloads/d2w_mini_projects/mp_sort/app/static
 $ ls
 ```
 
@@ -444,7 +428,7 @@ $ cd ../..
 ```
 which means go up the folder two times. Or, simply
 ```shell
-$ cd ~/Downloads/fip_powerx_mini_projects/mp_sort/
+$ cd ~/Downloads/d2w_mini_projects/mp_sort/
 ```
 
 You should see `application.py` in this root folder. Run Flask by typing:
@@ -538,7 +522,7 @@ This button's even `onclick` is binded to `sortnumber2()` function in your `libr
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
-[Mini Project 1 Expected Output](https://youtu.be/4kDRFaUtiow)
+[Mini Project 1 Expected Output](https://web.microsoftstream.com/video/fa203d50-c064-48a2-a951-ec0ec3385a48)
 
 ## Optional: Deploying to Amazon Elastic Beanstalk
 

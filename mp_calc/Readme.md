@@ -66,7 +66,7 @@ $ git clone https://github.com/kurniawano/d2w_mini_projects.git
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_calc` for this mini project.
 
 ```shell
-$ cd fip_powerx_mini_projects/mp_calc
+$ cd d2w_mini_projects/mp_calc
 $ ls
 ```
 
@@ -91,7 +91,7 @@ In the following steps, the Windows prompt will be represented by:
 ```
 Go to the root folder `mp_calc`.
 ```shell
-> cd %USERPROFILE%\fip_powerx_mini_projects\mp_calc
+> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_calc
 ```
 From the root folder, i.e. `mp_calc`, create virtual environment called `virtenv`.
 
@@ -124,7 +124,7 @@ $
 
 Go to the root folder `mp_calc`. 
 ```shell
-$ cd ~/fip_powerx_mini_projects/mp_calc
+$ cd ~/Downloads/d2w_mini_projects/mp_calc
 ```
 
 From the root folder, i.e. `mp_calc`, create virtual environment called `virtenv`.
@@ -331,6 +331,8 @@ This web application makes use of some client javascript library which is transl
 
 Follow the steps below.
 
+Follow the steps below.
+
 #### Linux/MacOs
 
 First, make sure that you have done the following:
@@ -384,14 +386,7 @@ Once this is done, you can run Flask depending on whether you use Vocareum or yo
 
 ##### Vocareum
 
-If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_calc/app/__init__.py`.
-
-```python
-# set voc=False if you run on local computer
-application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
-```
-
-Now, make sure you are inside the `mp_calc` folder  by using the `pwd` command. 
+If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. First, make sure you are inside the `mp_calc` folder  by using the `pwd` command. 
 
 ```shell
 > pwd
@@ -422,14 +417,7 @@ To stop the web app type `CTRL+C`.
 
 ##### Local Computer
 
-If you are using your own computer, make sure to change the flag `voc=False` in the following line inside `mp_sort/app/__init__.py`.
-
-```python
-# set voc=False if you run on local computer
-application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
-```
-
-Now, you can run Flask by typing:
+If you are using your own computer, you can run Flask by typing:
 
 ```shell
 $ flask run
@@ -568,7 +556,7 @@ Read the following notes to understand how to use the database and Bootstrap for
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
-[Mini Project 2 Expected Output](https://youtu.be/Rzy0nT9hMI8)
+[Mini Project 2 Expected Output](https://web.microsoftstream.com/video/1392234b-aa8a-412d-92c7-e2cf2b803175)
 
 ## Optional: Deploying to Amazon Elastic Beanstalk
 
@@ -579,7 +567,7 @@ Check [Deploying to Amazon Elastic Beanstalk](../mp_sort/DeployEB.md).
 1. I got, `ModuleNotFoundError: No module named 'flask_bootstrap'?` 
 
    Make sure you have activated your Python's virtual environment. For example, if your virtual environment name is `virtenv` you can do the following:
-   - Go to the folder or directory of your root project, e.g. `cd %USERPROFILE\fip_powerx_mini_projects\mp_calc` (Win), or `cd ~/fip_powerx_mini_projects/mp_calc` (Mac OS)
+   - Go to the folder or directory of your root project, e.g. `cd %USERPROFILE\Downloads\d2w_mini_projects\mp_calc` (Win), or `cd ~/Downloads/d2w_mini_projects/mp_calc` (Mac OS)
    - Actiate the virtual environment, e.g. `virtenv\Scripts\activate` (Win), or `source virtenv/bin/activate` (Mac OS).
 
 1. I can't run flask/use transcrypt?
