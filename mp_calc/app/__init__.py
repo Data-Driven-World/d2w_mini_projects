@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_bootstrap import Bootstrap 
-
+from app.middleware import PrefixMiddleware
 
 application = Flask(__name__)
 application.config.from_object(Config)
@@ -14,6 +14,7 @@ login = LoginManager(application)
 login.login_view = 'login'
 bootstrap = Bootstrap(application)
 
+application.wsgi_app = PrefixMiddleware(application.wsgi_app)
 
 
 from app import routes, models
