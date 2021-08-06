@@ -30,7 +30,7 @@ class Records:
 
 	def stop_timer(self, form_id, question_id):
 		self.items[question_id].stop()
-		curform = document.getElementById(f"form-{form_id:}")
+		curform = document.getElementById("form-{}".format(form_id))
 		answer = curform.elements["answer"].value
 		curform.elements["challenge_id"].value = str(question_id)
 		curform.elements["elapsed_time"].value = self.items[question_id].elapsedtime
