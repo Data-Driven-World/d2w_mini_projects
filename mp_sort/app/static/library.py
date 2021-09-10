@@ -1,8 +1,6 @@
 from org.transcrypt.stubs.browser import *
 import random
 
-array = []
-
 def gen_random_int(number, seed):
 	pass
 
@@ -13,7 +11,7 @@ def generate():
 	seed = 200
 
 	# call gen_random_int() with the given number and seed
-	# store it to the global variable array
+	# store it to the variable array
 	pass
 
 	array = None
@@ -34,8 +32,8 @@ def sortnumber1():
 		The function is called when the sort button is clicked.
 
 		You need to do the following:
-		- get the list of numbers from the global variable array and 
-			copy it to a new list
+		- get the list of numbers from the "generate" HTML id, use document.getElementById(id).innerHTML
+		- create a list of integers from the string of numbers
 		- call your sort function, either bubble sort or insertion sort
 		- create a string of the sorted numbers and store it in array_str
 	'''

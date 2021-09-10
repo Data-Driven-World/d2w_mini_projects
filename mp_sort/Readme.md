@@ -493,7 +493,8 @@ In `ex1.html`, you should also find the following lines:
 ```
 
 The second button is to sort the generated random numbers. The event `onclick` is binded to the function `sortnumber1()` in your `library.py`. Fill in this function to do the following:
-- get the random numbers from `array`,
+- get the random numbers from `generate` HTML id. *Hint: use `document.getElementById(id).innerHTML`* to get the numbers,
+- remove the other characters and create a list of integers called `sortedarray`,
 - sort the list using either bubble sort or insertion sort,
 - create a single string containing the sorted numbers.
 
