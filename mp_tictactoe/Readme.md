@@ -663,6 +663,9 @@ Now you should test your `TicTacToe` class.
 1. Scroll down to Exercise 4 test cases and comment out the following line `sys.exit(1)`. 
 1. Run the file under `mp_tictactoe/app` folder by calling `python serverlibrary.py` from the Terminal or Command Prompt.
 
+# Additional Notes
+The following two exercises are meant for you to get familiar with how the whole application works. The solutions have been provided in `routes.py` in the GitHub repository. However, you may want to compare this note and the solution. 
+
 ## Exercise 5
 
 Now our task is to updating the Single Player Page using the State table.
