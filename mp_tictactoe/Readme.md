@@ -663,6 +663,14 @@ Now you should test your `TicTacToe` class.
 1. Scroll down to Exercise 4 test cases and comment out the following line `sys.exit(1)`. 
 1. Run the file under `mp_tictactoe/app` folder by calling `python serverlibrary.py` from the Terminal or Command Prompt.
 
+1. The rest of the code has been written for you. By now, you should be able to play the Tic Tac Toe with the computer. Try to understand the overall code and every part of the project.  Run the webserver to test.
+
+## Expected Deliverable
+
+The expected output can be found in this video below.
+
+[Mini Project 3 Expected Output](https://web.microsoftstream.com/video/6c5a1ca1-66e3-46ab-aeb3-ae250422ed3d)
+
 # Additional Notes
 The following two exercises are meant for you to get familiar with how the whole application works. The solutions have been provided in `routes.py` in the GitHub repository. However, you may want to compare this note and the solution. 
 
@@ -873,13 +881,4 @@ def handle_click(message):
     # write the code to commit the session to the database
     pass
     ```
-1. The rest of the code has been written for you. By now, you should be able to play the Tic Tac Toe with the computer. Try to understand the overall code and every part of the project.  Run the webserver to test by running the following command in the terminal or command prompt.
-    ```shell
-    $ flask run
-    ```
 
-## Expected Deliverable
-
-The expected output can be found in this video below.
-
-[Mini Project 3 Expected Output](https://web.microsoftstream.com/video/6c5a1ca1-66e3-46ab-aeb3-ae250422ed3d)
