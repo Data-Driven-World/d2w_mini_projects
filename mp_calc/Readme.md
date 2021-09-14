@@ -156,12 +156,12 @@ Install the necessary packages for this mini project. From the root folder, i.e.
 
 For Windows:
 ```shell
-> pip install -U --force-reinstall -r requirements.txt
+> python -m pip install -U --force-reinstall -r requirements.txt
 ```
 
 For MacOS/Linux: (For Linux, you might need to type pip3 instead)
 ```shell
-$ pip install -U --force-reinstall -r requirements.txt
+$ python -m pip install -U --force-reinstall -r requirements.txt
 ```
 
 The above steps will install the following packages:
