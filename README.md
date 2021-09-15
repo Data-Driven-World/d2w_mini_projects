@@ -4,18 +4,18 @@ Mini Project templates for Fundamentals in Python SG Innovate.
 ## Mini Project 1
 This mini project is to create a simple html pages to generate random number and sort them.
 
-[Handout](mp_sort/README.md)
+[Handout](mp_sort/Readme.md)
 
 ## Mini Project 2
 This mini project is to create a simple web application for math quiz where users can create simple math challenges and take up challenge from others.
 
-[Handout](mp_calc/README.md)
+[Handout](mp_calc/Readme.md)
 
 ## Mini Project 3
 
 This mini project is to create a simple AI Tic Tac Toe game where a user can play Tic Tac Toe against a computer. 
 
-[Handout](mp_tictactoe/README.md)
+[Handout](mp_tictactoe/Readme.md)
 
 ## Groupings
 
