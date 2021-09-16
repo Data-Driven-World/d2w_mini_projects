@@ -5,8 +5,6 @@ def gen_random_int(number, seed):
 	pass
 
 def generate():
-	global array
-
 	number = 10
 	seed = 200
 
