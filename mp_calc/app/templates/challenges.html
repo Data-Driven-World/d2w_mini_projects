@@ -29,8 +29,8 @@
         <form id="form-{{ idx }}" action="" method="post" novalidate>
           {{ form.hidden_tag() }}
           <div>
-          {{ form.answer(size=32) }}
-          <button type="button" class="btn btn-primary"
+          {{ form.answer(size=32, id=challenges[idx].id) }}
+          <button type="button" class="btn btn-primary" id="{{ challenges[idx].id }}-btn"
             onclick="library.records.stop_timer({{ idx }}, {{ challenges[idx].id }})">Submit</button>
         </form>
       </td>
