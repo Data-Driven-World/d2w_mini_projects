@@ -101,7 +101,7 @@ Go to the root folder `mp_tictactoe`.
 From the root folder, i.e. `mp_tictactoe`, create virtual environment called `virtenv`.
 
 ```shell
-$ python -m venv virtenv
+> python -m venv virtenv
 ```
 
 A folder called `virtenv` will be created. Now, activate the virtual environment.
