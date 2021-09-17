@@ -353,7 +353,7 @@ $ cd app/static
 Type the following:
 
 ```shell
-$ python -m transcrypt -b clientlibrary.py
+$ python -m transcrypt -b -n clientlibrary
 ```
 
 Make sure you see the the `__target__` folder created successfully. You can check by typing:
@@ -469,7 +469,7 @@ Now, we can go to the location of `clientlibrary.py` under `app/static/`.
 Type the following:
 
 ```dos
-> python -m transcrypt -b clientlibrary.py
+> python -m transcrypt -b -n clientlibrary
 ```
 
 Make sure you see the the `__target__` folder created successfully. You can check by typing:

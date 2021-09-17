@@ -291,7 +291,7 @@ library.py
 Run Transcrypt on `library.py`:
 
 ```shell
-transcrypt -b library.py
+python -m transcrypt -b -n library
 ```
 
 The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. To see the content of that folder:
@@ -412,7 +412,7 @@ library.py
 Run Transcrypt on `library.py`:
 
 ```shell
-transcrypt -b library.py
+python -m transcrypt -b -n library
 ```
 
 The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. To see the content of that folder:

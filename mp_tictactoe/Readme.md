@@ -281,7 +281,7 @@ clientlibrary.py
 Run Transcrypt on `clientlibrary.py`:
 
 ```shell
-python -m transcrypt -b -m clientlibrary
+python -m transcrypt -b -n clientlibrary
 ```
 
 The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. You should see `clientlibrary.js` created inside this folder. 
@@ -303,7 +303,7 @@ clientlibrary.py
 Run Transcrypt on `clientlibrary.py`:
 
 ```shell
-python -m transcrypt -b clientlibrary.py
+python -m transcrypt -b -n clientlibrary
 ```
 
 The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. 
