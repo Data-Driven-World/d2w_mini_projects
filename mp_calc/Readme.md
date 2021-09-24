@@ -258,7 +258,7 @@ def users():
 - `users = User.query.all()` retrieves all users from the database in `User` table (`User` is defined in `models.py`). 
 - `mergesort(users, lambda item: item.username)` calls the sorting function to sort the list of users using its `username` attribute. Note that the `User` table has other attributes besides `username`. Refer to `models.py` for all the attributes of `User` table. It should sort the `users` in place. You need to modify your `mergesort()` function as described in **Q1** of `mp2_exercises.ipynb` to complete this. 
 - `usernames = [u.username for u in users]` creates a list of usernames from the list of sorted users. 
-- In the last line, `render_template('users.html', title='Users', users=usernames)`, we pass the variable `username` to be used in the `users.html` using some jinja templating under the name `users`.
+- In the last line, `render_template('users.html', title='Users', users=usernames)`, we pass the variable `usernames` to be used in the `users.html` using some jinja templating under the name `users`.
 
 
 This file `users.html` can be found inside the `templates` folder.
