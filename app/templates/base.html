@@ -1,0 +1,55 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}
+      {% if title %}
+      {{ title }} - Mini Project 2
+      {% else %}
+      Welcome to Mini Project 2
+      {% endif %}
+{% endblock %}
+
+{% block navbar %}
+  <nav class="navbar  navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+
+        <a class="navbar-brand" href="{{ url_for('index') }}">Mini Project 2</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        </button>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('index') }}">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('questions') }}">Questions</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('challenges') }}">Challenges</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('halloffame') }}">Hall of Fame</a></li>
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('users') }}">Users</a></li>
+        </ul>
+        <ul class="navbar-nav navbar-right">
+          {% if current_user.is_anonymous %}
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('login') }}">Login</a></li>
+          {% else %}
+          <li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-info" role="alert">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    {% block app_content %}{% endblock %}
+  </div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script type="module">import * as library from './static/__target__/clientlibrary.js'; window.library = library;</script>
+{% endblock %}

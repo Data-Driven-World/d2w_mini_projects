@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block app_content %}
+
+<h1 class="display-1">Hi, {{ user.username }}!</h1>
+
+<h3 class="display-3">Create a Question</h3>
+ <div class="row">
+        <div class="col-md-4">
+            {{ wtf.quick_form(form)}}
+        </div>
+  </div>
+ 
+<h3>Your Submitted Questions</h3>
+
+{% if questions %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Question</th>
+      <th scope="col">Answer</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for idx in range(questions|length) %}
+  	<tr>
+      <th scope="row" class="lead">{{ idx+1 }}</th>
+      <td class="lead">{{ questions[idx].expression }}</td>
+      <td class="lead">{{ questions[idx].answer }}</td>
+    </tr>
+  {% endfor %}
+  
+  </tbody>
+</table>
+
+{% else %}
+	<p>You have no Questions created yet!</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<h1 class="display-1">Hi, {{ current_user.username }}!</h1>
+
+<p class="lead">Welcome to Integer Arithmetic Challenge platform. Here, you can create integer math expression and send to your friends for them to solve. Actually, it's just for fun. The main purpose for this platform is for you to implement the mergesort algorithm, Stack data structure and to use Stack to evaluate the integer expressions.</p>
+<p class="lead">Click on the menu above to navigate. Do the following.
+	<ul>
+		<li class="lead">Create several users, more then three users would be best.</li>
+		<li class="lead">Exercise 1: Click "Users" page. You need to implement merge sort to make it work.</li>
+		<li class="lead">Exercise 2: You need to implement Stack and EvaluateExpression class. Once you are done, you can try to create question by navigating to the "Question" page, and answer other people's questions by navigating to the "Challenge" page.</li>
+	</ul>
+</p>{% endblock %}

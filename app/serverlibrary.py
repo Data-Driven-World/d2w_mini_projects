@@ -53,11 +53,13 @@ class Stack:
 class EvaluateExpression:
   valid_char = '0123456789+-*/() '
   def __init__(self, string=""):
+    self.expr = None
     self.expression = string
 
   @property
   def expression(self):
-    return self._expression
+    # Right?
+    return self.expr
 
   @expression.setter
   def expression(self, new_expr):
@@ -65,23 +67,25 @@ class EvaluateExpression:
       # Check whether each character in the potential new string is part of the valid list of characteres
       if i not in EvaluateExpression.valid_char:
         # If any character is invalid, we assign an empty string to self.expr and exit the method
-        self._expression = ""
+        self.expr = ""
         return
     # If ALL characters are valid, we assign new_expr to self.expr
-    self._expression = new_expr
+    self.expr = new_expr
 
   def insert_space(self):
-    # Choose to init a list with length equal to self.expression so that we don't have to init
+    # Choose to append each character of self.expr to a list so that we don't have to init
     # a new string every time we append a character
-    new_str = [0] * len(self.expression)
-    for idx, char in enumerate(self.expression):
+    new_str = []
+    for char in self.expr:
       # Check whether the character is one of the valid operators to pad with a space
       if char in EvaluateExpression.valid_char[-7:-1]:
-        # If it is we add it to our list at the proper index with a space character before and after
-        new_str[idx] = f" {char} "
+        # If it is we append it to our list with a space character before and after
+        new_str.append(" ")
+        new_str.append(char)
+        new_str.append(" ")
       else:
-        # If it isn't, we add it to our list at the proper index as-is
-        new_str[idx] = char
+        # If it isn't, we append it as it is
+        new_str.append(char)
 
     # Join the list to a string and let it be our new expression
     return "".join(new_str)
