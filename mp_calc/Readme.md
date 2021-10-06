@@ -299,7 +299,7 @@ Let's open `users.html`. The first few lines are shown here.
 <h1>This Platform's Users</h1>
 ```
 
-- The first line `{% extends "base.html" %}` inherits the `base.html` for some of the common elements such as the navigation bar, importing certain scripts, and CSS files. The javascript which we will transalte from the file `serverlibrary.py` is imported in the last few lines of `base.html`.
+- The first line `{% extends "base.html" %}` inherits the `base.html` for some of the common elements such as the navigation bar, importing certain scripts, and CSS files. The javascript which we will translate from the file `serverlibrary.py` is imported in the last few lines of `base.html`.
 - The second line indicates the block `app_content`. Each html file templates we have will modify this block `app_content`. 
 
 This file basically iterates over all users and create rows of users in a table. The table body code is shown below.
