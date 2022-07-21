@@ -9,29 +9,18 @@
         - [Install Git](#install-git)
         - [Downloading Repository](#downloading-repository)
         - [Go to Mini Project 1 Folder](#go-to-mini-project-1-folder)
-    - [Create Virtual Environment (Windows)](#create-virtual-environment-windows)
-    - [Create Virtual Environment (MacOS/Linux)](#create-virtual-environment-macoslinux)
-    - [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux)
-        - [Install Python Packages](#install-python-packages)
-        - [Exercise 1](#exercise-1)
-            - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
+        - [Create Virtual Environment](#create-virtual-environment)
+    - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
         - [HTML for Exercise 1](#html-for-exercise-1)
-    - [Windows](#windows)
         - [Using Transcrypt](#using-transcrypt)
         - [Run Flask](#run-flask)
             - [Vocareum](#vocareum)
             - [Local Computer](#local-computer)
-    - [MacOS/Linux](#macoslinux)
-        - [Using Transcrypt](#using-transcrypt-1)
-        - [Run Flask](#run-flask-1)
-    - [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux-1)
-        - [Assignment for Exercise 1](#assignment-for-exercise-1)
-            - [Part 1: Generating Random Integers](#part-1-generating-random-integers)
-            - [Part 2: Sorting Numbers](#part-2-sorting-numbers)
-        - [Assignment for Exercise 2](#assignment-for-exercise-2)
-            - [Part 1: Creating a Text Input](#part-1-creating-a-text-input)
-            - [Part 2: Sorting User Input](#part-2-sorting-user-input)
-        - [Expected Output](#expected-output)
+    - [Task 1: Generating Random Integers](#task-1-generating-random-integers)
+    - [Task 2: Sorting Numbers](#task-2-sorting-numbers)
+    - [Task 3: Creating a Text Input](#task-3-creating-a-text-input)
+    - [Task 4: Sorting User Input](#task-4-sorting-user-input)
+    - [Expected Output](#expected-output)
     - [Optional: Deploying to Amazon Elastic Beanstalk](#optional-deploying-to-amazon-elastic-beanstalk)
 
 <!-- markdown-toc end -->
@@ -56,8 +45,8 @@ You need to have Git to do the project. Download and install the software accord
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
 ```shell
-$ cd Downloads
-$ git clone https://github.com/kurniawano/d2w_mini_projects.git
+cd Downloads
+git clone https://github.com/kurniawano/d2w_mini_projects.git
 ```
 
 ### Go to Mini Project 1 Folder
@@ -65,8 +54,8 @@ $ git clone https://github.com/kurniawano/d2w_mini_projects.git
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_sort` for this mini project.
 
 ```shell
-$ cd d2w_mini_projects/mp_sort
-$ ls
+cd d2w_mini_projects/mp_sort
+ls
 ```
 
 The last command should output the following:
@@ -74,100 +63,89 @@ The last command should output the following:
 ```shell
 Readme.md		
 application.py
-requirements.txt
+Pipfile
+Pipfile.lock
 app
 ```
 
 This handout can be found in the file `Readme.md`.
 
-## Create Virtual Environment (Windows)
+### Create Virtual Environment 
 
 **You should open Anaconda Prompt to do the following steps.**
 
-In the following steps, the Windows prompt will be represented by:
+In the following steps, whenever there is a different between the OS commands, the **Windows** prompt will be represented by:
 ```shell
 >
 ```
-Go to the root folder `mp_sort`.
-```shell
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_sort
-```
-From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
-
-```shell
-> python -m venv virtenv
-```
-
-A folder called `virtenv` will be created. Now, activate the virtual environment.
-```shell
-> virtenv\Scripts\activate
-```
-
-You should see the word `virtenv` in your prompt something like:
-```shell
-(virtenv) folder>
-```
-
-_To exit the virtual environment at the end of this mini project, simply type:_
-```shell
-> deactivate
-```
-
-## Create Virtual Environment (MacOS/Linux)
-
-
-In the following steps, the MacOS/Linux prompt will be represented by:
+while the MacOS/Linux prompt will be represented by:
 ```shell
 $
 ```
 
-Go to the root folder `mp_sort`. 
+Go to the root folder `mp_sort`.
+
+Windows:
+```dos
+> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_sort
+```
+
+Unix/MacOS:
 ```shell
 $ cd ~/Downloads/d2w_mini_projects/mp_sort
 ```
 
-From the root folder, i.e. `mp_sort`, create virtual environment called `virtenv`.
+From the root folder, i.e. `mp_sort`, first make sure that you have installed `pipenv` package.
 
 ```shell
-$ python -m venv virtenv
+pip install --user pipenv
 ```
 
-A folder called `virtenv` will be created. Now, activate the virtual environment. 
+We will call `mp_sort` folder as the **root** folder of our application. 
 
+From the root folder, install the packages specified in the `Pipfile`.
 ```shell
-$ source virtenv/bin/activate
-```
-
-You should see the word `virtenv` in your prompt something like:
-```shell
-(virtenv) user$
-```
-
-_To exit the virtual environment at the end of this mini project, simply type:_
-```shell
-$ deactivate
-```
-## Combined (Windows/Mac/Linux)
-
-### Install Python Packages
-
-Install the necessary packages for this mini project. From the root folder, i.e. `mp_sort`, type the following:
-
-For Windows:
-```shell
-> python -m pip install -U --force-reinstall -r requirements.txt
-```
-
-For MacOS/Linux: (For Linux, you might need to type pip3 instead)
-```shell
-$ python -m pip install -U --force-reinstall -r requirements.txt
+pipenv install
 ```
 
 The above steps will install Flask and Transcrypt Python libraries and some other necessary packages.
 
-### Exercise 1
 
-#### Brief Overview of Flask Project Structure
+To activate the virtualenv, run
+```shell
+pipenv shell
+```
+
+Alternatively, you can choose everytime you run a command to prepend that command with the following:
+```shell
+pipenv run
+```
+
+Ok, so let's enter into the shell by typing:
+```shell
+pipenv shell
+```
+
+You should see the word `(mp_sort)` in your prompt something like:
+
+Windows:
+```dos
+(mp_sort) folder >
+```
+Unix/MacOS:
+```shell
+(mp_sort) user $
+```
+
+_To exit the virtual environment at the end of this mini project, simply type:_
+```shell
+exit
+```
+
+All the subsequent exercises assumes you are in the virtualenv shell. 
+
+
+## Brief Overview of Flask Project Structure
 
 We are using Flask web framework to create this web app. The first file you may notice is `application.py` in the root folder. Open that file using a text editor. You should see the following:
 
@@ -271,17 +249,22 @@ mp_sort/
 
 All your work for this mini project will be done inside `library.py`.
 
-
-## Windows
-
 ### Using Transcrypt
 
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
-```shell
+Windows:
+```dos
 > cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort\app\static
 > dir
 ```
+
+Unix/MacOS:
+```shell
+$ cd ~/Downloads/d2w_mini_projects/mp_sort/app/static
+$ ls
+```
+
 
 The last command will list the file in that folder, and you should see:
 ```shell
@@ -296,11 +279,19 @@ python -m transcrypt -b -n library
 
 The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. To see the content of that folder:
 
-```shell
+Windows:
+```dos
 > dir
 > dir __target__
 ```
 
+Unix/MacOS:
+```shell
+$ ls
+$ ls __target__
+```
+
+The output should be something like the following:
 ```shell
 __target__/
   library.js
@@ -316,20 +307,32 @@ You should see `library.js` created inside this folder.
 
 Now you are ready to run your web app in your local computer. To do so, you need to go back to the root directory. This can be done with the following:
 
-```shell
+Windows:
+```dos
 > cd ..\..
 ```
 
+Unix/MacOS:
+```shell
+$ cd ../..
+```
 which means go up the folder two times. Or, simply
 
-```shell
+Windows:
+```dos
 > cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort
 ```
+
+Unix/MacOS:
+```shell
+$ cd ~/Downloads/d2w_mini_projects/mp_sort/
+```
+
 
 You should see `application.py` in this root folder. 
 
 #### Vocareum
-If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_sort/app/__init__.py`.
+If you use Vocareum terminal, which is a linux terminal, to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_sort/app/__init__.py`.
 
 ```python
 # set voc=False if you run on local computer
@@ -339,26 +342,26 @@ application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
 Now, make sure you are inside the `mp_sort` folder  by using the `pwd` command. 
 
 ```shell
-> pwd
+pwd
 ```
 
 Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
 
 ```shell
-> ls
+ls
 ```
 
 Make sure that the script is executable by running the following command. 
 
 ```shell
-> chmod a+x ./runflaskvoc.sh
+chmod a+x ./runflaskvoc.sh
 ```
 The above script is to change the file to be executable for all users, group and owner.
 
 To run the script, type the following.
 
 ```shell
-> ./runflaskvoc.sh
+./runflaskvoc.sh
 ```
 
 Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
@@ -377,7 +380,7 @@ application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
 Now, you can run Flask by typing:
 
 ```shell
-> flask run
+flask run
 ```
 
 You should see that some output will be thrown out, which one of them would be:
@@ -392,83 +395,9 @@ Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. Yo
 
 To stop the web app type `CTRL+C`. 
 
+## Task 1: Generating Random Integers 
 
-## MacOS/Linux
-
-### Using Transcrypt
-
-Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
-
-```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort/app/static
-$ ls
-```
-
-The last command will list the file in that folder, and you should see:
-```shell
-library.py
-```
-
-Run Transcrypt on `library.py`:
-
-```shell
-python -m transcrypt -b -n library
-```
-
-The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. To see the content of that folder:
-
-```shell
-$ ls
-$ ls __target__
-```
-
-```shell
-__target__/
-  library.js
-  library.project
-  math.js
-  org.transcrypt.__runtime__.js
-  random.js
-```
-
-You should see `library.js` created inside this folder.
-
-### Run Flask
-
-Now you are ready to run your web app in your local computer. To do so, you need to go back to the root directory. This can be done with the following:
-
-```shell
-$ cd ../..
-```
-which means go up the folder two times. Or, simply
-```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort/
-```
-
-You should see `application.py` in this root folder. Run Flask by typing:
-
-```shell
-$ flask run
-```
-
-You should see that some output will be thrown out, which one of them would be:
-
-```shell
-* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-```
-
-Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
-
-![](https://www.dropbox.com/s/a2fqx5svvyqtqf9/mp1_home.png?raw=1)
-
-To stop the web app type `CTRL+C`. 
-
-## Combined (Windows/Mac/Linux)
-
-### Assignment for Exercise 1
-
-#### Part 1: Generating Random Integers 
-Open `ex1.html` in your text editor. You should see these few lines of code:
+We will start with Exercise 1.  Open `ex1.html` in your text editor. You should see these few lines of code:
 
 ```html
 <p>
@@ -482,7 +411,7 @@ We have two buttons. The first button is to generate 10 random numbers. The even
 - create a single string containing all the numbers. For example,
     `3, 1, 2, 4, 8, 6, 5, 9, 0, 7.`
 
-#### Part 2: Sorting Numbers
+## Task 2: Sorting Numbers
 
 In `ex1.html`, you should also find the following lines:
 ```html
@@ -498,11 +427,9 @@ The second button is to sort the generated random numbers. The event `onclick` i
 - sort the list using either bubble sort or insertion sort,
 - create a single string containing the sorted numbers.
 
-### Assignment for Exercise 2
+## Task 3: Creating a Text Input
 
-#### Part 1: Creating a Text Input
-
-In this exercise, instead of randomly generate the numbers, you will ask the user to enter the sequence of numbers using a Text Input.
+Now, let's move on to Exercise 2. In this exercise, instead of randomly generate the numbers, you will ask the user to enter the sequence of numbers using a Text Input.
 
 Open `ex2.html`. You should see the following:
 
@@ -513,9 +440,9 @@ Open `ex2.html`. You should see the following:
 </p>
 ```
 
-Search the internet to find out how to create a Text Input field and enter the code in the line indicated. Replace that line with the correct tag and code for Text Input. Name the text input `numbers`.
+Search the internet to find out how to create a Text Input field and enter the code in the line indicated. Replace that line with the correct tag and code for Text Input. Name the text input `numbers`. *You may want to also specify some default values to appear in the text input*.
 
-#### Part 2: Sorting User Input
+## Task 4: Sorting User Input
 
 You should also see the following line:
 
@@ -533,7 +460,7 @@ This button's even `onclick` is binded to `sortnumber2()` function in your `libr
 - sort the list of numbers,
 - create a single string containing the sorted numbers and store it to `array_str`.
 
-### Expected Output
+## Expected Output
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
