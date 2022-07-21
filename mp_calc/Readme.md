@@ -1,35 +1,29 @@
-# Mini Project 1: Math Quiz App
+# Mini Project 2: Math Quiz App
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
-- [Mini Project 1: Math Quiz App](#mini-project-1-math-quiz-app)
+- [Mini Project 2: Math Quiz App](#mini-project-2-math-quiz-app)
     - [Learning Objectives](#learning-objectives)
     - [Setup](#setup)
         - [Install Git](#install-git)
         - [Downloading Repository](#downloading-repository)
         - [Go to Mini Project 2 Folder](#go-to-mini-project-2-folder)
-    - [Create Virtual Environment (Windows)](#create-virtual-environment-windows)
-    - [Create Virtual Environment (MacOS/Linux)](#create-virtual-environment-macoslinux)
-    - [Combined (Windows/Mac/Linux)](#combined-windowsmaclinux)
-        - [Install Python Packages](#install-python-packages)
+    - [Create Virtual Environment](#create-virtual-environment)
+    - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
     - [Exercise 1](#exercise-1)
-        - [Brief Overview of Flask Project Structure](#brief-overview-of-flask-project-structure)
-    - [Exercise 1](#exercise-1-1)
         - [Exercise 1 - Task 1](#exercise-1---task-1)
         - [Exercise 1 - Task 2](#exercise-1---task-2)
         - [Exercise 1 - Task 3](#exercise-1---task-3)
-            - [Linux/MacOs](#linuxmacos)
-                - [Vocareum](#vocareum)
-                - [Local Computer](#local-computer)
-            - [Windows](#windows)
+        - [Running on Vocareum](#running-on-vocareum)
+        - [Local Computer](#local-computer)
         - [Exercise 1 - Task 4](#exercise-1---task-4)
     - [Exercise 2](#exercise-2)
         - [Exercise 2 - Task 1](#exercise-2---task-1)
         - [Exercise 2 - Task 2](#exercise-2---task-2)
         - [Exercise 2 - Task 3](#exercise-2---task-3)
         - [Exercise 2 - Task 4](#exercise-2---task-4)
-        - [Final Task](#final-task)
+    - [Final Task](#final-task)
     - [Expected Output](#expected-output)
     - [Optional: Deploying to Amazon Elastic Beanstalk](#optional-deploying-to-amazon-elastic-beanstalk)
     - [Troubleshooting](#troubleshooting)
@@ -57,17 +51,24 @@ You need to have Git to do the project. Download and install the software accord
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
 ```shell
-$ cd Downloads
-$ git clone https://github.com/kurniawano/d2w_mini_projects.git
+cd Downloads
+git clone https://github.com/Data-Driven-World/d2w_mini_projects
 ```
 
 ### Go to Mini Project 2 Folder
 
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_calc` for this mini project.
 
+Windows:
+```dos
+cd d2w_mini_projects\mp_calc
+dir
+```
+
+Unix/MacOS:
 ```shell
-$ cd d2w_mini_projects/mp_calc
-$ ls
+cd d2w_mini_projects/mp_calc
+ls
 ```
 
 The last command should output the following:
@@ -81,87 +82,41 @@ requirements.txt
 
 This handout can be found in the file `Readme.md`.
 
-## Create Virtual Environment (Windows)
+## Create Virtual Environment 
 
 **You should open Anaconda Prompt to do the following steps.**
 
-In the following steps, the Windows prompt will be represented by:
-```shell
+In the following steps, whenever there is a different between the OS commands, the **Windows** prompt will be represented by:
+
+Windows:
+```dos
 >
 ```
-Go to the root folder `mp_calc`.
-```shell
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_calc
-```
-From the root folder, i.e. `mp_calc`, create virtual environment called `virtenv`.
-
-```shell
-> python -m venv virtenv
-```
-
-A folder called `virtenv` will be created. Now, activate the virtual environment.
-```shell
-> virtenv\Scripts\activate
-```
-
-You should see the word `virtenv` in your prompt something like:
-```shell
-(virtenv) folder>
-```
-
-_To exit the virtual environment at the end of this mini project, simply type:_
-```shell
-> deactivate
-```
-
-## Create Virtual Environment (MacOS/Linux)
-
-
-In the following steps, the MacOS/Linux prompt will be represented by:
+while the MacOS/Linux prompt will be represented by:
 ```shell
 $
 ```
 
-Go to the root folder `mp_calc`. 
-```shell
+Go to the root folder `mp_calc`.
+Windows:
+```dos
+> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_calc
+```
+``shell
 $ cd ~/Downloads/d2w_mini_projects/mp_calc
 ```
 
-From the root folder, i.e. `mp_calc`, create virtual environment called `virtenv`.
+First make sure that you have installed `pipenv` package.
 
 ```shell
-$ python -m venv virtenv
+pip install --user pipenv
 ```
 
-A folder called `virtenv` will be created. Now, activate the virtual environment. 
+We will call `mp_calc` folder as the **root** folder of our application. 
 
+From the root folder, install the packages specified in the `Pipfile`.
 ```shell
-$ source virtenv/bin/activate
-```
-
-You should see the word `virtenv` in your prompt something like:
-```shell
-(virtenv) user$
-```
-
-_To exit the virtual environment at the end of this mini project, simply type:_
-```shell
-$ deactivate
-```
-## Combined (Windows/Mac/Linux)
-
-### Install Python Packages
-
-Install the necessary packages for this mini project. From the root folder, i.e. `mp_calc`, type the following:
-
-For Windows:
-```shell
-> python -m pip install -U --force-reinstall -r requirements.txt
-```
-
-For MacOS/Linux: (For Linux, you might need to type pip3 instead)
-```shell
-$ python -m pip install -U --force-reinstall -r requirements.txt
+pipenv install
 ```
 
 The above steps will install the following packages:
@@ -170,12 +125,43 @@ The above steps will install the following packages:
 - Transcrypt 
 - Flask-SQLAlchemy
 - Flask-Migration
-- Flask-Bootstrap
+- Bootstrap-Flask
 - and some other packages
 
-## Exercise 1
+To activate the virtualenv, run
+```shell
+pipenv shell
+```
 
-### Brief Overview of Flask Project Structure
+Alternatively, you can choose everytime you run a command to prepend that command with the following:
+```shell
+pipenv run
+```
+
+Ok, so let's enter into the shell by typing:
+```shell
+pipenv shell
+```
+
+You should see the word `(mp_calc)` in your prompt something like:
+
+Windows:
+```dos
+(mp_calc) folder >
+```
+Unix/MacOS:
+```shell
+(mp_calc) user $
+```
+
+_To exit the virtual environment at the end of this mini project, simply type:_
+```shell
+exit
+```
+
+All the subsequent exercises assumes you are in the virtualenv shell. 
+
+## Brief Overview of Flask Project Structure
 
 We are using Flask web framework to create this web app. There are more files in this mini project as compared to the first one. You should revise your first mini project before proceeding to this mini project. In this notes, we will highlight only those parts which differ from the previous mini project.
 
@@ -221,7 +207,7 @@ db = SQLAlchemy(application)
 migrate = Migrate(application, db)
 login = LoginManager(application)
 login.login_view = 'login'
-bootstrap = Bootstrap(application)
+bootstrap = Bootstrap5(application)
 
 from app import routes, models
 ```
@@ -230,7 +216,7 @@ from app import routes, models
 - The third line defines `db` as an object instance of `SQLAlchemy`
 - We also define `migrate` that is used to migrate the database whenever we make changes to the tables or the models. 
 - Next, we have two lines to create our login page. `login.login_view` directs the URL and route it to `login()` defined in the `routes.py`.
-- Lastly, we defined `bootstrap` which allow us to use some predefined CSS from [Bootstrap](https://pythonhosted.org/Flask-Bootstrap/basic-usage.html).
+- Lastly, we defined `bootstrap` which allow us to use some predefined CSS from [Bootstrap-Flask](https://bootstrap-flask.readthedocs.io/en/stable/).
 
 This file also import the file `routes.py` which defines the URL routing. Open `app/routes.py` to see the whole file. We will focus on the first few lines for the first exercise.
 
@@ -329,23 +315,29 @@ This web application makes use of some client javascript library which is transl
 - compile `clientlibrary.py` into a javascript file
 - create database
 
-Follow the steps below.
-
-Follow the steps below.
-
-#### Linux/MacOs
-
 First, make sure that you have done the following:
 - actiate your virtual environment
 - install all the required packages (see the instructions above)
 
 Go to your root folder.
+Windows:
+```dos
+> cd %USERPROFILE\d2w_mini_projects\mp_calc
+```
+
+Unix/MacOS:
 ```shell
 $ cd ~/d2w_mini_projects/mp_calc
 ```
 
 Now, we can go to the location of `clientlibrary.py` under `app/static/`.
 
+Windows:
+```dos
+> cd app\static
+```
+
+Unix/MacOS:
 ```shell
 $ cd app/static
 ```
@@ -353,38 +345,55 @@ $ cd app/static
 Type the following:
 
 ```shell
-$ python -m transcrypt -b -n clientlibrary
+python -m transcrypt -b -n clientlibrary
 ```
 
 Make sure you see the the `__target__` folder created successfully. You can check by typing:
 
+Windows:
+```dos
+> dir
+```
+
+Unix/MacOS:
 ```shell
 $ ls
 ```
 
 Now you are ready to run your web app in your local computer or in Vocareum. To do so, you need to go back to the root directory. This can be done with the following:
 
+Windows:
+```dos
+> cd ..\..
+```
+Unix/MacOS:
 ```shell
 $ cd ../..
 ```
-which means go up the folder two times. Or, simply
+which means go up the folder two times. Or, you can also type the following.
+
+Windows:
+```dos
+> cd %USERPROFILE\d2w_mini_projects\mp_calc
+```
+Unix/MacOS
 ```shell
 $ cd ~/d2w_mini_projects/mp_calc/
 ```
 
 You should see `application.py` in this root folder. Run the following commands:
 
-```dos
-> flask db init
-> flask db migrate
-> flask db upgrade
+```shell
+flask db init
+flask db migrate
+flask db upgrade
 ```
 
 You should see a file called `app.db` and a folder `migrations`. 
 
 Once this is done, you can run Flask depending on whether you use Vocareum or your local computer. 
 
-##### Vocareum
+### Running on Vocareum
 
 If you use Vocareum terminal to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_calc/app/__init__.py`.
 
@@ -396,33 +405,33 @@ application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
 Now, make sure you are inside the `mp_calc` folder  by using the `pwd` command. 
 
 ```shell
-> pwd
+pwd
 ```
 
 Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
 
 ```shell
-> ls
+ls
 ```
 
 Make sure that the script is executable by running the following command. 
 
 ```shell
-> chmod a+x ./runflaskvoc.sh
+chmod a+x ./runflaskvoc.sh
 ```
 The above script is to change the file to be executable for all users, group and owner.
 
 To run the script, type the following.
 
 ```shell
-> ./runflaskvoc.sh
+./runflaskvoc.sh
 ```
 
 Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
 
 To stop the web app type `CTRL+C`. 
 
-##### Local Computer
+### Local Computer
 
 If you are using your own computer, make sure to change the flag `voc=False` in the following line inside `mp_calc/app/__init__.py`.
 
@@ -434,7 +443,7 @@ application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
 Now, you can run Flask by typing:
 
 ```shell
-$ flask run
+flask run
 ```
 
 You should see that some output will be thrown out, which one of them would be:
@@ -448,77 +457,6 @@ Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. Yo
 ![](https://www.dropbox.com/s/nra8ltsjltlylp1/mp2_login.png?raw=1)
 
 To stop the web app type `CTRL+C`. 
-
-#### Windows
-
-First, make sure that you have done the following:
-- actiate your virtual environment
-- install all the required packages (see the instructions above)
-
-Go to your root folder.
-```dos
-> cd %USERPROFILE\d2w_mini_projects\mp_calc
-```
-
-Now, we can go to the location of `clientlibrary.py` under `app/static/`.
-
-```dos
-> cd app\static
-```
-
-Type the following:
-
-```dos
-> python -m transcrypt -b -n clientlibrary
-```
-
-Make sure you see the the `__target__` folder created successfully. You can check by typing:
-
-```dos
-> dir
-```
-
-Now you are ready to create your database in your local computer. To do so, you need to go back to the root directory. This can be done with the following:
-
-```dos
-> cd ..\..
-```
-
-which means go up the folder two times. Or, simply
-
-```dos
-> cd %USERPROFILE\d2w_mini_projects\mp_calc
-```
-
-You should see `application.py` in this root folder. Run the following commands:
-
-```dos
-> flask db init
-> flask db migrate
-> flask db upgrade
-```
-
-You should see a file called `app.db` and a folder `migrations`. 
-
-Once this is done, you can run Flask by typing:
-
-or
-```dos
-> flask run
-```
-
-You should see that some output will be thrown out, which one of them would be:
-
-```dos
-* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-```
-
-Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. You should see something like the following:
-
-![](https://www.dropbox.com/s/nra8ltsjltlylp1/mp2_login.png?raw=1)
-
-To stop the web app type `CTRL+C`. 
-
 
 ### Exercise 1 - Task 4
 
@@ -558,7 +496,7 @@ Test also the other pages and see if they are working fine:
 - Put the answer in the provided input box, and click "Submit". If your answer is correct, the elapsed time will be displayed on the last column. Otherwise, nothing will be displayed in the last column.
 - Answer several challenges with different users, then navigate to "Hall of Fame" page. If your `mergesort()` implementation is correct, you will see a table listing all the challenges with the fastest top three users for each of them.
 
-### Final Task
+## Final Task
 
 Read the following notes to understand how to use the database and Bootstrap for styling.
 
@@ -578,11 +516,11 @@ Check [Deploying to Amazon Elastic Beanstalk](../mp_sort/DeployEB.md).
 
 ## Troubleshooting
 
-1. I got, `ModuleNotFoundError: No module named 'flask_bootstrap'?` 
+1. I got, `ModuleNotFoundError: No module named ''?` 
 
-   Make sure you have activated your Python's virtual environment. For example, if your virtual environment name is `virtenv` you can do the following:
+   Make sure you have activated your Python's virtual environment:
    - Go to the folder or directory of your root project, e.g. `cd %USERPROFILE\Downloads\d2w_mini_projects\mp_calc` (Win), or `cd ~/Downloads/d2w_mini_projects/mp_calc` (Mac OS)
-   - Actiate the virtual environment, e.g. `virtenv\Scripts\activate` (Win), or `source virtenv/bin/activate` (Mac OS).
+   - Actiate the virtual environment, e.g. `pipenv shell`.
 
 1. I can't run flask/use transcrypt?
 
