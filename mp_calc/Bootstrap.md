@@ -10,21 +10,46 @@ We will only explains those relevant to this mini project and more explanations 
 
 ## Base HTML
 
-In this mini project, we have one base HTML file inside `app/templates/base.html`. 
+In this mini project, we have one base HTML file inside `app/templates/base.html`.  This HTML file has the following structure following the [documentation](https://bootstrap-flask.readthedocs.io/en/stable/migrate/).
 
 ```html
-{% extends "bootstrap/base.html" %}
+<!doctype html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+
+        <title>Your page title</title>
+        {% endblock %}
+    </head>
+    <body>
+        <!-- Your page content -->
+        {% block content %}{% endblock %}
+
+        {% block scripts %}
+            <!-- Optional JavaScript -->
+            {{ bootstrap.load_js() }}
+        {% endblock %}
+    </body>
+</html>
 ```
 
-This file makes use of `bootstrap/base.html`. In order to use this file, you have to create `Bootstrap` object in your `app/__init__.py` file.
+In order to use this file, you have to create `Bootstrap5` object in your `app/__init__.py` file. This uses Bootstrap 5 instead of Bootstrap 4. 
 
 ```python
-from flask_bootstrap import Bootstrap 
+from flask_bootstrap import Bootstrap5 
 ...
-bootstrap = Bootstrap(application)
+bootstrap = Bootstrap5(application)
 ```
 
-The base HTML contains the code for the navigation bar on the top:
+The base HTML also contains the code for the navigation bar on the top:
 
 ```html
 <nav class="navbar navbar-default">
@@ -76,7 +101,7 @@ After the navigation bar, the code describes the content block.
 
 The code above is used to display any flashed message. An example for a flash message is when the web application gives an alert or display an error message. In our mini project, we use this several times, for example after we create a new question inside `app/routes.py`, under `questions()` function definition, we can find the following code.
 
-Notice that we use the code `<div class="alert alert-info" role="alert">` to style our alert. You can find more info in [Bootstrap's Alert Documentation](https://getbootstrap.com/docs/4.5/components/alerts/).
+Notice that we use the code `<div class="alert alert-info" role="alert">` to style our alert. You can find more info in [Bootstrap's Alert Documentation](https://getbootstrap.com/docs/5.0/components/alerts/).
 
 ```python
 def questions():
@@ -124,11 +149,11 @@ When you open `index.html` inside the `template` folder, you will see that we us
 <p class="lead">Welcome ...</p>
 ```
 
-For more options on typography, check [Bootstrap's Typography Documentation](https://getbootstrap.com/docs/4.5/content/typography/). 
+For more options on typography, check [Bootstrap's Typography Documentation](https://getbootstrap.com/docs/5.0/content/typography/). 
 
 ## Table Styles
 
-We use [Bootstrap's Table Style](https://getbootstrap.com/docs/4.5/content/tables/) in several files like `question.html`, `challenge.html`, `users.html`, and `halloffame.html`. 
+We use [Bootstrap's Table Style](https://getbootstrap.com/docs/5.0/content/tables/) in several files like `question.html`, `challenge.html`, `users.html`, and `halloffame.html`. 
 
 The code below is from `users.html`.
 
@@ -160,9 +185,9 @@ We use `table` inside the `class` option for `<table>` to enable Bootstrap's Tab
 
 ## References
 
-- [Bootstrap's Navbar Documentation](https://getbootstrap.com/docs/4.5/components/navbar/)
-[Bootstrap's Alert Documentation](https://getbootstrap.com/docs/4.5/components/alerts/).
-- [Bootstrap's Table Documentation](https://getbootstrap.com/docs/4.5/content/tables/)
-- [Bootstrap's Typography Documentation](https://getbootstrap.com/docs/4.5/content/typography/)
-- [Bootstrap Documentation](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
+- [Bootstrap's Navbar Documentation](https://getbootstrap.com/docs/5.0/components/navbar/)
+- [Bootstrap's Alert Documentation](https://getbootstrap.com/docs/5.0/components/alerts/).
+- [Bootstrap's Table Documentation](https://getbootstrap.com/docs/5.0/content/tables/)
+- [Bootstrap's Typography Documentation](https://getbootstrap.com/docs/5.0/content/typography/)
+- [Bootstrap Documentation](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
