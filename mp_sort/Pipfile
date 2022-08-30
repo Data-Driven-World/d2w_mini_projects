@@ -6,8 +6,9 @@ name = "pypi"
 [packages]
 flask = "*"
 transcrypt = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3"
