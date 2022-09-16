@@ -9,7 +9,7 @@ Flask-SQLAlchemy==2.4.1
 Flask-WTF==0.14.3
 itsdangerous==1.1.0
 Jinja2>=2.11.3
-Mako==1.1.2
+Mako==1.2.2
 MarkupSafe>=2.0
 mypy==0.770
 mypy-extensions==0.4.3
