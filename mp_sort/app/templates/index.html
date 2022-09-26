@@ -1,6 +1,9 @@
 <html>
     <head>
         <title>{{title}}</title>
+        <script type = "text/javascript">
+            if (!("/x".includes(document.location.toString().slice(-1)))) document.location += "/"
+        </script>
     </head>
     <body>
         <h1>Welcome to {{title}}</h1>
