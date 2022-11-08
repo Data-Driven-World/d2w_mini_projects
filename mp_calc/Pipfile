@@ -11,8 +11,6 @@ flask-sqlalchemy = "*"
 flask-wtf = "*"
 transcrypt = "*"
 bootstrap-flask = "*"
-importlib-resources = "*"
-colorama = "*"
 
 [dev-packages]
 
