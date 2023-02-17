@@ -10,4 +10,4 @@ python-dotenv==0.10.3
 Transcrypt==3.7.16
 typed-ast==1.4.0
 typing-extensions==3.7.4.1
-Werkzeug==0.16.0
+Werkzeug==2.2.3
