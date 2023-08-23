@@ -101,7 +101,7 @@ Windows:
 ```dos
 > cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_calc
 ```
-``shell
+```shell
 $ cd ~/Downloads/d2w_mini_projects/mp_calc
 ```
 
