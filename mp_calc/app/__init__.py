@@ -15,7 +15,7 @@ login.login_view = 'login'
 bootstrap = Bootstrap5(application)
 
 # set voc=False if you run on local computer
-application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
+application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
 
 
 from app import routes, models

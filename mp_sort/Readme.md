@@ -351,52 +351,6 @@ $ cd ~/Downloads/d2w_mini_projects/mp_sort/
 
 You should see `application.py` in this root folder. 
 
-#### Vocareum
-If you use Vocareum terminal, which is a linux terminal, to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_sort/app/__init__.py`.
-
-```python
-# set voc=False if you run on local computer
-application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
-```
-
-Now, make sure you are inside the `mp_sort` folder  by using the `pwd` command. 
-
-```shell
-pwd
-```
-
-Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
-
-```shell
-ls
-```
-
-Make sure that the script is executable by running the following command. 
-
-```shell
-chmod a+x ./runflaskvoc.sh
-```
-The above script is to change the file to be executable for all users, group and owner.
-
-To run the script, type the following.
-
-```shell
-./runflaskvoc.sh
-```
-
-Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
-
-To stop the web app type `CTRL+C`. 
-
-#### Local Computer
-
-If you are using your own computer, make sure to change the flag `voc=False` in the following line inside `mp_sort/app/__init__.py`.
-
-```python
-# set voc=False if you run on local computer
-application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
-```
-
 Now, you can run Flask by typing:
 
 ```shell
@@ -413,7 +367,11 @@ Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. Yo
 
 ![](https://www.dropbox.com/s/a2fqx5svvyqtqf9/mp1_home.png?raw=1)
 
-To stop the web app type `CTRL+C`. 
+To stop the web app, type `CTRL+C`. 
+
+If you are doing your mini project in Vocareum, you can do a CTRL-click (Windows) or CMD-click on the `http://127.0.0.1:5000` link in the terminal and it will open a new tab in your browser. 
+
+To stop the web app, type `CTRL+C`.
 
 ## Task 1: Generating Random Integers 
 
