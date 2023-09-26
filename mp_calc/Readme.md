@@ -108,10 +108,10 @@ $ cd ~/Downloads/d2w_mini_projects/mp_calc
 First make sure that you have installed `pipenv` package.
 
 ```shell
-pip install --user pipenv
+python -m pip install --user pipenv
 ```
 
-If you are running the above commands in Vocareum, you may encounter the following message at the end of the installation.
+**If you are running the above commands in Vocareum, you may encounter the following message at the end of the installation.**
 
 ```shell
 WARNING: The script virtualenv is installed in '/voc/work/.local/bin' which is not on PATH.
@@ -126,12 +126,13 @@ It is basically saying that you need to add the newly installed `pipenv` program
 export PATH='/voc/work/.local/bin':$PATH
 ```
 
+Note: the above command works when you are running in Vocareum under Linux shell. 
 
 We will call `mp_calc` folder as the **root** folder of our application. 
 
 From the root folder, install the packages specified in the `Pipfile`.
 ```shell
-pipenv install
+python -m pipenv install
 ```
 
 The above steps will install the following packages:
@@ -145,17 +146,17 @@ The above steps will install the following packages:
 
 To activate the virtualenv, run
 ```shell
-pipenv shell
+python -m pipenv shell
 ```
 
 Alternatively, you can choose everytime you run a command to prepend that command with the following:
 ```shell
-pipenv run
+python -m pipenv run
 ```
 
 Ok, so let's enter into the shell by typing:
 ```shell
-pipenv shell
+python -m pipenv shell
 ```
 
 You should see the word `(mp_calc)` in your prompt something like:
