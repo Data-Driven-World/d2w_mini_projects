@@ -427,9 +427,13 @@ Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. Yo
 
 To stop the web app, type `CTRL+C`. 
 
-If you are doing your mini project in Vocareum, you can do a CTRL-click (Windows) or CMD-click on the `http://127.0.0.1:5000` link in the terminal and it will open a new tab in your browser. 
-
-To stop the web app, type `CTRL+C`.
+If you are doing your mini project in Vocareum, do the following:
+1. Before running `flask run`, edit the file `mp_calc/app/__init__.py` and change the argument from `voc=False` to `voc=True` in the following line.
+    ```python
+    application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
+    ```
+1. Go to `mp_calc` directory or your root directory and type `flask run` in the terminal.
+1. you can do a CTRL-click (Windows) or CMD-click on the `http://127.0.0.1:5000` link in the terminal and it will open a new tab in your browser. 
 
 ### Exercise 1 - Task 4
 
