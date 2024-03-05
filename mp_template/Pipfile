@@ -13,9 +13,9 @@ transcrypt = "*"
 bootstrap-flask = "*"
 importlib-resources = "*"
 colorama = "*"
-Werkzeug = "==2.3.0"
+Werkzeug = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3"
+python_version = "3.11"
