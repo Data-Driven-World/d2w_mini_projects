@@ -4,8 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-flask = "*"
-flask-login = "*"
+flask = ">=3.0.0"
+flask-login = ">=0.6.3"
 flask-migrate = "*"
 flask-sqlalchemy = "*"
 flask-wtf = "*"
@@ -13,9 +13,9 @@ transcrypt = "*"
 bootstrap-flask = "*"
 importlib-resources = "*"
 colorama = "*"
-Werkzeug = "==2.3.0"
+Werkzeug = ">=3.0.0"
 
 [dev-packages]
 
 [requires]
-python_version = "3"
+python_version = "3.11"

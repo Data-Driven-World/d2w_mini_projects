@@ -3,18 +3,18 @@ from flask import render_template, flash, redirect, url_for
 from app.forms import LoginForm, RegistrationForm, CreateQuestionForm, ChallengeAnswerForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Question, Challenge, TimeRecord
-from werkzeug.urls import url_parse
+from urllib.parse import urlparse
 from app import db
 from flask import request 
 from app.serverlibrary import mergesort, EvaluateExpression, get_smallest_three 
 
 @application.route('/')
-@application.route('/index')
+@application.route('/index/')
 @login_required
 def index():
 	return render_template('index.html', title='Home')
 
-@application.route('/users')
+@application.route('/users/')
 @login_required
 def users():
 	users = User.query.all()	
@@ -23,7 +23,7 @@ def users():
 	return render_template('users.html', title='Users',
 							users=usernames)
 
-@application.route('/questions', methods=['GET','POST'])
+@application.route('/questions/', methods=['GET','POST'])
 @login_required
 def questions():
 	questions = current_user.questions.all()
@@ -56,7 +56,7 @@ def questions():
 							questions=questions,
 							form=form)
 
-@application.route('/challenges', methods=['GET', 'POST'])
+@application.route('/challenges/', methods=['GET', 'POST'])
 @login_required
 def challenges():
 	challenges = current_user.challenges.all()
@@ -91,7 +91,7 @@ def challenges():
 							form = form,
 							records = records)
 
-@application.route('/halloffame')
+@application.route('/halloffame/')
 def halloffame():
 	challenges = Challenge.query.all()
 	records = { c.id:get_smallest_three(c) for c in challenges}
@@ -100,7 +100,7 @@ def halloffame():
 							challenges=challenges,
 							records=records)
 
-@application.route('/login', methods=['GET', 'POST'])
+@application.route('/login/', methods=['GET', 'POST'])
 def login():
 	if current_user.is_authenticated:
 		return redirect(url_for('index'))
@@ -114,17 +114,17 @@ def login():
 			return redirect(url_for('login'))
 		login_user(user, remember=form.remember_me.data)
 		next_page = request.args.get('next')
-		if not next_page or url_parse(next_page).netloc != '':
+		if not next_page or urlparse(next_page).netloc != '':
 			next_page = url_for('index')
 		return redirect(next_page)
 	return render_template('login.html', title='Sign In', form=form)
 
-@application.route('/logout')
+@application.route('/logout/')
 def logout():
 	logout_user()
 	return redirect(url_for('index'))
 
-@application.route('/register', methods=['GET', 'POST'])
+@application.route('/register/', methods=['GET', 'POST'])
 def register():
 	if current_user.is_authenticated:
 		return redirect(url_for('index'))
