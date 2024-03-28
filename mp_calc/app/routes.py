@@ -47,10 +47,6 @@ def questions():
 		db.session.commit()
 		flash('Congratulations, you have created a new question.')
 		questions = current_user.questions.all()
-		return render_template('questions.html', title='Questions', 
-							user=current_user,
-							questions=questions,
-							form=form)
 	return render_template('questions.html', title='Questions', 
 							user=current_user,
 							questions=questions,
