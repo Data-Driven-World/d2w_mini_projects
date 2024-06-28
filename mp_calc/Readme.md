@@ -493,7 +493,7 @@ The expected output for both exercises 1 and 2 can be found in this video.
 
    Make sure you have activated your Python's virtual environment:
    - Go to the folder or directory of your root project, e.g. `cd d2w_mini_projects\mp_calc` (Win), or `cd d2w_mini_projects/mp_calc` (Mac OS)
-   - Actiate the virtual environment, e.g. `pipenv shell`.
+   - Actiate the virtual environment, e.g. `python -m pipenv shell`.
 
 1. I can't run flask/use transcrypt?
 
