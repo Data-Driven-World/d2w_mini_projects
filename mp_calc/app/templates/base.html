@@ -68,7 +68,7 @@
     
     {% block scripts %}
       {{ bootstrap.load_js() }}
-      <script type="module">import * as library from '/static/__target__/clientlibrary.js'; window.library = library;</script>
+      <script type="module">import * as library from '{{prefix}}/static/__target__/clientlibrary.js'; window.library = library;</script>
     {% endblock %}
   </body>
 </html>
