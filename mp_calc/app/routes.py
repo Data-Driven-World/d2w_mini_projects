@@ -3,7 +3,7 @@ from flask import render_template, flash, redirect, url_for
 from app.forms import LoginForm, RegistrationForm, CreateQuestionForm, ChallengeAnswerForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Question, Challenge, TimeRecord
-from urllib.parse import urlparse
+from urllib.parse import urlparse, unquote
 from app import db
 from flask import request 
 from app.serverlibrary import mergesort, EvaluateExpression, get_smallest_three 
@@ -116,7 +116,7 @@ def login():
 			flash('Invalid username or password')
 			return redirect(url_for('login'))
 		login_user(user, remember=form.remember_me.data)
-		next_page = request.args.get('next')
+		next_page = unquote(request.args.get('next'))
 		if not next_page or urlparse(next_page).netloc != '':
 			next_page = url_for('index')
 		return redirect(next_page)
