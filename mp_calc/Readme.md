@@ -484,7 +484,7 @@ Read the following notes to understand how to use the database and Bootstrap for
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
-[Mini Project 2 Expected Output](https://sutdapac-my.sharepoint.com/:v:/g/personal/oka_kurniawan_sutd_edu_sg/EWNSr5uKQQJCgdMJNpyAyV8BUP-2dIx6y1ezLJJAVVgmLw?e=spm6oH&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19)
+[Mini Project 2 Expected Output](https://sutdapac-my.sharepoint.com/:v:/g/personal/oka_kurniawan_sutd_edu_sg/EWNSr5uKQQJCgdMJNpyAyV8BUP-2dIx6y1ezLJJAVVgmLw?e=tQBevF&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 
 ## Troubleshooting
