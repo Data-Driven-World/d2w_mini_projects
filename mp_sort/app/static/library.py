@@ -2,6 +2,7 @@ from org.transcrypt.stubs.browser import *
 import random
 
 def gen_random_int(number, seed):
+	#Code goes here
 	pass
 
 def generate():
