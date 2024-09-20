@@ -2,8 +2,10 @@ from org.transcrypt.stubs.browser import *
 import random
 
 def gen_random_int(number, seed):
-	#Code goes here
-	pass
+	result = list(range(0, number))
+	random.seed(seed)
+	random.shuffle(result)
+	return result
 
 def generate():
 	number = 10
@@ -11,15 +13,14 @@ def generate():
 
 	# call gen_random_int() with the given number and seed
 	# store it to the variable array
-	pass
+	array = gen_random_int(number, seed)
 
-	array = None
 	# convert the items into one single string 
 	# the number should be separated by a comma
 	# and a full stop should end the string.
-	pass
 
-	array_str = None
+	array_str = ",".join(map(str,array)) + "."
+	#print(array_str)
 
 	# This line is to placed the string into the HTML
 	# under div section with the id called "generate"	
@@ -36,10 +37,10 @@ def sortnumber1():
 		- call your sort function, either bubble sort or insertion sort
 		- create a string of the sorted numbers and store it in array_str
 	'''
-	pass
-
-	array_str = None
-	
+	array_str = document.getElementById("generate").innerHTML
+	array = list(map(int, array_str[:-1].split(",")))
+	bubble_sort(array)
+	array_str = ",".join(map(str,array)) + "."
 	document.getElementById("sorted").innerHTML = array_str
 
 def sortnumber2():
@@ -69,4 +70,9 @@ def sortnumber2():
 
 	document.getElementById("sorted").innerHTML = array_str
 
-
+def bubble_sort(array: list[int|float]) -> int:
+    n = len(array)
+    for a in range(1,n):
+        for b in range(1,n):
+            if array[b] < array[b-1]:
+                array[b], array[b-1] = array[b-1], array[b]
