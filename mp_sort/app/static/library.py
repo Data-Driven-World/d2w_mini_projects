@@ -21,7 +21,6 @@ def generate():
 
 	array_str = ",".join(map(str,array)) + "."
 	#print(array_str)
-
 	# This line is to placed the string into the HTML
 	# under div section with the id called "generate"	
 	document.getElementById("generate").innerHTML = array_str
@@ -71,8 +70,21 @@ def sortnumber2():
 	document.getElementById("sorted").innerHTML = array_str
 
 def bubble_sort(array: list[int|float]) -> int:
-    n = len(array)
-    for a in range(1,n):
-        for b in range(1,n):
-            if array[b] < array[b-1]:
-                array[b], array[b-1] = array[b-1], array[b]
+    # n = len(array)
+    # for a in range(1,n):
+    #     for b in range(1,n):
+    #         if array[b] < array[b-1]:
+    #             array[b], array[b-1] = array[b-1], array[b]
+	n = len(array)
+	swapped = True
+	while swapped is True:
+		swapped = False
+		new_n = 0
+		for inner_index in range(1,n):
+			first_number = array[inner_index-1]
+			second_number = array[inner_index]
+			if first_number > second_number:
+				array[inner_index-1], array[inner_index] = array[inner_index], array[inner_index-1]
+				swapped = True
+				new_n = inner_index
+		n = new_n
