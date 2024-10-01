@@ -64,9 +64,9 @@ def sortnumber2():
 
 	# Your code should start from here
 	# store the final string to the variable array_str
-	pass
-
-	array_str = None
+	array = list(map(int, value.split(",")))
+	bubble_sort(array)
+	array_str = ",".join(map(str,array)) + "."
 
 	document.getElementById("sorted").innerHTML = array_str
 
