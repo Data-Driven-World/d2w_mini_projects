@@ -43,7 +43,6 @@ You need to have Git to do the project. Download and install the software accord
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
 ```shell
-cd Downloads
 git clone https://github.com/Data-Driven-World/d2w_mini_projects
 ```
 
@@ -91,12 +90,12 @@ Go to the root folder `mp_sort`.
 
 Windows:
 ```dos
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_sort
+> cd d2w_mini_projects\mp_sort
 ```
 
 Unix/MacOS:
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort
+$ cd d2w_mini_projects/mp_sort
 ```
 
 First make sure that you have installed `pipenv` package.
@@ -276,13 +275,13 @@ Javascript is the commonly used language for front-end web development. However,
 
 Windows:
 ```dos
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort\app\static
+> cd d2w_mini_projects\mp_sort\app\static
 > dir
 ```
 
 Unix/MacOS:
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort/app/static
+$ cd d2w_mini_projects/mp_sort/app/static
 $ ls
 ```
 
@@ -341,12 +340,12 @@ which means go up the folder two times. Or, simply
 
 Windows:
 ```dos
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort
+> cd d2w_mini_projects\mp_sort
 ```
 
 Unix/MacOS:
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_sort/
+$ cd d2w_mini_projects/mp_sort/
 ```
 
 
@@ -443,5 +442,5 @@ This button's even `onclick` is binded to `sortnumber2()` function in your `libr
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
-[Mini Project 1 Expected Output](https://web.microsoftstream.com/video/fa203d50-c064-48a2-a951-ec0ec3385a48)
+[Mini Project 1 Expected Output](https://sutdapac-my.sharepoint.com/:v:/g/personal/oka_kurniawan_sutd_edu_sg/EZZFflu2UTZNmy2PZ47bTjUBTCdKm8R-glGbTt00vaMLDA?e=J8bL2n&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 

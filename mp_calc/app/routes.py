@@ -3,29 +3,33 @@ from flask import render_template, flash, redirect, url_for
 from app.forms import LoginForm, RegistrationForm, CreateQuestionForm, ChallengeAnswerForm
 from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Question, Challenge, TimeRecord
-from werkzeug.urls import url_parse
+from urllib.parse import urlparse, unquote
 from app import db
 from flask import request 
 from app.serverlibrary import mergesort, EvaluateExpression, get_smallest_three 
 
+
 @application.route('/')
-@application.route('/index')
+@application.route('/index/')
 @login_required
 def index():
-	return render_template('index.html', title='Home')
+	prefix = application.wsgi_app.prefix[:-1]
+	return render_template('index.html', title='Home', prefix=prefix)
 
-@application.route('/users')
+@application.route('/users/')
 @login_required
 def users():
+	prefix = application.wsgi_app.prefix[:-1]
 	users = User.query.all()	
 	mergesort(users, lambda item: item.username)
 	usernames = [u.username for u in users]
 	return render_template('users.html', title='Users',
-							users=usernames)
+							users=usernames, prefix=prefix)
 
-@application.route('/questions', methods=['GET','POST'])
+@application.route('/questions/', methods=['GET','POST'])
 @login_required
 def questions():
+	prefix = application.wsgi_app.prefix[:-1]
 	questions = current_user.questions.all()
 	form = CreateQuestionForm()
 	users = User.query.all()
@@ -47,18 +51,15 @@ def questions():
 		db.session.commit()
 		flash('Congratulations, you have created a new question.')
 		questions = current_user.questions.all()
-		return render_template('questions.html', title='Questions', 
-							user=current_user,
-							questions=questions,
-							form=form)
 	return render_template('questions.html', title='Questions', 
 							user=current_user,
 							questions=questions,
-							form=form)
+							form=form, prefix=prefix)
 
-@application.route('/challenges', methods=['GET', 'POST'])
+@application.route('/challenges/', methods=['GET', 'POST'])
 @login_required
 def challenges():
+	prefix = application.wsgi_app.prefix[:-1]
 	challenges = current_user.challenges.all()
 	form = ChallengeAnswerForm()
 	recordsquery = TimeRecord.query.filter_by(user_id=current_user.id).all()
@@ -81,7 +82,7 @@ def challenges():
 							user=current_user,
 							challenges=challenges,
 							form = form,
-							records = records)
+							records = records, prefix=prefix)
 		
 		return redirect(url_for('challenges'))
 	form.answer.data=""
@@ -89,19 +90,21 @@ def challenges():
 							user=current_user,
 							challenges=challenges,
 							form = form,
-							records = records)
+							records = records, prefix=prefix)
 
-@application.route('/halloffame')
+@application.route('/halloffame/')
 def halloffame():
+	prefix = application.wsgi_app.prefix[:-1]
 	challenges = Challenge.query.all()
 	records = { c.id:get_smallest_three(c) for c in challenges}
 	print(records)
 	return render_template('halloffame.html', title="Hall of Fame",
 							challenges=challenges,
-							records=records)
+							records=records, prefix=prefix)
 
-@application.route('/login', methods=['GET', 'POST'])
+@application.route('/login/', methods=['GET', 'POST'])
 def login():
+	prefix = application.wsgi_app.prefix[:-1]
 	if current_user.is_authenticated:
 		return redirect(url_for('index'))
 
@@ -113,19 +116,25 @@ def login():
 			flash('Invalid username or password')
 			return redirect(url_for('login'))
 		login_user(user, remember=form.remember_me.data)
-		next_page = request.args.get('next')
-		if not next_page or url_parse(next_page).netloc != '':
+		if (request.args.get('next')) is None:
+			next_page = None
+		else:
+			next_page = unquote(request.args.get('next'))
+
+		if not next_page or urlparse(next_page).netloc != '':
 			next_page = url_for('index')
 		return redirect(next_page)
-	return render_template('login.html', title='Sign In', form=form)
+	return render_template('login.html', title='Sign In', form=form, prefix=prefix)
 
-@application.route('/logout')
+@application.route('/logout/')
 def logout():
+	prefix = application.wsgi_app.prefix[:-1]
 	logout_user()
 	return redirect(url_for('index'))
 
-@application.route('/register', methods=['GET', 'POST'])
+@application.route('/register/', methods=['GET', 'POST'])
 def register():
+	prefix = application.wsgi_app.prefix[:-1]
 	if current_user.is_authenticated:
 		return redirect(url_for('index'))
 	form = RegistrationForm()
@@ -136,5 +145,5 @@ def register():
 		db.session.commit()
 		flash('Congratulations, you are now a registered user.')
 		return redirect(url_for('login'))
-	return render_template('register.html', title='Register', form=form)
+	return render_template('register.html', title='Register', form=form, prefix=prefix)
 

@@ -62,8 +62,7 @@ You need to have Git to do the project. Download and install the software accord
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
 ```shell
-$ cd Downloads
-$ git clone https://github.com/kurniawano/d2w_mini_projects.git
+git clone https://github.com/kurniawano/d2w_mini_projects.git
 ```
 
 ### Go to Mini Project 3 Folder
@@ -96,7 +95,7 @@ In the following steps, the Windows prompt will be represented by:
 ```
 Go to the root folder `mp_tictactoe`.
 ```shell
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_tictactoe
+> cd d2w_mini_projects\mp_tictactoe
 ```
 From the root folder, i.e. `mp_tictactoe`, create virtual environment called `virtenv`.
 
@@ -129,7 +128,7 @@ $
 
 Go to the root folder `mp_tictactoe`. 
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_tictactoe
+$ cd d2w_mini_projects/mp_tictactoe
 ```
 
 From the root folder, i.e. `mp_tictactoe`, create virtual environment called `virtenv`.
@@ -269,7 +268,7 @@ In this task, you need to compile the `clientlibrary.py` into a javascript file 
 To compile `clientlibrary.py`, first we need to go into the `static` folder.
 
 ```shell
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_tictactoe\app\static
+> cd d2w_mini_projects\mp_tictactoe\app\static
 > dir
 ```
 
@@ -291,7 +290,7 @@ The option `-b` means to build the javascript library. You can use `--help` for 
 To compile `library.py`, first we need to go into the `static` folder.
 
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_tictactoe/app/static
+$ cd d2w_mini_projects/mp_tictactoe/app/static
 $ ls
 ```
 
@@ -388,15 +387,15 @@ Now, your task is to replace the `None`:
 
 ### Task 3
 
-Now, we are going to create the database using Flask-Migrate tool. First, go to the root directory of your project. For example, if you download the repository to your user's `Download` folder, you can use the following.
+Now, we are going to create the database using Flask-Migrate tool. First, go to the root directory of your project. 
 
 Windows:
 ```dos
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_tictactoe
+> cd d2w_mini_projects\mp_tictactoe
 ```
 Mac OS:
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_tictactoe
+$ cd d2w_mini_projects/mp_tictactoe
 ```
 
 Then, run the following command from the terminal:
@@ -416,11 +415,11 @@ You can try to run the web application now. First go to the root directory of yo
 
 Windows:
 ```dos
-> cd %USERPROFILE\Downloads\d2w_mini_projects\mp_tictactoe
+> cd d2w_mini_projects\mp_tictactoe
 ```
 Mac OS:
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_tictactoe
+$ cd d2w_mini_projects/mp_tictactoe
 ```
 
 Now you can run Flask.

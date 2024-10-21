@@ -50,7 +50,6 @@ You need to have Git to do the project. Download and install the software accord
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
 ```shell
-cd Downloads
 git clone https://github.com/Data-Driven-World/d2w_mini_projects
 ```
 
@@ -99,10 +98,10 @@ $
 Go to the root folder `mp_calc`.
 Windows:
 ```dos
-> cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_calc
+> cd d2w_mini_projects\mp_calc
 ```
 ```shell
-$ cd ~/Downloads/d2w_mini_projects/mp_calc
+$ cd d2w_mini_projects/mp_calc
 ```
 
 First make sure that you have installed `pipenv` package.
@@ -485,7 +484,7 @@ Read the following notes to understand how to use the database and Bootstrap for
 
 The expected output for both exercises 1 and 2 can be found in this video.
 
-[Mini Project 2 Expected Output](https://sutdapac-my.sharepoint.com/:v:/g/personal/oka_kurniawan_sutd_edu_sg/EWNSr5uKQQJCgdMJNpyAyV8BUP-2dIx6y1ezLJJAVVgmLw?e=spm6oH&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZyIsInJlZmVycmFsQXBwUGxhdGZvcm0iOiJXZWIiLCJyZWZlcnJhbE1vZGUiOiJ2aWV3In19)
+[Mini Project 2 Expected Output](https://sutdapac-my.sharepoint.com/:v:/g/personal/oka_kurniawan_sutd_edu_sg/EWNSr5uKQQJCgdMJNpyAyV8BUP-2dIx6y1ezLJJAVVgmLw?e=tQBevF&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
 
 
 ## Troubleshooting
@@ -493,8 +492,8 @@ The expected output for both exercises 1 and 2 can be found in this video.
 1. I got, `ModuleNotFoundError: No module named ''?` 
 
    Make sure you have activated your Python's virtual environment:
-   - Go to the folder or directory of your root project, e.g. `cd %USERPROFILE\Downloads\d2w_mini_projects\mp_calc` (Win), or `cd ~/Downloads/d2w_mini_projects/mp_calc` (Mac OS)
-   - Actiate the virtual environment, e.g. `pipenv shell`.
+   - Go to the folder or directory of your root project, e.g. `cd d2w_mini_projects\mp_calc` (Win), or `cd d2w_mini_projects/mp_calc` (Mac OS)
+   - Actiate the virtual environment, e.g. `python -m pipenv shell`.
 
 1. I can't run flask/use transcrypt?
 
