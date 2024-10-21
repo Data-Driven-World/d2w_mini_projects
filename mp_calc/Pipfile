@@ -13,7 +13,7 @@ transcrypt = "*"
 bootstrap-flask = "*"
 importlib-resources = "*"
 colorama = "*"
-Werkzeug = ">=3.0.0"
+Werkzeug = "==3.0.1"
 
 [dev-packages]
 
